@@ -1,0 +1,22 @@
+body {
+    /*background-image: url('ruta/de/tu/imagen.jpg');*/
+    background-color: #f7f7f7;
+    text-align: center;
+}
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: #0d6efd;
+}
+.main-container {
+    flex-grow: 1;
+}
+.card-custom {
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.card form {
+    text-align: left;
+}
+.navbar .container-fluid {
+    justify-content: center;
+}

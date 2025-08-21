@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- La codificacion de caracteres de la pagina -->
+        <meta charset="UTF-8">
+
+        <!-- Controla vista adaptada para dispositivos moviles-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Texas Hold'em Pocker</title>
+
+        <!-- Icono de la página -->
+        <link rel="icon" href="./src/images/poker.ico" type="image/png">
+
+        <!-- Importamos Bootstrap -->
+        <link rel="stylesheet" href="./src/css/common.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <header class="bg-light shadow-sm">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./pages/login.html">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./pages/register.html">Registro</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Servicios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Acerca</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contacto-form">Contacto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Ayuda</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container-fluid p-5 bg-primary text-white text-center">
+            <h1>Texas Hold'em Pocker</h1>
+            <img src="./src/images/poker.png" style="max-width:200px"/>
+        </div>
+
+        <!--
+            Cargamos el script como un modulo luego de que se muestran los 
+         elementos 
+        -->
+        <!--
+            La etiqueta <script type="module"> permite usar módulos ES6 en JavaScript. Esto significa que puedes 
+            importar y exportar funciones, clases y variables entre archivos JS usando import y export. Además, 
+            el código dentro de este script se ejecuta en modo estricto y tiene su propio ámbito.
+        -->
+        <script type="module">
+            import TexasHoldemPocker from '/src/js/poker.js';
+            const juego = new TexasHoldemPocker();
+            juego.dealer.di_hola();
+            console.log(juego.mesa.jugadores[0].name);
+        </script>
+    </body>
+</html>
