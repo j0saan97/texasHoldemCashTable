@@ -1,0 +1,13 @@
+.contenedor-cartas{
+
+}
+
+.cartas-mesa{
+    display:flex;
+    flex-direction:row;
+    gap:1px;
+}
+
+.item-carta{
+    margin:10px;
+}

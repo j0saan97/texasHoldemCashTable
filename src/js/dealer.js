@@ -1,25 +1,33 @@
 import Baraja from './baraja.js';
 
 class Dealer {
-    constructor(name, codigo) {
-        this.name = name;
+    constructor(name = null, codigo = null, mesa = null) {
+        this.nombre = name;
         this.codigo = codigo;
-        //this.baraja
-        //this.mesa
+        this.mesa = mesa;
+        this.baraja = this.usarBaraja();
     }
 
-    di_hola(){
-        console.log('Hola jugadores');
+    usarBaraja(){
+        /* Toma una baraja */
+        return new Baraja();
     }
-    
+
+    barajar(){
+        // Mezclamos las cartas aleatoriamente con el algoritmo Fisher-Yates
+        for (let i = this.baraja.cartas.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.baraja.cartas[i], this.baraja.cartas[j]] = [this.baraja.cartas[j], this.baraja.cartas[i]];
+        }
+    }
+
     entregaComunitarias(total_comunitarias){
-        /* Coloca N cartas comunitarias en la mesa indicada */
+        /* Coloca N cartas comunitarias en la mesa */
         for (let i = 0; i < total_comunitarias; i++) {
             this.mesa.cartas.push(this.baraja.cartas.pop());
         }
     }
 
-    // repartir las 2 cartas de 1 en 1, es decir en 2 rondas
     repartir(jugadores, cartasPorJugador = 2) {
         for (const jugador of jugadores) {
             for (let i = 0; i < cartasPorJugador; i++) {

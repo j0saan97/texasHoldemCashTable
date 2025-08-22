@@ -37,6 +37,8 @@ export const RANK_VALUE = {
   '8': 8, '9': 9, 'T': 10, 'J': 11, 'Q': 12, 'K': 13, 'A': 14
 };
 
+
+
 export default {
   RANKING_MANOS,
   POSICIONES,
@@ -53,12 +55,3 @@ export default {
 };
 
 // Nota: con esto tendrías todas las constantes centralizadas. Si más adelante creas variantes (MTT, Spin&Go), podrías cargar distintos config por tipo de torneo.
-
-
-
-
-
-
-
-
-

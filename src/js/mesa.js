@@ -1,19 +1,27 @@
+import Dealer from "./dealer.js";
+
 class Mesa {
 	constructor(codigo, amount) {
 		this.amount = amount;
         this.codigo = codigo;
         this.cartas = [];
         this.jugadores = [];
+        this.dealer = null;
 	}
 
-    verCartas(){
+    verCartasHTML() {
         if (this.cartas.length === 0) {
-            console.log("No tienes cartas.");
+            return `<div>
+                        <span>No hay cartas en la mesa</span>
+                    </div>`;
         } else {
-            const cartasStr = this.cartas.map(carta => `${carta.valor} de ${carta.palo}` ).join(', ');
-            console.log(`Cartas en la mesa: ${cartasStr}`);
+            // Genera el HTML de todas las cartas en la mesa
+            return `<div class="cartas-mesa">
+                        ${this.cartas.map(carta => carta.verCartaHTML()).join('')}
+                    </div>`;
         }
     }
+
 }
 
 export default Mesa;

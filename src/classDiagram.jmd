@@ -1,0 +1,97 @@
+classDiagram
+    class Carta {
+        -rank
+        -suit
+        -value
+        +constructor(rank, suit)
+        +toString()
+        +valueOf()
+    }
+
+    class Baraja {
+        -cards
+        +constructor({seeded, cards})
+        +shuffle()
+        +draw(n)
+        +reset()
+    }
+
+    class Jugador {
+        -id
+        -nombre
+        -apellidos
+        -email
+        -telefono
+        -stack
+        -saldoEnCuenta
+        -mano
+        -seat
+        -isAllIn
+        -isFolded
+        -currentBet
+        +constructor(opts)
+        +apostar(amount)
+        +igualar(amount)
+        +check()
+        +retirarse()
+        +recibirCarta(carta)
+        +bancaTotal()
+    }
+
+    class Mesa {
+        -id
+        -stakes
+        -pot
+        -sidePots
+        -players
+        -communityCards
+        -buttonPos
+        -phase
+        +constructor(opts)
+        +resetMano()
+        +addToPot(amount)
+    }
+
+    class Dealer {
+        -baraja
+        -mesa
+        +constructor(mesa, baraja)
+        +dealHoleCards()
+        +dealFlop()
+        +dealTurn()
+        +dealRiver()
+        +jugarManoCompleta()  
+    }
+
+    class EvaluadorDeManos {
+        +evaluate(hand, community)
+        +compare(handA, handB)
+        +bestFiveFromSeven(cards)
+    }
+
+    class GestorDePartida {
+        -mesa
+        -dealer
+        -evaluador
+        +constructor(mesa, dealer, evaluador)
+        +startHand()
+        +runBettingRound()
+        +progressPhase()
+        +handleAllInsAndSidePots()
+        +showdown()
+    }
+
+    class SidePot {
+        -amount
+        -eligiblePlayers
+        +constructor(amount, players)
+    }
+
+    Carta <|-- Baraja : contiene
+    Baraja --> Dealer : usa
+    Mesa *-- Jugador : contiene
+    Mesa o-- Baraja : contiene (opcional)
+    Dealer --> Mesa : actua sobre
+    GestorDePartida --> Dealer : orquesta
+    GestorDePartida --> EvaluadorDeManos : usa
+    Mesa "1" o-- "n" SidePot : tiene

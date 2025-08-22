@@ -55,19 +55,6 @@
             <img src="./src/images/poker.png" style="max-width:200px"/>
         </div>
 
-        <div id="contenedor-cartas">
-        </div>
-        <script type="module">
-            import Pocker from '/src/js/pocker.js';
-            const pocker = new Pocker();
-            pocker.mesa.dealer.barajar();
-            pocker.mesa.dealer.entregaComunitarias(3);
-            console.log(pocker.mesa.dealer);
-            console.log(pocker.mesa.jugadores);
-            document.getElementById("contenedor-cartas").innerHTML = pocker.mesa.verCartasHTML();
-        </script>
-        
-
         <footer class="bg-dark text-white pt-5 pb-4 mt-auto">
             <div class="container text-center text-md-start">
                 <div class="row text-center text-md-start justify-content-center">

@@ -1,10 +1,19 @@
 class Jugador {
-	constructor(nombre, codigo) {
-		this.name = nombre;
+	constructor(nombre=null, codigo=null, mesa=null) {
+		this.nombre = nombre;
         this.codigo = codigo;
         this.cartas = [];
         this.activo = true;
+        this.mesa = mesa;
 	}
+
+    pedirCarta(){
+        return false;
+    }
+
+    rechazarCarta(){
+        return false;
+    }
 
     jugarCarta(){
         return false;
@@ -14,16 +23,7 @@ class Jugador {
         return false;
     }
 
-    checkear(){
-        return false;
-    }
-
-    resubir(){
-        return false;
-    }
-
-    foldear(){
-        // se retira de los jugadores que optan al bote, no puede reaizar mas acciones hasta la siguiente mano
+    retirarseDeMesa(){
         return false;
     }
 

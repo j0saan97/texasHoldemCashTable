@@ -1,19 +1,15 @@
 class Carta {
 	constructor(palo, valor) {
 		this.palo = palo;
-        this.valor = valor
-        this.image_url = `./src/images/cartas/${valor}${palo}.png`;  
+        this.valor = valor;
+        this.image_url = `https://deckofcardsapi.com/static/img/${this.valor}${this.palo}.png`;
 	}
 
-    mostrarCartaHTML() {
-        return `<div class="card-container">
-                    <img src="${this.image_url}" alt="Carta de póker">
+    verCartaHTML() {
+        return `<div class="item-carta">
+                    <img src="${this.image_url}" alt="${this.valor} de ${this.palo}" class="carta-img" />
                 </div>`;
     }
-    
-    verCarta(){
-        console.log(`${this.valor} de ${this.palo}`)
-    }
 }
- 
+
 export default Carta;
