@@ -21,12 +21,47 @@ class Dealer {
         }
     }
 
+    quemarCarta(){
+        // quema una carta del mazo mostrandola boca abajo en el tapete, usar el css de la API que tiene cartas boca abajo
+        return false;
+    }
+
+    repartirFlop(){
+        /* Coloca 3 cartas comunitarias en la mesa 
+        for (let i = 0; i < 3; i++) {
+            this.mesa.cartas.push(this.baraja.cartas.pop());
+        } 
+        añadirlas a la variable cartas comunitarias y eliminarlas del mazo 
+        
+        */
+    }
+
+    repartirTurn(){
+        /* Coloca 1 carta comunitaria en la mesa 
+        this.mesa.cartas.push(this.baraja.cartas.pop()); */
+    }
+
+    repartirRiver(){
+        /* Coloca 1 carta comunitaria en la mesa 
+        this.mesa.cartas.push(this.baraja.cartas.pop()); */
+    }
+
+    repartirBoard(){
+        /* Reparte las 5 cartas comunitarias en la mesa */
+        this.repartirFlop();
+        this.repartirTurn();
+        this.repartirRiver();
+    }   
+
+
     entregaComunitarias(total_comunitarias){
-        /* Coloca N cartas comunitarias en la mesa */
+
+        /* Coloca N cartas comunitarias en la mesa, util para pruebas*/
         for (let i = 0; i < total_comunitarias; i++) {
             this.mesa.cartas.push(this.baraja.cartas.pop());
         }
     }
+
 
     repartir(jugadores, cartasPorJugador = 2) {
         for (const jugador of jugadores) {

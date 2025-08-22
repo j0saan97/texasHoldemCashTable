@@ -57,16 +57,6 @@
 
         <div id="contenedor-cartas">
         </div>
-        <script type="module">
-            import Pocker from '/src/js/pocker.js';
-            const pocker = new Pocker();
-            pocker.mesa.dealer.barajar();
-            pocker.mesa.dealer.entregaComunitarias(3);
-            console.log(pocker.mesa.dealer);
-            console.log(pocker.mesa.jugadores);
-            document.getElementById("contenedor-cartas").innerHTML = pocker.mesa.verCartasHTML();
-        </script>
-        
 
         <footer class="bg-dark text-white pt-5 pb-4 mt-auto">
             <div class="container text-center text-md-start">
@@ -132,6 +122,16 @@
                 </div>
             </div>
         </footer>
+        
+        <script type="module">
+            import Pocker from '/src/js/pocker.js';
+            const pocker = new Pocker();
+            pocker.mesa.dealer.barajar();
+            pocker.mesa.dealer.entregaComunitarias(2);
+            console.log(pocker.mesa.dealer);
+            console.log(pocker.mesa.jugadores);
+            document.getElementById("contenedor-cartas").innerHTML = pocker.mesa.verCartasHTML();
+        </script>
         <!--
             Cargamos el script como un modulo luego de que se muestran los elementos 
         -->
@@ -140,8 +140,7 @@
             importar y exportar funciones, clases y variables entre archivos JS usando import y export. Además, 
             el código dentro de este script se ejecuta en modo estricto y tiene su propio ámbito.
         -->
-        <div id="contenedor-cartas">
-        </div>
+    
         
     </body>
 </html>
