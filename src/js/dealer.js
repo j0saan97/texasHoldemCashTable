@@ -47,7 +47,7 @@ class Dealer {
     }   
 
 
-    entregaComunitarias(total_comunitarias){
+    repartirComunitarias(total_comunitarias){
 
         /* Coloca N cartas comunitarias en la mesa, util para pruebas*/
         for (let i = 0; i < total_comunitarias; i++) {
