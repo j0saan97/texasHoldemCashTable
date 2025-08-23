@@ -24,6 +24,8 @@ classDiagram
         -telefono
         -stack
         -saldoEnCuenta
+        - saldoEnMesa
+        - saldoTotal = saldoEnCuenta + saldoEnMesa
         -mano
         -seat
         -isAllIn
@@ -42,6 +44,10 @@ classDiagram
         -id
         -stakes
         -pot
+        - BUTTON
+        - smallBlind
+        - bigBlind
+         AsidedPot
         -sidePots
         -players
         -communityCards

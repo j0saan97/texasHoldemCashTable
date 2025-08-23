@@ -1,5 +1,9 @@
+import Cartera from "./cartera.js";
+
+
 class Jugador {
-	constructor(nombre=null, codigo=null, mesa=null) {
+	constructor(nombre=null, codigo=null, mesa=null ) {
+        this.cartera = new Cartera(1000); // cada jugador empieza con 1000 de dinero
 		this.nombre = nombre;
         this.codigo = codigo;
         this.cartas = [];
@@ -7,20 +11,12 @@ class Jugador {
         this.mesa = mesa;
 	}
 
-    pedirCarta(){
+    agregarCarta(){
         return false;
     }
 
-    rechazarCarta(){
-        return false;
-    }
-
-    jugarCarta(){
-        return false;
-    }
-
-    apostarDinero(){
-        return false;
+    apostarDinero(amount){
+        this.mesa.apostarDinero(amount);
     }
 
     retirarseDeMesa(){

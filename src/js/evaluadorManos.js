@@ -4,6 +4,8 @@ class evaluadorManos {
         this.rangoMano = null; // rango de la mano, se asigna despues de evaluar
     }
 
+    
+    
     /**
      * Evalúa si la mano es una Escalera Real.
      * @returns {boolean}

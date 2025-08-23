@@ -1,7 +1,10 @@
 import Dealer from "./dealer.js";
+import Pozo from "./pozo.js";
+
 
 class Mesa {
 	constructor(codigo, amount) {
+        this.pozo = new Pozo(0);
 		this.amount = amount;
         this.codigo = codigo;
         this.cartas = [];
@@ -9,6 +12,10 @@ class Mesa {
         this.dealer = null;
 	}
 
+    apostarDinero(amount){
+        this.pozo.agregarFondos(amount);
+    }
+    
     verCartasHTML() {
         if (this.cartas.length === 0) {
             return `<div>

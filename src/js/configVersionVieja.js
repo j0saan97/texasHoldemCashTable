@@ -16,8 +16,8 @@ export const ORDEN_ACCION_PREFLOP = ["UTG", "MP", "CU", "BU", "SB", "BB"];
 export const ORDEN_ACCION_POSTFLOP = ["SB", "BB", "UTG", "MP", "CU", "BU"];
 
 export const DEFAULT_BLINDS = { 
-  small: 0.5, 
-  big: 1, 
+  smallBlind: 0.5, 
+  bigBlind: 1, 
   ante: 0.1 // por jugador
 };
 

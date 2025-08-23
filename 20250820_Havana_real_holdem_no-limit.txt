@@ -1,0 +1,4078 @@
+Winamax Poker - CashGame - HandId: #21360420-1-1755679100 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:38:20 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (10€)
+Seat 3: yancodech (10€)
+*** ANTE/BLINDS ***
+yancodech posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [8h Ah]
+*** PRE-FLOP *** 
+yancodech calls 0.05€
+teresarl89 raises 0.20€ to 0.30€
+yancodech calls 0.20€
+*** FLOP *** [4c Jd 9s]
+teresarl89 checks
+yancodech bets 0.67€
+teresarl89 folds
+yancodech collected 1.24€ from pot
+*** SUMMARY ***
+Total pot 1.24€ | Rake 0.03€
+Board: [4c Jd 9s]
+Seat 3: yancodech (small blind) (button) won 1.24€
+
+
+Winamax Poker - CashGame - HandId: #21360420-2-1755679148 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:39:08 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (9.70€)
+Seat 2: Mick6574 (6.56€)
+Seat 3: yancodech (10.27€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Mick6574 posts big blind 0.10€
+Dealt to teresarl89 [3h Ah]
+*** PRE-FLOP *** 
+yancodech calls 0.10€
+teresarl89 raises 0.20€ to 0.30€
+Mick6574 calls 0.20€
+yancodech calls 0.20€
+*** FLOP *** [5s 6s 5d]
+teresarl89 checks
+Mick6574 bets 0.32€
+yancodech calls 0.32€
+teresarl89 calls 0.32€
+*** TURN *** [5s 6s 5d][3d]
+teresarl89 checks
+Mick6574 checks
+yancodech checks
+*** RIVER *** [5s 6s 5d 3d][Jh]
+teresarl89 checks
+Mick6574 checks
+yancodech checks
+*** SHOW DOWN ***
+teresarl89 shows [3h Ah] (Two pairs : 5 and 3)
+yancodech shows [9s As] (One pair : 5)
+Mick6574 shows [8d 8h] (Two pairs : 8 and 5)
+Mick6574 collected 1.75€ from pot
+*** SUMMARY ***
+Total pot 1.75€ | Rake 0.11€
+Board: [5s 6s 5d 3d Jh]
+Seat 1: teresarl89 (small blind) showed [3h Ah] and lost with Two pairs : 5 and 3
+Seat 2: Mick6574 (big blind) showed [8d 8h] and won 1.75€ with Two pairs : 8 and 5
+Seat 3: yancodech (button) showed [9s As] and lost with One pair : 5
+
+
+Winamax Poker - CashGame - HandId: #21360420-3-1755679254 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:40:54 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (9.08€)
+Seat 2: Mick6574 (7.69€)
+Seat 3: yancodech (9.65€)
+*** ANTE/BLINDS ***
+Mick6574 posts small blind 0.05€
+yancodech posts big blind 0.10€
+Dealt to teresarl89 [3s 9d]
+*** PRE-FLOP *** 
+teresarl89 folds
+Mick6574 calls 0.05€
+yancodech checks
+*** FLOP *** [2c Qh Tc]
+Mick6574 checks
+yancodech checks
+*** TURN *** [2c Qh Tc][9c]
+Mick6574 bets 0.13€
+yancodech folds
+Mick6574 collected 0.32€ from pot
+*** SUMMARY ***
+Total pot 0.32€ | Rake 0.01€
+Board: [2c Qh Tc 9c]
+Seat 2: Mick6574 (small blind) won 0.32€
+
+
+Winamax Poker - CashGame - HandId: #21360420-4-1755679275 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:41:15 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (9.08€)
+Seat 2: Mick6574 (7.78€)
+Seat 3: yancodech (9.55€)
+*** ANTE/BLINDS ***
+yancodech posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Tc 8c]
+*** PRE-FLOP *** 
+Mick6574 calls 0.10€
+yancodech calls 0.05€
+teresarl89 checks
+*** FLOP *** [9d Th 8h]
+yancodech bets 9.45€ and is all-in
+teresarl89 calls 8.98€ and is all-in
+Mick6574 folds
+*** TURN *** [9d Th 8h][Kc]
+*** RIVER *** [9d Th 8h Kc][3s]
+*** SHOW DOWN ***
+teresarl89 shows [Tc 8c] (Two pairs : Tens and 8)
+yancodech shows [2h Ts] (One pair : Tens)
+yancodech collected 0.47€ from side pot 1
+teresarl89 collected 17.26€ from main pot
+*** SUMMARY ***
+Total pot 17.73€ | Rake 1€
+Board: [9d Th 8h Kc 3s]
+Seat 1: teresarl89 (big blind) showed [Tc 8c] and won 17.26€ with Two pairs : Tens and 8
+Seat 3: yancodech (small blind) showed [2h Ts] and won 0.47€ with One pair : Tens
+
+
+Winamax Poker - CashGame - HandId: #21360420-5-1755679319 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:41:59 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.26€)
+Seat 2: Mick6574 (7.68€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Mick6574 posts big blind 0.10€
+Dealt to teresarl89 [Qc Js]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+Mick6574 calls 0.15€
+*** FLOP *** [5h 9h 3s]
+Mick6574 checks
+teresarl89 bets 0.20€
+Mick6574 calls 0.20€
+*** TURN *** [5h 9h 3s][Tc]
+Mick6574 checks
+teresarl89 bets 0.58€
+Mick6574 calls 0.58€
+*** RIVER *** [5h 9h 3s Tc][2c]
+Mick6574 checks
+teresarl89 bets 2.06€
+Mick6574 folds
+teresarl89 collected 4€ from pot
+*** SUMMARY ***
+Total pot 4€ | Rake 0.12€
+Board: [5h 9h 3s Tc 2c]
+Seat 1: teresarl89 (small blind) (button) won 4€
+
+
+Winamax Poker - CashGame - HandId: #21360420-6-1755679341 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:42:21 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (18.17€)
+Seat 2: Mick6574 (6.65€)
+*** ANTE/BLINDS ***
+Mick6574 posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Kc 6d]
+*** PRE-FLOP *** 
+Mick6574 raises 0.15€ to 0.25€
+teresarl89 calls 0.15€
+*** FLOP *** [4d 8c As]
+teresarl89 checks
+Mick6574 checks
+*** TURN *** [4d 8c As][3s]
+teresarl89 checks
+Mick6574 bets 0.33€
+teresarl89 folds
+Mick6574 collected 0.80€ from pot
+*** SUMMARY ***
+Total pot 0.80€ | Rake 0.03€
+Board: [4d 8c As 3s]
+Seat 2: Mick6574 (small blind) (button) won 0.80€
+
+
+Winamax Poker - CashGame - HandId: #21360420-7-1755679360 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:42:40 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.92€)
+Seat 2: Mick6574 (6.87€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Mick6574 posts big blind 0.10€
+Dealt to teresarl89 [9h 7d]
+*** PRE-FLOP *** 
+teresarl89 folds
+Mick6574 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: Mick6574 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-8-1755679365 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:42:45 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.87€)
+Seat 2: Mick6574 (6.92€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+Mick6574 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [9s 3c]
+*** PRE-FLOP *** 
+teresarl89 folds
+Mick6574 calls 0.05€
+OnEstLaOuPas raises 0.25€ to 0.35€
+Mick6574 folds
+OnEstLaOuPas collected 0.45€ from pot
+*** SUMMARY ***
+Total pot 0.45€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.45€
+
+
+Winamax Poker - CashGame - HandId: #21360420-9-1755679425 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:43:45 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.87€)
+Seat 2: Mick6574 (6.82€)
+Seat 3: OnEstLaOuPas (10.10€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Qs 5d]
+*** PRE-FLOP *** 
+Mick6574 calls 0.10€
+OnEstLaOuPas raises 0.35€ to 0.45€
+teresarl89 folds
+Mick6574 folds
+OnEstLaOuPas collected 0.65€ from pot
+*** SUMMARY ***
+Total pot 0.65€ | No rake
+Seat 3: OnEstLaOuPas (small blind) won 0.65€
+
+
+Winamax Poker - CashGame - HandId: #21360420-10-1755679446 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:44:06 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.77€)
+Seat 3: OnEstLaOuPas (10.30€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Kd Ac]
+*** PRE-FLOP *** 
+teresarl89 raises 0.20€ to 0.30€
+OnEstLaOuPas folds
+teresarl89 collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 1: teresarl89 (small blind) (button) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-11-1755679465 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:44:25 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.87€)
+Seat 2: ogredebarbak (10€)
+Seat 3: OnEstLaOuPas (10.20€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [2h 5c]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 folds
+OnEstLaOuPas collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 3: OnEstLaOuPas (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-12-1755679483 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:44:43 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.77€)
+Seat 2: ogredebarbak (10€)
+Seat 3: OnEstLaOuPas (10.30€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+ogredebarbak posts big blind 0.10€
+Dealt to teresarl89 [Tc Td]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 raises 0.20€ to 0.30€
+ogredebarbak folds
+teresarl89 collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 1: teresarl89 (small blind) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-13-1755679510 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:45:10 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.87€)
+Seat 2: ogredebarbak (9.90€)
+Seat 3: OnEstLaOuPas (10.30€)
+*** ANTE/BLINDS ***
+ogredebarbak posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [5c 7c]
+*** PRE-FLOP *** 
+teresarl89 folds
+ogredebarbak raises 0.15€ to 0.25€
+OnEstLaOuPas calls 0.15€
+*** FLOP *** [9h Kc 4d]
+ogredebarbak checks
+OnEstLaOuPas bets 0.17€
+ogredebarbak folds
+OnEstLaOuPas collected 0.64€ from pot
+*** SUMMARY ***
+Total pot 0.64€ | Rake 0.03€
+Board: [9h Kc 4d]
+Seat 3: OnEstLaOuPas (big blind) won 0.64€
+
+
+Winamax Poker - CashGame - HandId: #21360420-14-1755679527 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:45:27 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.87€)
+Seat 2: ogredebarbak (9.65€)
+Seat 3: OnEstLaOuPas (10.52€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [6c 8h]
+*** PRE-FLOP *** 
+ogredebarbak raises 0.10€ to 0.20€
+OnEstLaOuPas folds
+teresarl89 folds
+ogredebarbak collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 2: ogredebarbak (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-15-1755679540 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:45:40 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.77€)
+Seat 2: ogredebarbak (9.80€)
+Seat 3: OnEstLaOuPas (10.47€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+ogredebarbak posts big blind 0.10€
+Dealt to teresarl89 [4h Ah]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 raises 0.20€ to 0.30€
+ogredebarbak folds
+teresarl89 collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 1: teresarl89 (small blind) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-16-1755679558 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:45:58 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.87€)
+Seat 2: ogredebarbak (9.70€)
+Seat 3: OnEstLaOuPas (10.47€)
+*** ANTE/BLINDS ***
+ogredebarbak posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [5s Kh]
+*** PRE-FLOP *** 
+teresarl89 folds
+ogredebarbak raises 0.20€ to 0.30€
+OnEstLaOuPas raises 0.70€ to 1€
+ogredebarbak raises 8.70€ to 9.70€ and is all-in
+OnEstLaOuPas folds
+ogredebarbak collected 10.70€ from pot
+*** SUMMARY ***
+Total pot 10.70€ | No rake
+Seat 2: ogredebarbak (small blind) won 10.70€
+
+
+Winamax Poker - CashGame - HandId: #21360420-17-1755679612 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:46:52 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.87€)
+Seat 2: ogredebarbak (10.70€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Ac Th]
+*** PRE-FLOP *** 
+ogredebarbak folds
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-18-1755679618 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:46:58 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.92€)
+Seat 2: ogredebarbak (10.70€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+ogredebarbak posts big blind 0.10€
+Dealt to teresarl89 [Jc 8s]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 calls 0.05€
+ogredebarbak checks
+*** FLOP *** [Ts 6h 9h]
+teresarl89 bets 0.15€
+ogredebarbak folds
+teresarl89 collected 0.34€ from pot
+*** SUMMARY ***
+Total pot 0.34€ | Rake 0.01€
+Board: [Ts 6h 9h]
+Seat 1: teresarl89 (small blind) won 0.34€
+
+
+Winamax Poker - CashGame - HandId: #21360420-19-1755679638 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:47:18 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (18.01€)
+Seat 2: ogredebarbak (10.60€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+ogredebarbak posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [2s Kc]
+*** PRE-FLOP *** 
+teresarl89 folds
+ogredebarbak raises 0.10€ to 0.20€
+OnEstLaOuPas folds
+ogredebarbak collected 0.30€ from pot
+*** SUMMARY ***
+Total pot 0.30€ | No rake
+Seat 2: ogredebarbak (small blind) won 0.30€
+
+
+Winamax Poker - CashGame - HandId: #21360420-20-1755679645 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:47:25 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (18.01€)
+Seat 2: ogredebarbak (10.70€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Jc 2c]
+*** PRE-FLOP *** 
+ogredebarbak folds
+OnEstLaOuPas raises 0.20€ to 0.30€
+teresarl89 folds
+OnEstLaOuPas collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 3: OnEstLaOuPas (small blind) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-21-1755679669 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:47:49 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.91€)
+Seat 2: ogredebarbak (10.70€)
+Seat 3: OnEstLaOuPas (10.10€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+ogredebarbak posts big blind 0.10€
+Dealt to teresarl89 [Qc 6c]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.10€ to 0.20€
+teresarl89 folds
+ogredebarbak folds
+OnEstLaOuPas collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 3: OnEstLaOuPas (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-22-1755679680 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:48:00 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.86€)
+Seat 2: ogredebarbak (10.60€)
+Seat 3: OnEstLaOuPas (10.25€)
+*** ANTE/BLINDS ***
+ogredebarbak posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Td Kd]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+ogredebarbak folds
+OnEstLaOuPas calls 0.15€
+*** FLOP *** [5h 3d 7c]
+OnEstLaOuPas checks
+teresarl89 checks
+*** TURN *** [5h 3d 7c][Qs]
+OnEstLaOuPas checks
+teresarl89 bets 0.33€
+OnEstLaOuPas folds
+teresarl89 collected 0.85€ from pot
+*** SUMMARY ***
+Total pot 0.85€ | Rake 0.03€
+Board: [5h 3d 7c Qs]
+Seat 1: teresarl89 (button) won 0.85€
+
+
+Winamax Poker - CashGame - HandId: #21360420-23-1755679718 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:48:38 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (18.13€)
+Seat 2: ogredebarbak (10.55€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Td 4s]
+*** PRE-FLOP *** 
+ogredebarbak folds
+OnEstLaOuPas raises 0.20€ to 0.30€
+teresarl89 folds
+OnEstLaOuPas collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 3: OnEstLaOuPas (small blind) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-24-1755679733 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:48:53 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (18.03€)
+Seat 2: ogredebarbak (10.55€)
+Seat 3: OnEstLaOuPas (10.10€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+ogredebarbak posts big blind 0.10€
+Dealt to teresarl89 [Ah 5d]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.10€ to 0.20€
+teresarl89 raises 0.40€ to 0.60€
+ogredebarbak folds
+OnEstLaOuPas calls 0.40€
+*** FLOP *** [3h 8d Jh]
+teresarl89 bets 0.46€
+OnEstLaOuPas folds
+teresarl89 collected 1.69€ from pot
+*** SUMMARY ***
+Total pot 1.69€ | Rake 0.07€
+Board: [3h 8d Jh]
+Seat 1: teresarl89 (small blind) won 1.69€
+
+
+Winamax Poker - CashGame - HandId: #21360420-25-1755679761 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:49:21 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (18.66€)
+Seat 2: ogredebarbak (10.45€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+ogredebarbak posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [6s 3h]
+*** PRE-FLOP *** 
+teresarl89 folds
+ogredebarbak raises 0.10€ to 0.20€
+OnEstLaOuPas folds
+ogredebarbak collected 0.30€ from pot
+*** SUMMARY ***
+Total pot 0.30€ | No rake
+Seat 2: ogredebarbak (small blind) won 0.30€
+
+
+Winamax Poker - CashGame - HandId: #21360420-26-1755679777 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:49:37 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (18.66€)
+Seat 2: ogredebarbak (10.55€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Jd 3s]
+*** PRE-FLOP *** 
+ogredebarbak folds
+OnEstLaOuPas raises 0.20€ to 0.30€
+teresarl89 folds
+OnEstLaOuPas collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 3: OnEstLaOuPas (small blind) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-27-1755679793 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:49:53 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (18.56€)
+Seat 2: ogredebarbak (10.55€)
+Seat 3: OnEstLaOuPas (10.10€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+ogredebarbak posts big blind 0.10€
+Dealt to teresarl89 [Tc 3s]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.10€ to 0.20€
+teresarl89 folds
+ogredebarbak calls 0.10€
+*** FLOP *** [4h 2h 2d]
+ogredebarbak checks
+OnEstLaOuPas bets 0.11€
+ogredebarbak folds
+OnEstLaOuPas collected 0.53€ from pot
+*** SUMMARY ***
+Total pot 0.53€ | Rake 0.03€
+Board: [4h 2h 2d]
+Seat 3: OnEstLaOuPas (button) won 0.53€
+
+
+Winamax Poker - CashGame - HandId: #21360420-28-1755679846 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:50:46 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (18.51€)
+Seat 2: ogredebarbak (10.35€)
+Seat 3: OnEstLaOuPas (10.32€)
+*** ANTE/BLINDS ***
+ogredebarbak posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Qc 4h]
+*** PRE-FLOP *** 
+teresarl89 folds
+ogredebarbak raises 0.10€ to 0.20€
+OnEstLaOuPas calls 0.10€
+*** FLOP *** [Ts Jc 7s]
+ogredebarbak bets 0.14€
+OnEstLaOuPas folds
+ogredebarbak collected 0.52€ from pot
+*** SUMMARY ***
+Total pot 0.52€ | Rake 0.02€
+Board: [Ts Jc 7s]
+Seat 2: ogredebarbak (small blind) won 0.52€
+
+
+Winamax Poker - CashGame - HandId: #21360420-29-1755679896 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:51:36 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (18.51€)
+Seat 2: ogredebarbak (10.53€)
+Seat 3: OnEstLaOuPas (10.12€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Ad Qh]
+*** PRE-FLOP *** 
+ogredebarbak folds
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-30-1755679903 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:51:43 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (18.56€)
+Seat 3: OnEstLaOuPas (10.07€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [7s Ks]
+*** PRE-FLOP *** 
+teresarl89 raises 0.20€ to 0.30€
+OnEstLaOuPas raises 1€ to 1.30€
+teresarl89 folds
+OnEstLaOuPas collected 1.60€ from pot
+*** SUMMARY ***
+Total pot 1.60€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 1.60€
+
+
+Winamax Poker - CashGame - HandId: #21360420-31-1755679938 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:52:18 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (18.26€)
+Seat 3: OnEstLaOuPas (10.37€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Jc 5s]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 folds
+OnEstLaOuPas collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 3: OnEstLaOuPas (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-32-1755679944 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:52:24 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (18.16€)
+Seat 3: OnEstLaOuPas (10.47€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Tc 3h]
+*** PRE-FLOP *** 
+teresarl89 folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-33-1755679953 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:52:33 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (18.11€)
+Seat 3: OnEstLaOuPas (10.52€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [6d 2c]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 folds
+OnEstLaOuPas collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 3: OnEstLaOuPas (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-34-1755679961 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:52:41 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (18.01€)
+Seat 3: OnEstLaOuPas (10.62€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [6s Jh]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+OnEstLaOuPas calls 0.15€
+*** FLOP *** [3h 8d 4d]
+OnEstLaOuPas checks
+teresarl89 bets 0.15€
+OnEstLaOuPas calls 0.15€
+*** TURN *** [3h 8d 4d][As]
+OnEstLaOuPas checks
+teresarl89 bets 0.40€
+OnEstLaOuPas raises 1.70€ to 2.10€
+teresarl89 folds
+OnEstLaOuPas collected 3.21€ from pot
+*** SUMMARY ***
+Total pot 3.21€ | Rake 0.09€
+Board: [3h 8d 4d As]
+Seat 3: OnEstLaOuPas (big blind) won 3.21€
+
+
+Winamax Poker - CashGame - HandId: #21360420-35-1755680022 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:53:42 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.21€)
+Seat 2: valuebiche33 (10€)
+Seat 3: OnEstLaOuPas (11.33€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [7c 6h]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 folds
+OnEstLaOuPas collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 3: OnEstLaOuPas (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-36-1755680028 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:53:48 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.11€)
+Seat 2: valuebiche33 (10€)
+Seat 3: OnEstLaOuPas (11.43€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [3c 9c]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 raises 0.15€ to 0.25€
+valuebiche33 calls 0.15€
+*** FLOP *** [9s 8s Ks]
+teresarl89 bets 0.13€
+valuebiche33 calls 0.13€
+*** TURN *** [9s 8s Ks][Jh]
+teresarl89 checks
+valuebiche33 bets 0.49€
+teresarl89 folds
+valuebiche33 collected 1.21€ from pot
+*** SUMMARY ***
+Total pot 1.21€ | Rake 0.04€
+Board: [9s 8s Ks Jh]
+Seat 2: valuebiche33 (big blind) won 1.21€
+
+
+Winamax Poker - CashGame - HandId: #21360420-37-1755680050 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:54:10 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (16.73€)
+Seat 2: valuebiche33 (10.34€)
+Seat 3: OnEstLaOuPas (11.43€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Tc 4h]
+*** PRE-FLOP *** 
+teresarl89 folds
+valuebiche33 calls 0.05€
+OnEstLaOuPas checks
+*** FLOP *** [Ks 7c 6h]
+valuebiche33 checks
+OnEstLaOuPas checks
+*** TURN *** [Ks 7c 6h][5h]
+valuebiche33 checks
+OnEstLaOuPas bets 0.15€
+valuebiche33 folds
+OnEstLaOuPas collected 0.34€ from pot
+*** SUMMARY ***
+Total pot 0.34€ | Rake 0.01€
+Board: [Ks 7c 6h 5h]
+Seat 3: OnEstLaOuPas (big blind) won 0.34€
+
+
+Winamax Poker - CashGame - HandId: #21360420-38-1755680083 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:54:43 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (16.73€)
+Seat 2: valuebiche33 (10.24€)
+Seat 3: OnEstLaOuPas (11.52€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [9s 8s]
+*** PRE-FLOP *** 
+valuebiche33 folds
+OnEstLaOuPas raises 0.20€ to 0.30€
+teresarl89 calls 0.20€
+*** FLOP *** [9c Qs 4c]
+OnEstLaOuPas checks
+teresarl89 checks
+*** TURN *** [9c Qs 4c][3d]
+OnEstLaOuPas bets 0.69€
+teresarl89 calls 0.69€
+*** RIVER *** [9c Qs 4c 3d][6s]
+OnEstLaOuPas checks
+teresarl89 checks
+*** SHOW DOWN ***
+OnEstLaOuPas shows [Jd Tc] (High card : Queen)
+teresarl89 shows [9s 8s] (One pair : 9)
+teresarl89 collected 1.87€ from pot
+*** SUMMARY ***
+Total pot 1.87€ | Rake 0.11€
+Board: [9c Qs 4c 3d 6s]
+Seat 1: teresarl89 (big blind) showed [9s 8s] and won 1.87€ with One pair : 9
+Seat 3: OnEstLaOuPas (small blind) showed [Jd Tc] and lost with High card : Queen
+
+
+Winamax Poker - CashGame - HandId: #21360420-39-1755680125 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:55:25 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.61€)
+Seat 2: valuebiche33 (10.24€)
+Seat 3: OnEstLaOuPas (10.53€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [4d 7h]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 folds
+valuebiche33 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: valuebiche33 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-40-1755680130 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:55:30 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.56€)
+Seat 2: valuebiche33 (10.29€)
+Seat 3: OnEstLaOuPas (10.53€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [6h 7d]
+*** PRE-FLOP *** 
+teresarl89 folds
+valuebiche33 folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-41-1755680139 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:55:39 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.56€)
+Seat 2: valuebiche33 (10.24€)
+Seat 3: OnEstLaOuPas (10.58€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [6h 4d]
+*** PRE-FLOP *** 
+valuebiche33 raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 folds
+valuebiche33 collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 2: valuebiche33 (button) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-42-1755680149 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:55:49 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.46€)
+Seat 2: valuebiche33 (10.39€)
+Seat 3: OnEstLaOuPas (10.53€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [8c Qh]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.10€ to 0.20€
+teresarl89 folds
+valuebiche33 folds
+OnEstLaOuPas collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 3: OnEstLaOuPas (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-43-1755680162 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:56:02 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.41€)
+Seat 2: valuebiche33 (10.29€)
+Seat 3: OnEstLaOuPas (10.68€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [4s Jd]
+*** PRE-FLOP *** 
+teresarl89 folds
+valuebiche33 raises 0.20€ to 0.30€
+OnEstLaOuPas calls 0.20€
+*** FLOP *** [Td 2h 6c]
+valuebiche33 checks
+OnEstLaOuPas bets 0.45€
+valuebiche33 calls 0.45€
+*** TURN *** [Td 2h 6c][2d]
+valuebiche33 checks
+OnEstLaOuPas bets 0.99€
+valuebiche33 calls 0.99€
+*** RIVER *** [Td 2h 6c 2d][Ah]
+valuebiche33 bets 1.74€
+OnEstLaOuPas calls 1.74€
+*** SHOW DOWN ***
+OnEstLaOuPas shows [7d Ts] (Two pairs : Tens and 2)
+valuebiche33 shows [6s 6h] (Full of 6 and 2)
+valuebiche33 collected 6.56€ from pot
+*** SUMMARY ***
+Total pot 6.56€ | Rake 0.40€
+Board: [Td 2h 6c 2d Ah]
+Seat 2: valuebiche33 (small blind) showed [6s 6h] and won 6.56€ with Full of 6 and 2
+Seat 3: OnEstLaOuPas (big blind) showed [7d Ts] and lost with Two pairs : Tens and 2
+
+
+Winamax Poker - CashGame - HandId: #21360420-44-1755680225 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:57:05 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.41€)
+Seat 2: valuebiche33 (13.37€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [3s Ts]
+*** PRE-FLOP *** 
+valuebiche33 folds
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-45-1755680235 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:57:15 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.46€)
+Seat 2: valuebiche33 (13.37€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [2h 2s]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 raises 0.15€ to 0.25€
+valuebiche33 calls 0.15€
+*** FLOP *** [8s 4d Js]
+teresarl89 bets 0.13€
+valuebiche33 calls 0.13€
+*** TURN *** [8s 4d Js][9s]
+teresarl89 checks
+valuebiche33 checks
+*** RIVER *** [8s 4d Js 9s][3c]
+teresarl89 checks
+valuebiche33 bets 0.38€
+teresarl89 folds
+valuebiche33 collected 1.10€ from pot
+*** SUMMARY ***
+Total pot 1.10€ | Rake 0.04€
+Board: [8s 4d Js 9s 3c]
+Seat 2: valuebiche33 (big blind) won 1.10€
+
+
+Winamax Poker - CashGame - HandId: #21360420-46-1755680272 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:57:52 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.08€)
+Seat 2: valuebiche33 (13.71€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [3h 5s]
+*** PRE-FLOP *** 
+teresarl89 folds
+valuebiche33 calls 0.05€
+OnEstLaOuPas checks
+*** FLOP *** [8h 7h Kd]
+valuebiche33 checks
+OnEstLaOuPas checks
+*** TURN *** [8h 7h Kd][Qd]
+valuebiche33 bets 0.20€
+OnEstLaOuPas folds
+valuebiche33 collected 0.39€ from pot
+*** SUMMARY ***
+Total pot 0.39€ | Rake 0.01€
+Board: [8h 7h Kd Qd]
+Seat 2: valuebiche33 (small blind) won 0.39€
+
+
+Winamax Poker - CashGame - HandId: #21360420-47-1755680312 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:58:32 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.08€)
+Seat 2: valuebiche33 (13.80€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Qc 3d]
+*** PRE-FLOP *** 
+valuebiche33 raises 0.10€ to 0.20€
+OnEstLaOuPas folds
+teresarl89 folds
+valuebiche33 collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 2: valuebiche33 (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-48-1755680330 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:58:50 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (16.98€)
+Seat 2: valuebiche33 (13.95€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [Qc Kd]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 raises 0.15€ to 0.25€
+valuebiche33 folds
+teresarl89 collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 1: teresarl89 (small blind) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-49-1755680340 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:59:00 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.08€)
+Seat 2: valuebiche33 (13.85€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Qh 6d]
+*** PRE-FLOP *** 
+teresarl89 folds
+valuebiche33 folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-50-1755680348 - Holdem no limit (0.05€/0.10€) - 2025/08/20 08:59:08 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.08€)
+Seat 2: valuebiche33 (13.80€)
+Seat 3: OnEstLaOuPas (10.05€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [2s 7h]
+*** PRE-FLOP *** 
+valuebiche33 calls 0.10€
+OnEstLaOuPas calls 0.05€
+teresarl89 checks
+*** FLOP *** [5h Ts 2c]
+OnEstLaOuPas checks
+teresarl89 checks
+valuebiche33 checks
+*** TURN *** [5h Ts 2c][7d]
+OnEstLaOuPas checks
+teresarl89 bets 0.20€
+valuebiche33 calls 0.20€
+OnEstLaOuPas folds
+*** RIVER *** [5h Ts 2c 7d][Ac]
+teresarl89 bets 0.70€
+valuebiche33 folds
+teresarl89 collected 1.36€ from pot
+*** SUMMARY ***
+Total pot 1.36€ | Rake 0.04€
+Board: [5h Ts 2c 7d Ac]
+Seat 1: teresarl89 (big blind) won 1.36€
+
+
+Winamax Poker - CashGame - HandId: #21360420-51-1755680416 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:00:16 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.44€)
+Seat 2: valuebiche33 (13.50€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [3h 8d]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 folds
+valuebiche33 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: valuebiche33 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-52-1755680421 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:00:21 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.39€)
+Seat 2: valuebiche33 (13.55€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [8c As]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+valuebiche33 calls 0.20€
+OnEstLaOuPas folds
+*** FLOP *** [Qd Kc 9d]
+valuebiche33 checks
+teresarl89 bets 0.15€
+valuebiche33 calls 0.15€
+*** TURN *** [Qd Kc 9d][Jd]
+valuebiche33 bets 0.58€
+teresarl89 folds
+valuebiche33 collected 1.43€ from pot
+*** SUMMARY ***
+Total pot 1.43€ | Rake 0.05€
+Board: [Qd Kc 9d Jd]
+Seat 2: valuebiche33 (small blind) won 1.43€
+
+
+Winamax Poker - CashGame - HandId: #21360420-53-1755680456 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:00:56 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (16.99€)
+Seat 2: valuebiche33 (14€)
+Seat 3: OnEstLaOuPas (10€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [4s Jd]
+*** PRE-FLOP *** 
+valuebiche33 raises 0.10€ to 0.20€
+OnEstLaOuPas raises 0.80€ to 1€
+teresarl89 folds
+valuebiche33 folds
+OnEstLaOuPas collected 1.30€ from pot
+*** SUMMARY ***
+Total pot 1.30€ | No rake
+Seat 3: OnEstLaOuPas (small blind) won 1.30€
+
+
+Winamax Poker - CashGame - HandId: #21360420-54-1755680477 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:01:17 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (16.89€)
+Seat 2: valuebiche33 (13.80€)
+Seat 3: OnEstLaOuPas (10.30€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [7c 3d]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 folds
+valuebiche33 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: valuebiche33 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-55-1755680481 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:01:21 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (16.84€)
+Seat 2: valuebiche33 (13.85€)
+Seat 3: OnEstLaOuPas (10.30€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [9c Qh]
+*** PRE-FLOP *** 
+teresarl89 folds
+valuebiche33 folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-56-1755680486 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:01:26 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (16.84€)
+Seat 2: valuebiche33 (13.80€)
+Seat 3: OnEstLaOuPas (10.35€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Kc 2d]
+*** PRE-FLOP *** 
+valuebiche33 calls 0.10€
+OnEstLaOuPas raises 0.35€ to 0.45€
+teresarl89 folds
+valuebiche33 calls 0.35€
+*** FLOP *** [Js 9d Td]
+OnEstLaOuPas checks
+valuebiche33 bets 0.50€
+OnEstLaOuPas calls 0.50€
+*** TURN *** [Js 9d Td][9c]
+OnEstLaOuPas checks
+valuebiche33 bets 1€
+OnEstLaOuPas calls 1€
+*** RIVER *** [Js 9d Td 9c][Tc]
+OnEstLaOuPas checks
+valuebiche33 bets 3.20€
+OnEstLaOuPas calls 3.20€
+*** SHOW DOWN ***
+valuebiche33 shows [8h 9h] (Full of 9 and Tens)
+OnEstLaOuPas shows [Th Qd] (Full of Tens and 9)
+OnEstLaOuPas collected 9.80€ from pot
+*** SUMMARY ***
+Total pot 9.80€ | Rake 0.60€
+Board: [Js 9d Td 9c Tc]
+Seat 2: valuebiche33 (button) showed [8h 9h] and lost with Full of 9 and Tens
+Seat 3: OnEstLaOuPas (small blind) showed [Th Qd] and won 9.80€ with Full of Tens and 9
+
+
+Winamax Poker - CashGame - HandId: #21360420-57-1755680547 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:02:27 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (16.74€)
+Seat 2: valuebiche33 (8.65€)
+Seat 3: OnEstLaOuPas (15€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [Kc Qd]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 raises 0.15€ to 0.25€
+valuebiche33 calls 0.15€
+*** FLOP *** [3c Jc 5h]
+teresarl89 checks
+valuebiche33 checks
+*** TURN *** [3c Jc 5h][Ac]
+teresarl89 checks
+valuebiche33 bets 0.25€
+teresarl89 calls 0.25€
+*** RIVER *** [3c Jc 5h Ac][8c]
+teresarl89 bets 1€
+valuebiche33 calls 1€
+*** SHOW DOWN ***
+valuebiche33 shows [2c 2s] (Flush Ace high)
+teresarl89 shows [Kc Qd] (Flush Ace high)
+teresarl89 collected 2.83€ from pot
+*** SUMMARY ***
+Total pot 2.83€ | Rake 0.17€
+Board: [3c Jc 5h Ac 8c]
+Seat 1: teresarl89 (small blind) showed [Kc Qd] and won 2.83€ with Flush Ace high
+Seat 2: valuebiche33 (big blind) showed [2c 2s] and lost with Flush Ace high
+
+
+Winamax Poker - CashGame - HandId: #21360420-58-1755680584 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:03:04 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (18.07€)
+Seat 2: valuebiche33 (7.15€)
+Seat 3: OnEstLaOuPas (15€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [8d 7c]
+*** PRE-FLOP *** 
+teresarl89 folds
+valuebiche33 folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-59-1755680590 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:03:10 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (18.07€)
+Seat 2: valuebiche33 (7.10€)
+Seat 3: OnEstLaOuPas (15.05€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [7h 9d]
+*** PRE-FLOP *** 
+valuebiche33 folds
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-60-1755680597 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:03:17 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (18.12€)
+Seat 2: valuebiche33 (7.10€)
+Seat 3: OnEstLaOuPas (15€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [Tc 6s]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 folds
+valuebiche33 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: valuebiche33 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-61-1755680601 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:03:21 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (18.07€)
+Seat 2: valuebiche33 (7.15€)
+Seat 3: OnEstLaOuPas (15€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [3h 3c]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+valuebiche33 folds
+OnEstLaOuPas folds
+teresarl89 collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 1: teresarl89 (button) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-62-1755680622 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:03:42 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (18.22€)
+Seat 2: valuebiche33 (7.10€)
+Seat 3: OnEstLaOuPas (14.90€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [7s 2c]
+*** PRE-FLOP *** 
+valuebiche33 folds
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-63-1755680630 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:03:50 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (18.27€)
+Seat 2: valuebiche33 (7.10€)
+Seat 3: OnEstLaOuPas (14.85€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [Ts 9s]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.10€ to 0.20€
+teresarl89 calls 0.15€
+valuebiche33 folds
+*** FLOP *** [2d 8h Kh]
+teresarl89 checks
+OnEstLaOuPas bets 0.13€
+teresarl89 folds
+OnEstLaOuPas collected 0.60€ from pot
+*** SUMMARY ***
+Total pot 0.60€ | Rake 0.03€
+Board: [2d 8h Kh]
+Seat 3: OnEstLaOuPas (button) won 0.60€
+
+
+Winamax Poker - CashGame - HandId: #21360420-64-1755680649 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:04:09 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (18.07€)
+Seat 2: valuebiche33 (7€)
+Seat 3: OnEstLaOuPas (15.12€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Tc 8c]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+valuebiche33 folds
+OnEstLaOuPas calls 0.15€
+*** FLOP *** [3c Kc 2s]
+OnEstLaOuPas checks
+teresarl89 bets 0.19€
+OnEstLaOuPas raises 0.55€ to 0.74€
+teresarl89 calls 0.55€
+*** TURN *** [3c Kc 2s][5c]
+OnEstLaOuPas checks
+teresarl89 bets 2.03€
+OnEstLaOuPas folds
+teresarl89 collected 3.94€ from pot
+*** SUMMARY ***
+Total pot 3.94€ | Rake 0.12€
+Board: [3c Kc 2s 5c]
+Seat 1: teresarl89 (button) won 3.94€
+
+
+Winamax Poker - CashGame - HandId: #21360420-65-1755680700 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:05:00 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (18.99€)
+Seat 2: valuebiche33 (6.95€)
+Seat 3: OnEstLaOuPas (14.13€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [6d 3h]
+*** PRE-FLOP *** 
+valuebiche33 folds
+OnEstLaOuPas raises 0.20€ to 0.30€
+teresarl89 folds
+OnEstLaOuPas collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 3: OnEstLaOuPas (small blind) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-66-1755680714 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:05:14 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (18.89€)
+Seat 2: valuebiche33 (6.95€)
+Seat 3: OnEstLaOuPas (14.23€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [Ac Td]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.10€ to 0.20€
+teresarl89 raises 0.40€ to 0.60€
+valuebiche33 folds
+OnEstLaOuPas calls 0.40€
+*** FLOP *** [4c 7s Kh]
+teresarl89 bets 0.33€
+OnEstLaOuPas folds
+teresarl89 collected 1.56€ from pot
+*** SUMMARY ***
+Total pot 1.56€ | Rake 0.07€
+Board: [4c 7s Kh]
+Seat 1: teresarl89 (small blind) won 1.56€
+
+
+Winamax Poker - CashGame - HandId: #21360420-67-1755680746 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:05:46 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (19.52€)
+Seat 2: valuebiche33 (6.85€)
+Seat 3: OnEstLaOuPas (13.63€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [5d Td]
+*** PRE-FLOP *** 
+teresarl89 folds
+valuebiche33 calls 0.05€
+OnEstLaOuPas checks
+*** FLOP *** [Jd As 2s]
+valuebiche33 checks
+OnEstLaOuPas checks
+*** TURN *** [Jd As 2s][9c]
+valuebiche33 checks
+OnEstLaOuPas checks
+*** RIVER *** [Jd As 2s 9c][4d]
+valuebiche33 checks
+OnEstLaOuPas checks
+*** SHOW DOWN ***
+valuebiche33 shows [6s Th] (High card : Ace)
+OnEstLaOuPas shows [Ks 6c] (High card : Ace)
+OnEstLaOuPas collected 0.19€ from pot
+*** SUMMARY ***
+Total pot 0.19€ | Rake 0.01€
+Board: [Jd As 2s 9c 4d]
+Seat 2: valuebiche33 (small blind) showed [6s Th] and lost with High card : Ace
+Seat 3: OnEstLaOuPas (big blind) showed [Ks 6c] and won 0.19€ with High card : Ace
+
+
+Winamax Poker - CashGame - HandId: #21360420-68-1755680791 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:06:31 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (19.52€)
+Seat 2: valuebiche33 (6.75€)
+Seat 3: OnEstLaOuPas (13.72€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Jc 6s]
+*** PRE-FLOP *** 
+valuebiche33 raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 folds
+valuebiche33 collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 2: valuebiche33 (button) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-69-1755680800 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:06:40 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (19.42€)
+Seat 2: valuebiche33 (6.90€)
+Seat 3: OnEstLaOuPas (13.67€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [As 2h]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 raises 0.50€ to 0.75€
+valuebiche33 folds
+OnEstLaOuPas raises 1.10€ to 1.85€
+teresarl89 folds
+OnEstLaOuPas collected 2.70€ from pot
+*** SUMMARY ***
+Total pot 2.70€ | No rake
+Seat 3: OnEstLaOuPas (button) won 2.70€
+
+
+Winamax Poker - CashGame - HandId: #21360420-70-1755680829 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:07:09 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (18.67€)
+Seat 2: valuebiche33 (6.80€)
+Seat 3: OnEstLaOuPas (14.52€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Jd Ah]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+valuebiche33 folds
+OnEstLaOuPas folds
+teresarl89 collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 1: teresarl89 (button) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-71-1755680849 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:07:29 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (18.82€)
+Seat 2: valuebiche33 (6.75€)
+Seat 3: OnEstLaOuPas (14.42€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [8c 7s]
+*** PRE-FLOP *** 
+valuebiche33 raises 0.10€ to 0.20€
+OnEstLaOuPas folds
+teresarl89 calls 0.10€
+*** FLOP *** [Jd 9d Qd]
+teresarl89 checks
+valuebiche33 bets 0.45€
+teresarl89 calls 0.45€
+*** TURN *** [Jd 9d Qd][9c]
+teresarl89 checks
+valuebiche33 bets 0.47€
+teresarl89 folds
+valuebiche33 collected 1.74€ from pot
+*** SUMMARY ***
+Total pot 1.74€ | Rake 0.08€
+Board: [Jd 9d Qd 9c]
+Seat 2: valuebiche33 (button) won 1.74€
+
+
+Winamax Poker - CashGame - HandId: #21360420-72-1755680904 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:08:24 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (18.17€)
+Seat 2: valuebiche33 (7.37€)
+Seat 3: OnEstLaOuPas (14.37€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [9s Tc]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 raises 0.15€ to 0.25€
+valuebiche33 folds
+teresarl89 collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 1: teresarl89 (small blind) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-73-1755680916 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:08:36 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (18.27€)
+Seat 2: valuebiche33 (7.27€)
+Seat 3: OnEstLaOuPas (14.37€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [3c Jh]
+*** PRE-FLOP *** 
+teresarl89 folds
+valuebiche33 folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-74-1755680924 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:08:44 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (18.27€)
+Seat 2: valuebiche33 (7.22€)
+Seat 3: OnEstLaOuPas (14.42€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Ks 4s]
+*** PRE-FLOP *** 
+valuebiche33 folds
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-75-1755680929 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:08:49 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (18.32€)
+Seat 2: valuebiche33 (7.22€)
+Seat 3: OnEstLaOuPas (14.37€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [Jc 4d]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.10€ to 0.20€
+teresarl89 folds
+valuebiche33 folds
+OnEstLaOuPas collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 3: OnEstLaOuPas (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-76-1755680939 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:08:59 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (18.27€)
+Seat 2: valuebiche33 (7.12€)
+Seat 3: OnEstLaOuPas (14.52€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [2h 4h]
+*** PRE-FLOP *** 
+teresarl89 folds
+valuebiche33 raises 0.10€ to 0.20€
+OnEstLaOuPas raises 0.55€ to 0.75€
+valuebiche33 calls 0.55€
+*** FLOP *** [Ac 6c 3c]
+valuebiche33 checks
+OnEstLaOuPas bets 0.50€
+valuebiche33 folds
+OnEstLaOuPas collected 1.91€ from pot
+*** SUMMARY ***
+Total pot 1.91€ | Rake 0.09€
+Board: [Ac 6c 3c]
+Seat 3: OnEstLaOuPas (big blind) won 1.91€
+
+
+Winamax Poker - CashGame - HandId: #21360420-77-1755680956 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:09:16 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (18.27€)
+Seat 2: valuebiche33 (6.37€)
+Seat 3: OnEstLaOuPas (15.18€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [2s Js]
+*** PRE-FLOP *** 
+valuebiche33 calls 0.10€
+OnEstLaOuPas folds
+teresarl89 checks
+*** FLOP *** [Ad 8s Td]
+teresarl89 checks
+valuebiche33 bets 0.16€
+teresarl89 folds
+valuebiche33 collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | Rake 0.01€
+Board: [Ad 8s Td]
+Seat 2: valuebiche33 (button) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-78-1755680970 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:09:30 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (18.17€)
+Seat 2: valuebiche33 (6.51€)
+Seat 3: OnEstLaOuPas (15.13€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [2d Th]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 folds
+valuebiche33 calls 0.15€
+*** FLOP *** [6d 8h 6c]
+valuebiche33 checks
+OnEstLaOuPas bets 0.14€
+valuebiche33 calls 0.14€
+*** TURN *** [6d 8h 6c][As]
+valuebiche33 checks
+OnEstLaOuPas checks
+*** RIVER *** [6d 8h 6c As][5d]
+valuebiche33 checks
+OnEstLaOuPas checks
+*** SHOW DOWN ***
+valuebiche33 shows [Jh Qc] (One pair : 6)
+OnEstLaOuPas shows [Ks 9s] (One pair : 6)
+OnEstLaOuPas collected 0.78€ from pot
+*** SUMMARY ***
+Total pot 0.78€ | Rake 0.05€
+Board: [6d 8h 6c As 5d]
+Seat 2: valuebiche33 (big blind) showed [Jh Qc] and lost with One pair : 6
+Seat 3: OnEstLaOuPas (button) showed [Ks 9s] and won 0.78€ with One pair : 6
+
+
+Winamax Poker - CashGame - HandId: #21360420-79-1755680999 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:09:59 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (18.12€)
+Seat 2: valuebiche33 (6.12€)
+Seat 3: OnEstLaOuPas (15.52€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [3s Qc]
+*** PRE-FLOP *** 
+teresarl89 folds
+valuebiche33 raises 0.10€ to 0.20€
+OnEstLaOuPas folds
+valuebiche33 collected 0.30€ from pot
+*** SUMMARY ***
+Total pot 0.30€ | No rake
+Seat 2: valuebiche33 (small blind) won 0.30€
+
+
+Winamax Poker - CashGame - HandId: #21360420-80-1755681007 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:10:07 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (18.12€)
+Seat 2: valuebiche33 (6.22€)
+Seat 3: OnEstLaOuPas (15.42€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [5s 8c]
+*** PRE-FLOP *** 
+valuebiche33 raises 0.10€ to 0.20€
+OnEstLaOuPas raises 0.70€ to 0.90€
+teresarl89 folds
+valuebiche33 calls 0.70€
+*** FLOP *** [7c Ah 2c]
+OnEstLaOuPas bets 0.63€
+valuebiche33 folds
+OnEstLaOuPas collected 2.42€ from pot
+*** SUMMARY ***
+Total pot 2.42€ | Rake 0.11€
+Board: [7c Ah 2c]
+Seat 3: OnEstLaOuPas (small blind) won 2.42€
+
+
+Winamax Poker - CashGame - HandId: #21360420-81-1755681038 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:10:38 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (18.02€)
+Seat 2: valuebiche33 (5.32€)
+Seat 3: OnEstLaOuPas (16.31€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [4s 8s]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 folds
+valuebiche33 calls 0.15€
+*** FLOP *** [7h 5s Js]
+valuebiche33 checks
+OnEstLaOuPas bets 0.14€
+valuebiche33 calls 0.14€
+*** TURN *** [7h 5s Js][2h]
+valuebiche33 checks
+OnEstLaOuPas bets 0.95€
+valuebiche33 folds
+OnEstLaOuPas collected 1.73€ from pot
+*** SUMMARY ***
+Total pot 1.73€ | Rake 0.05€
+Board: [7h 5s Js 2h]
+Seat 3: OnEstLaOuPas (button) won 1.73€
+
+
+Winamax Poker - CashGame - HandId: #21360420-82-1755681058 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:10:58 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.97€)
+Seat 2: valuebiche33 (4.93€)
+Seat 3: OnEstLaOuPas (16.70€)
+*** ANTE/BLINDS ***
+valuebiche33 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Qd 9h]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+valuebiche33 calls 0.20€
+OnEstLaOuPas raises 1.10€ to 1.35€
+teresarl89 folds
+valuebiche33 folds
+OnEstLaOuPas collected 1.85€ from pot
+*** SUMMARY ***
+Total pot 1.85€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 1.85€
+
+
+Winamax Poker - CashGame - HandId: #21360420-83-1755681073 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:11:13 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.72€)
+Seat 2: valuebiche33 (4.68€)
+Seat 3: OnEstLaOuPas (17.20€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Jh Kh]
+*** PRE-FLOP *** 
+valuebiche33 folds
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-84-1755681079 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:11:19 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.77€)
+Seat 2: valuebiche33 (4.68€)
+Seat 3: OnEstLaOuPas (17.15€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [Jd 4d]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 raises 0.20€ to 0.30€
+valuebiche33 folds
+teresarl89 collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 1: teresarl89 (small blind) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-85-1755681146 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:12:26 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.87€)
+Seat 2: valuebiche33 (4.58€)
+Seat 3: OnEstLaOuPas (17.15€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [4d 4s]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-86-1755681161 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:12:41 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.92€)
+Seat 2: valuebiche33 (4.58€)
+Seat 3: OnEstLaOuPas (17.10€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [4h Th]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+OnEstLaOuPas calls 0.15€
+*** FLOP *** [5h Js 3d]
+OnEstLaOuPas checks
+teresarl89 bets 0.18€
+OnEstLaOuPas folds
+teresarl89 collected 0.65€ from pot
+*** SUMMARY ***
+Total pot 0.65€ | Rake 0.03€
+Board: [5h Js 3d]
+Seat 1: teresarl89 (small blind) (button) won 0.65€
+
+
+Winamax Poker - CashGame - HandId: #21360420-87-1755681178 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:12:58 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (18.14€)
+Seat 2: valuebiche33 (4.58€)
+Seat 3: OnEstLaOuPas (16.85€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Qs 6d]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-88-1755681182 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:13:02 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (18.19€)
+Seat 2: valuebiche33 (4.58€)
+Seat 3: OnEstLaOuPas (16.80€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+valuebiche33 posts big blind 0.10€
+Dealt to teresarl89 [8d 7d]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 calls 0.20€
+valuebiche33 calls 0.15€
+*** FLOP *** [9s 4c Qc]
+teresarl89 checks
+valuebiche33 bets 0.75€
+OnEstLaOuPas raises 1.33€ to 2.08€
+teresarl89 folds
+valuebiche33 raises 2.25€ to 4.33€ and is all-in
+OnEstLaOuPas calls 2.25€
+*** TURN *** [9s 4c Qc][4s]
+*** RIVER *** [9s 4c Qc 4s][7c]
+*** SHOW DOWN ***
+valuebiche33 shows [Th Qd] (Two pairs : Queens and 4)
+OnEstLaOuPas shows [Ah Qh] (Two pairs : Queens and 4)
+OnEstLaOuPas collected 8.87€ from pot
+*** SUMMARY ***
+Total pot 8.87€ | Rake 0.54€
+Board: [9s 4c Qc 4s 7c]
+Seat 2: valuebiche33 (big blind) showed [Th Qd] and lost with Two pairs : Queens and 4
+Seat 3: OnEstLaOuPas (button) showed [Ah Qh] and won 8.87€ with Two pairs : Queens and 4
+
+
+Winamax Poker - CashGame - HandId: #21360420-89-1755681227 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:13:47 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.94€)
+Seat 2: LeJardinier_ (0€)
+Seat 3: OnEstLaOuPas (21.09€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [3c Qh]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 folds
+OnEstLaOuPas collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 3: OnEstLaOuPas (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-90-1755681237 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:13:57 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.84€)
+Seat 2: LeJardinier_ (10€)
+Seat 3: OnEstLaOuPas (21.19€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+LeJardinier_ posts big blind 0.10€
+Dealt to teresarl89 [5c Qh]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 calls 0.05€
+LeJardinier_ raises 0.40€ to 0.50€
+teresarl89 folds
+LeJardinier_ collected 0.60€ from pot
+*** SUMMARY ***
+Total pot 0.60€ | No rake
+Seat 2: LeJardinier_ (big blind) won 0.60€
+
+
+Winamax Poker - CashGame - HandId: #21360420-91-1755681275 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:14:35 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.74€)
+Seat 2: LeJardinier_ (10.10€)
+Seat 3: OnEstLaOuPas (21.19€)
+*** ANTE/BLINDS ***
+LeJardinier_ posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [3h Qs]
+*** PRE-FLOP *** 
+teresarl89 folds
+LeJardinier_ folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-92-1755681296 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:14:56 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.74€)
+Seat 2: LeJardinier_ (10.05€)
+Seat 3: OnEstLaOuPas (21.24€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [5s 9c]
+*** PRE-FLOP *** 
+LeJardinier_ raises 0.12€ to 0.22€
+OnEstLaOuPas folds
+teresarl89 folds
+LeJardinier_ collected 0.37€ from pot
+*** SUMMARY ***
+Total pot 0.37€ | No rake
+Seat 2: LeJardinier_ (button) won 0.37€
+
+
+Winamax Poker - CashGame - HandId: #21360420-93-1755681315 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:15:15 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.64€)
+Seat 2: LeJardinier_ (10.20€)
+Seat 3: OnEstLaOuPas (21.19€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+LeJardinier_ posts big blind 0.10€
+Dealt to teresarl89 [3d 4d]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.10€ to 0.20€
+teresarl89 folds
+LeJardinier_ folds
+OnEstLaOuPas collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 3: OnEstLaOuPas (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-94-1755681342 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:15:42 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.59€)
+Seat 2: LeJardinier_ (10.10€)
+Seat 3: OnEstLaOuPas (21.34€)
+*** ANTE/BLINDS ***
+LeJardinier_ posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [3c Qc]
+*** PRE-FLOP *** 
+teresarl89 folds
+LeJardinier_ raises 0.20€ to 0.30€
+OnEstLaOuPas raises 0.70€ to 1€
+LeJardinier_ raises 2€ to 3€
+OnEstLaOuPas folds
+LeJardinier_ collected 4€ from pot
+*** SUMMARY ***
+Total pot 4€ | No rake
+Seat 2: LeJardinier_ (small blind) won 4€
+
+
+Winamax Poker - CashGame - HandId: #21360420-95-1755681387 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:16:27 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.59€)
+Seat 2: LeJardinier_ (11.10€)
+Seat 3: OnEstLaOuPas (20.34€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Kd Tc]
+*** PRE-FLOP *** 
+LeJardinier_ folds
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-96-1755681407 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:16:47 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.64€)
+Seat 2: LeJardinier_ (11.10€)
+Seat 3: OnEstLaOuPas (20.29€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+LeJardinier_ posts big blind 0.10€
+Dealt to teresarl89 [Tc 7s]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.10€ to 0.20€
+teresarl89 folds
+LeJardinier_ calls 0.10€
+*** FLOP *** [Qh 7d 3s]
+LeJardinier_ checks
+OnEstLaOuPas bets 0.11€
+LeJardinier_ folds
+OnEstLaOuPas collected 0.53€ from pot
+*** SUMMARY ***
+Total pot 0.53€ | Rake 0.03€
+Board: [Qh 7d 3s]
+Seat 3: OnEstLaOuPas (button) won 0.53€
+
+
+Winamax Poker - CashGame - HandId: #21360420-97-1755681494 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:18:14 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.59€)
+Seat 2: LeJardinier_ (10.90€)
+Seat 3: OnEstLaOuPas (20.51€)
+*** ANTE/BLINDS ***
+LeJardinier_ posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Qh Th]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+LeJardinier_ raises 0.85€ to 1.10€
+OnEstLaOuPas folds
+teresarl89 folds
+LeJardinier_ collected 1.45€ from pot
+*** SUMMARY ***
+Total pot 1.45€ | No rake
+Seat 2: LeJardinier_ (small blind) won 1.45€
+
+
+Winamax Poker - CashGame - HandId: #21360420-98-1755681524 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:18:44 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.34€)
+Seat 2: LeJardinier_ (11.25€)
+Seat 3: OnEstLaOuPas (20.41€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [6s 5h]
+*** PRE-FLOP *** 
+LeJardinier_ raises 0.12€ to 0.22€
+OnEstLaOuPas folds
+teresarl89 folds
+LeJardinier_ collected 0.37€ from pot
+*** SUMMARY ***
+Total pot 0.37€ | No rake
+Seat 2: LeJardinier_ (button) won 0.37€
+
+
+Winamax Poker - CashGame - HandId: #21360420-99-1755681545 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:19:05 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.24€)
+Seat 2: LeJardinier_ (11.40€)
+Seat 3: OnEstLaOuPas (20.36€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [3s 3d]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+OnEstLaOuPas calls 0.15€
+*** FLOP *** [Jc Jd Ah]
+OnEstLaOuPas checks
+teresarl89 bets 0.13€
+OnEstLaOuPas raises 0.46€ to 0.59€
+teresarl89 folds
+OnEstLaOuPas collected 1.18€ from pot
+*** SUMMARY ***
+Total pot 1.18€ | Rake 0.04€
+Board: [Jc Jd Ah]
+Seat 3: OnEstLaOuPas (big blind) won 1.18€
+
+
+Winamax Poker - CashGame - HandId: #21360420-100-1755681574 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:19:34 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (16.86€)
+Seat 3: OnEstLaOuPas (20.70€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [4c 7h]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-101-1755681588 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:19:48 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (16.91€)
+Seat 3: OnEstLaOuPas (20.65€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Ts Qd]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 1: teresarl89 (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-102-1755681607 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:20:07 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.01€)
+Seat 3: OnEstLaOuPas (20.55€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [2s 7h]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-103-1755681613 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:20:13 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.06€)
+Seat 2: chonchon35 (0€)
+Seat 3: OnEstLaOuPas (20.50€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [4h Jd]
+*** PRE-FLOP *** 
+teresarl89 folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-104-1755681617 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:20:17 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.01€)
+Seat 2: chonchon35 (0€)
+Seat 3: OnEstLaOuPas (20.55€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [3c 5h]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 folds
+OnEstLaOuPas collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 3: OnEstLaOuPas (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-105-1755681632 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:20:32 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (16.91€)
+Seat 3: OnEstLaOuPas (20.65€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [8h 6h]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 1: teresarl89 (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-106-1755681651 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:20:51 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.01€)
+Seat 3: OnEstLaOuPas (20.55€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [2s 2d]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 calls 0.15€
+*** FLOP *** [5c 5h 3h]
+teresarl89 checks
+OnEstLaOuPas bets 0.13€
+teresarl89 calls 0.13€
+*** TURN *** [5c 5h 3h][7h]
+teresarl89 checks
+OnEstLaOuPas bets 0.38€
+teresarl89 folds
+OnEstLaOuPas collected 1.10€ from pot
+*** SUMMARY ***
+Total pot 1.10€ | Rake 0.04€
+Board: [5c 5h 3h 7h]
+Seat 3: OnEstLaOuPas (small blind) (button) won 1.10€
+
+
+Winamax Poker - CashGame - HandId: #21360420-107-1755681690 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:21:30 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (16.63€)
+Seat 3: OnEstLaOuPas (20.89€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Kc Jd]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+OnEstLaOuPas calls 0.15€
+*** FLOP *** [7c 2d 9d]
+OnEstLaOuPas checks
+teresarl89 bets 0.13€
+OnEstLaOuPas raises 0.51€ to 0.64€
+teresarl89 calls 0.51€
+*** TURN *** [7c 2d 9d][Qc]
+OnEstLaOuPas bets 1.34€
+teresarl89 folds
+OnEstLaOuPas collected 3.02€ from pot
+*** SUMMARY ***
+Total pot 3.02€ | Rake 0.10€
+Board: [7c 2d 9d Qc]
+Seat 3: OnEstLaOuPas (big blind) won 3.02€
+
+
+Winamax Poker - CashGame - HandId: #21360420-108-1755681751 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:22:31 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (15.74€)
+Seat 3: OnEstLaOuPas (21.68€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [3s 8c]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 folds
+OnEstLaOuPas collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 3: OnEstLaOuPas (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-109-1755681756 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:22:36 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (15.64€)
+Seat 3: OnEstLaOuPas (21.78€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [7d 8s]
+*** PRE-FLOP *** 
+teresarl89 calls 0.05€
+OnEstLaOuPas checks
+*** FLOP *** [Qs 4d Tc]
+OnEstLaOuPas checks
+teresarl89 checks
+*** TURN *** [Qs 4d Tc][3h]
+OnEstLaOuPas checks
+teresarl89 bets 0.13€
+OnEstLaOuPas calls 0.13€
+*** RIVER *** [Qs 4d Tc 3h][Jc]
+OnEstLaOuPas checks
+teresarl89 checks
+*** SHOW DOWN ***
+teresarl89 shows [7d 8s] (High card : Queen)
+OnEstLaOuPas shows [As 2c] (High card : Ace)
+OnEstLaOuPas collected 0.43€ from pot
+*** SUMMARY ***
+Total pot 0.43€ | Rake 0.03€
+Board: [Qs 4d Tc 3h Jc]
+Seat 1: teresarl89 (small blind) (button) showed [7d 8s] and lost with High card : Queen
+Seat 3: OnEstLaOuPas (big blind) showed [As 2c] and won 0.43€ with High card : Ace
+
+
+Winamax Poker - CashGame - HandId: #21360420-110-1755681784 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:23:04 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (15.41€)
+Seat 3: OnEstLaOuPas (21.98€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [9d 6d]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 calls 0.15€
+*** FLOP *** [2c 3c Td]
+teresarl89 checks
+OnEstLaOuPas bets 0.13€
+teresarl89 folds
+OnEstLaOuPas collected 0.60€ from pot
+*** SUMMARY ***
+Total pot 0.60€ | Rake 0.03€
+Board: [2c 3c Td]
+Seat 3: OnEstLaOuPas (small blind) (button) won 0.60€
+
+
+Winamax Poker - CashGame - HandId: #21360420-111-1755681816 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:23:36 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (15.16€)
+Seat 3: OnEstLaOuPas (22.20€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [9c Qc]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 1: teresarl89 (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-112-1755681829 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:23:49 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (15.26€)
+Seat 3: OnEstLaOuPas (22.10€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [7c As]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 raises 0.50€ to 0.75€
+OnEstLaOuPas calls 0.50€
+*** FLOP *** [3s 6c Kd]
+teresarl89 checks
+OnEstLaOuPas checks
+*** TURN *** [3s 6c Kd][Kc]
+teresarl89 bets 0.53€
+OnEstLaOuPas folds
+teresarl89 collected 1.94€ from pot
+*** SUMMARY ***
+Total pot 1.94€ | Rake 0.09€
+Board: [3s 6c Kd Kc]
+Seat 1: teresarl89 (big blind) won 1.94€
+
+
+Winamax Poker - CashGame - HandId: #21360420-113-1755681871 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:24:31 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (15.92€)
+Seat 3: OnEstLaOuPas (21.35€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [9h 7s]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 1: teresarl89 (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-114-1755681879 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:24:39 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (16.02€)
+Seat 3: OnEstLaOuPas (21.25€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Qd Jh]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 calls 0.15€
+*** FLOP *** [4d Jc 5c]
+teresarl89 checks
+OnEstLaOuPas bets 0.13€
+teresarl89 calls 0.13€
+*** TURN *** [4d Jc 5c][6c]
+teresarl89 checks
+OnEstLaOuPas bets 0.38€
+teresarl89 calls 0.38€
+*** RIVER *** [4d Jc 5c 6c][4c]
+teresarl89 checks
+OnEstLaOuPas checks
+*** SHOW DOWN ***
+teresarl89 shows [Qd Jh] (Two pairs : Jacks and 4)
+OnEstLaOuPas shows [Kh Tc] (Flush Jack high)
+OnEstLaOuPas collected 1.43€ from pot
+*** SUMMARY ***
+Total pot 1.43€ | Rake 0.09€
+Board: [4d Jc 5c 6c 4c]
+Seat 1: teresarl89 (big blind) showed [Qd Jh] and lost with Two pairs : Jacks and 4
+Seat 3: OnEstLaOuPas (small blind) (button) showed [Kh Tc] and won 1.43€ with Flush Jack high
+
+
+Winamax Poker - CashGame - HandId: #21360420-115-1755681961 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:26:01 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (15.26€)
+Seat 3: OnEstLaOuPas (21.92€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [5s Kc]
+*** PRE-FLOP *** 
+teresarl89 folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-116-1755681966 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:26:06 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (15.21€)
+Seat 3: OnEstLaOuPas (21.97€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Ah 6h]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 calls 0.15€
+*** FLOP *** [Js Ks Kh]
+teresarl89 checks
+OnEstLaOuPas bets 0.13€
+teresarl89 calls 0.13€
+*** TURN *** [Js Ks Kh][3c]
+teresarl89 checks
+OnEstLaOuPas checks
+*** RIVER *** [Js Ks Kh 3c][3h]
+teresarl89 checks
+OnEstLaOuPas checks
+*** SHOW DOWN ***
+teresarl89 shows [Ah 6h] (Two pairs : Kings and 3)
+OnEstLaOuPas shows [4c 4s] (Two pairs : Kings and 4)
+OnEstLaOuPas collected 0.72€ from pot
+*** SUMMARY ***
+Total pot 0.72€ | Rake 0.04€
+Board: [Js Ks Kh 3c 3h]
+Seat 1: teresarl89 (big blind) showed [Ah 6h] and lost with Two pairs : Kings and 3
+Seat 3: OnEstLaOuPas (small blind) (button) showed [4c 4s] and won 0.72€ with Two pairs : Kings and 4
+
+
+Winamax Poker - CashGame - HandId: #21360420-117-1755682016 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:26:56 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (14.83€)
+Seat 3: OnEstLaOuPas (22.31€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [6d Td]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+OnEstLaOuPas calls 0.15€
+*** FLOP *** [Ah Qs Ad]
+OnEstLaOuPas checks
+teresarl89 bets 0.15€
+OnEstLaOuPas calls 0.15€
+*** TURN *** [Ah Qs Ad][4d]
+OnEstLaOuPas checks
+teresarl89 bets 0.40€
+OnEstLaOuPas calls 0.40€
+*** RIVER *** [Ah Qs Ad 4d][8s]
+OnEstLaOuPas checks
+teresarl89 bets 1.60€
+OnEstLaOuPas folds
+teresarl89 collected 3.11€ from pot
+*** SUMMARY ***
+Total pot 3.11€ | Rake 0.09€
+Board: [Ah Qs Ad 4d 8s]
+Seat 1: teresarl89 (small blind) (button) won 3.11€
+
+
+Winamax Poker - CashGame - HandId: #21360420-118-1755682100 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:28:20 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (15.54€)
+Seat 3: OnEstLaOuPas (21.51€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [7h 6d]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-119-1755682104 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:28:24 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (15.59€)
+Seat 3: OnEstLaOuPas (21.46€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Ts 2c]
+*** PRE-FLOP *** 
+teresarl89 folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-120-1755682108 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:28:28 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (15.54€)
+Seat 3: OnEstLaOuPas (21.51€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [8d 8s]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-121-1755682124 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:28:44 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (15.59€)
+Seat 3: OnEstLaOuPas (21.46€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [9d 3h]
+*** PRE-FLOP *** 
+teresarl89 folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-122-1755682129 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:28:49 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (15.54€)
+Seat 3: OnEstLaOuPas (21.51€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [8d 8h]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 calls 0.15€
+*** FLOP *** [8c 7h 2c]
+teresarl89 checks
+OnEstLaOuPas bets 0.13€
+teresarl89 calls 0.13€
+*** TURN *** [8c 7h 2c][Kc]
+teresarl89 checks
+OnEstLaOuPas bets 0.38€
+teresarl89 calls 0.38€
+*** RIVER *** [8c 7h 2c Kc][6s]
+teresarl89 checks
+OnEstLaOuPas checks
+*** SHOW DOWN ***
+OnEstLaOuPas shows [9s 9d] (One pair : 9)
+teresarl89 shows [8d 8h] (Trips of 8)
+teresarl89 collected 1.43€ from pot
+*** SUMMARY ***
+Total pot 1.43€ | Rake 0.09€
+Board: [8c 7h 2c Kc 6s]
+Seat 1: teresarl89 (big blind) showed [8d 8h] and won 1.43€ with Trips of 8
+Seat 3: OnEstLaOuPas (small blind) (button) showed [9s 9d] and lost with One pair : 9
+
+
+Winamax Poker - CashGame - HandId: #21360420-123-1755682184 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:29:44 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (16.21€)
+Seat 3: OnEstLaOuPas (20.75€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Ac 6c]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 1: teresarl89 (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-124-1755682194 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:29:54 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (16.31€)
+Seat 3: OnEstLaOuPas (20.65€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [7h 8c]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 calls 0.15€
+*** FLOP *** [6s 2h Jh]
+teresarl89 checks
+OnEstLaOuPas bets 0.13€
+teresarl89 folds
+OnEstLaOuPas collected 0.60€ from pot
+*** SUMMARY ***
+Total pot 0.60€ | Rake 0.03€
+Board: [6s 2h Jh]
+Seat 3: OnEstLaOuPas (small blind) (button) won 0.60€
+
+
+Winamax Poker - CashGame - HandId: #21360420-125-1755682217 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:30:17 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (16.06€)
+Seat 3: OnEstLaOuPas (20.87€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [2h 8h]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 1: teresarl89 (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-126-1755682236 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:30:36 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (16.16€)
+Seat 3: OnEstLaOuPas (20.77€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Qd 6d]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-127-1755682241 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:30:41 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (16.21€)
+Seat 3: OnEstLaOuPas (20.72€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [7s 9d]
+*** PRE-FLOP *** 
+teresarl89 folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-128-1755682246 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:30:46 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (16.16€)
+Seat 3: OnEstLaOuPas (20.77€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Qc 2c]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-129-1755682250 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:30:50 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (16.21€)
+Seat 3: OnEstLaOuPas (20.72€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [5h Kc]
+*** PRE-FLOP *** 
+teresarl89 calls 0.05€
+OnEstLaOuPas checks
+*** FLOP *** [7h 7c Ac]
+OnEstLaOuPas checks
+teresarl89 bets 0.15€
+OnEstLaOuPas folds
+teresarl89 collected 0.34€ from pot
+*** SUMMARY ***
+Total pot 0.34€ | Rake 0.01€
+Board: [7h 7c Ac]
+Seat 1: teresarl89 (small blind) (button) won 0.34€
+
+
+Winamax Poker - CashGame - HandId: #21360420-130-1755682276 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:31:16 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (16.30€)
+Seat 3: OnEstLaOuPas (20.62€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Qh 3d]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-131-1755682286 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:31:26 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (16.35€)
+Seat 3: OnEstLaOuPas (20.57€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Tc Ac]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 1: teresarl89 (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-132-1755682295 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:31:35 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (16.45€)
+Seat 3: OnEstLaOuPas (20.47€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [8h Jc]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-133-1755682298 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:31:38 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (16.50€)
+Seat 3: OnEstLaOuPas (20.42€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [6s 9c]
+*** PRE-FLOP *** 
+teresarl89 folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-134-1755682304 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:31:44 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (16.45€)
+Seat 3: OnEstLaOuPas (20.47€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Jh Qd]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-135-1755682310 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:31:50 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (16.50€)
+Seat 3: OnEstLaOuPas (20.42€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [6s 3h]
+*** PRE-FLOP *** 
+teresarl89 folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-136-1755682313 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:31:53 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (16.45€)
+Seat 3: OnEstLaOuPas (20.47€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Th 3c]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 folds
+OnEstLaOuPas collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 3: OnEstLaOuPas (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-137-1755682320 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:32:00 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (16.35€)
+Seat 3: OnEstLaOuPas (20.57€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [8c Jd]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+OnEstLaOuPas raises 1€ to 1.25€
+teresarl89 folds
+OnEstLaOuPas collected 1.50€ from pot
+*** SUMMARY ***
+Total pot 1.50€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 1.50€
+
+
+Winamax Poker - CashGame - HandId: #21360420-138-1755682363 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:32:43 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (16.10€)
+Seat 3: OnEstLaOuPas (20.82€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [2d 3d]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 calls 0.15€
+*** FLOP *** [Jc 5h 5s]
+teresarl89 checks
+OnEstLaOuPas bets 0.13€
+teresarl89 folds
+OnEstLaOuPas collected 0.60€ from pot
+*** SUMMARY ***
+Total pot 0.60€ | Rake 0.03€
+Board: [Jc 5h 5s]
+Seat 3: OnEstLaOuPas (small blind) (button) won 0.60€
+
+
+Winamax Poker - CashGame - HandId: #21360420-139-1755682382 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:33:02 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (15.85€)
+Seat 2: Aigre-Douce (10€)
+Seat 3: OnEstLaOuPas (21.04€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [Jd 5c]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 folds
+Aigre-Douce collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: Aigre-Douce (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-140-1755682396 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:33:16 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (15.80€)
+Seat 2: Aigre-Douce (10.05€)
+Seat 3: OnEstLaOuPas (21.04€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [5d 8h]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce raises 0.20€ to 0.30€
+OnEstLaOuPas raises 0.70€ to 1€
+Aigre-Douce calls 0.70€
+*** FLOP *** [Jc 5h 7h]
+Aigre-Douce checks
+OnEstLaOuPas bets 0.66€
+Aigre-Douce folds
+OnEstLaOuPas collected 2.54€ from pot
+*** SUMMARY ***
+Total pot 2.54€ | Rake 0.12€
+Board: [Jc 5h 7h]
+Seat 3: OnEstLaOuPas (big blind) won 2.54€
+
+
+Winamax Poker - CashGame - HandId: #21360420-141-1755682443 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:34:03 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (15.80€)
+Seat 2: Aigre-Douce (10€)
+Seat 3: OnEstLaOuPas (21.92€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [3h 5h]
+*** PRE-FLOP *** 
+Aigre-Douce folds
+OnEstLaOuPas raises 0.20€ to 0.30€
+teresarl89 calls 0.20€
+*** FLOP *** [Td 6s 5s]
+OnEstLaOuPas checks
+teresarl89 bets 0.30€
+OnEstLaOuPas calls 0.30€
+*** TURN *** [Td 6s 5s][7s]
+OnEstLaOuPas checks
+teresarl89 checks
+*** RIVER *** [Td 6s 5s 7s][9c]
+OnEstLaOuPas checks
+teresarl89 checks
+*** SHOW DOWN ***
+teresarl89 shows [3h 5h] (One pair : 5)
+OnEstLaOuPas shows [6d 7d] (Two pairs : 7 and 6)
+OnEstLaOuPas collected 1.13€ from pot
+*** SUMMARY ***
+Total pot 1.13€ | Rake 0.07€
+Board: [Td 6s 5s 7s 9c]
+Seat 1: teresarl89 (big blind) showed [3h 5h] and lost with One pair : 5
+Seat 3: OnEstLaOuPas (small blind) showed [6d 7d] and won 1.13€ with Two pairs : 7 and 6
+
+
+Winamax Poker - CashGame - HandId: #21360420-142-1755682524 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:35:24 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (15.20€)
+Seat 2: Aigre-Douce (10€)
+Seat 3: OnEstLaOuPas (22.45€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [4h 3c]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 folds
+Aigre-Douce collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: Aigre-Douce (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-143-1755682535 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:35:35 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (15.15€)
+Seat 2: Aigre-Douce (10.05€)
+Seat 3: OnEstLaOuPas (22.45€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Ts 4d]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce raises 0.20€ to 0.30€
+OnEstLaOuPas calls 0.20€
+*** FLOP *** [Qh Qs 9c]
+Aigre-Douce bets 0.20€
+OnEstLaOuPas calls 0.20€
+*** TURN *** [Qh Qs 9c][3s]
+Aigre-Douce checks
+OnEstLaOuPas bets 0.75€
+Aigre-Douce calls 0.75€
+*** RIVER *** [Qh Qs 9c 3s][6h]
+Aigre-Douce checks
+OnEstLaOuPas bets 1.88€
+Aigre-Douce calls 1.88€
+*** SHOW DOWN ***
+Aigre-Douce shows [4h 3h] (Two pairs : Queens and 3)
+OnEstLaOuPas shows [8c Qd] (Trips of Queens)
+OnEstLaOuPas collected 5.90€ from pot
+*** SUMMARY ***
+Total pot 5.90€ | Rake 0.36€
+Board: [Qh Qs 9c 3s 6h]
+Seat 2: Aigre-Douce (small blind) showed [4h 3h] and lost with Two pairs : Queens and 3
+Seat 3: OnEstLaOuPas (big blind) showed [8c Qd] and won 5.90€ with Trips of Queens
+
+
+Winamax Poker - CashGame - HandId: #21360420-144-1755682629 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:37:09 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (15.15€)
+Seat 2: Aigre-Douce (10€)
+Seat 3: OnEstLaOuPas (25.22€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Ts Js]
+*** PRE-FLOP *** 
+Aigre-Douce raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 calls 0.15€
+*** FLOP *** [Jh 2s Jd]
+teresarl89 checks
+Aigre-Douce bets 0.19€
+teresarl89 calls 0.19€
+*** TURN *** [Jh 2s Jd][8s]
+teresarl89 checks
+Aigre-Douce bets 0.60€
+teresarl89 raises 1.10€ to 1.70€
+Aigre-Douce calls 1.10€
+*** RIVER *** [Jh 2s Jd 8s][Kc]
+teresarl89 bets 4.33€
+Aigre-Douce folds
+teresarl89 collected 8.41€ from pot
+*** SUMMARY ***
+Total pot 8.41€ | Rake 0.25€
+Board: [Jh 2s Jd 8s Kc]
+Seat 1: teresarl89 (big blind) won 8.41€
+
+
+Winamax Poker - CashGame - HandId: #21360420-145-1755682677 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:37:57 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.09€)
+Seat 2: Aigre-Douce (10€)
+Seat 3: OnEstLaOuPas (25.17€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [7h Kc]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 raises 0.15€ to 0.25€
+Aigre-Douce calls 0.15€
+*** FLOP *** [6s 3s Ad]
+teresarl89 bets 0.13€
+Aigre-Douce calls 0.13€
+*** TURN *** [6s 3s Ad][7d]
+teresarl89 checks
+Aigre-Douce checks
+*** RIVER *** [6s 3s Ad 7d][Jd]
+teresarl89 checks
+Aigre-Douce checks
+*** SHOW DOWN ***
+Aigre-Douce shows [5d 5c] (One pair : 5)
+teresarl89 shows [7h Kc] (One pair : 7)
+teresarl89 collected 0.72€ from pot
+*** SUMMARY ***
+Total pot 0.72€ | Rake 0.04€
+Board: [6s 3s Ad 7d Jd]
+Seat 1: teresarl89 (small blind) showed [7h Kc] and won 0.72€ with One pair : 7
+Seat 2: Aigre-Douce (big blind) showed [5d 5c] and lost with One pair : 5
+
+
+Winamax Poker - CashGame - HandId: #21360420-146-1755682729 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:38:49 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.43€)
+Seat 2: Aigre-Douce (10€)
+Seat 3: OnEstLaOuPas (25.17€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Jd Ad]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+Aigre-Douce folds
+OnEstLaOuPas folds
+teresarl89 collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 1: teresarl89 (button) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-147-1755682737 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:38:57 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.58€)
+Seat 2: Aigre-Douce (10€)
+Seat 3: OnEstLaOuPas (25.07€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [6s Qc]
+*** PRE-FLOP *** 
+Aigre-Douce folds
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-148-1755682743 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:39:03 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.63€)
+Seat 2: Aigre-Douce (10€)
+Seat 3: OnEstLaOuPas (25.02€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [7h 2d]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 folds
+Aigre-Douce collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: Aigre-Douce (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-149-1755682752 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:39:12 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.58€)
+Seat 2: Aigre-Douce (10.05€)
+Seat 3: OnEstLaOuPas (25.02€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [8s 3d]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-150-1755682757 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:39:17 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.58€)
+Seat 2: Aigre-Douce (10€)
+Seat 3: OnEstLaOuPas (25.07€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Qd 6d]
+*** PRE-FLOP *** 
+Aigre-Douce raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 calls 0.15€
+*** FLOP *** [Ah 6c 3d]
+teresarl89 checks
+Aigre-Douce bets 0.15€
+teresarl89 calls 0.15€
+*** TURN *** [Ah 6c 3d][3c]
+teresarl89 checks
+Aigre-Douce checks
+*** RIVER *** [Ah 6c 3d 3c][7s]
+teresarl89 bets 0.40€
+Aigre-Douce folds
+teresarl89 collected 1.20€ from pot
+*** SUMMARY ***
+Total pot 1.20€ | Rake 0.05€
+Board: [Ah 6c 3d 3c 7s]
+Seat 1: teresarl89 (big blind) won 1.20€
+
+
+Winamax Poker - CashGame - HandId: #21360420-151-1755682796 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:39:56 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.98€)
+Seat 2: Aigre-Douce (10€)
+Seat 3: OnEstLaOuPas (25.02€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [4h 6d]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 folds
+Aigre-Douce collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: Aigre-Douce (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-152-1755682809 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:40:09 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.93€)
+Seat 2: Aigre-Douce (10.05€)
+Seat 3: OnEstLaOuPas (25.02€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [7c 3h]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-153-1755682818 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:40:18 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.93€)
+Seat 2: Aigre-Douce (10€)
+Seat 3: OnEstLaOuPas (25.07€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Ts 2d]
+*** PRE-FLOP *** 
+Aigre-Douce raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 folds
+Aigre-Douce collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 2: Aigre-Douce (button) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-154-1755682847 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:40:47 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.83€)
+Seat 2: Aigre-Douce (10.15€)
+Seat 3: OnEstLaOuPas (25.02€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [9s 9c]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.10€ to 0.20€
+teresarl89 raises 0.50€ to 0.70€
+Aigre-Douce folds
+OnEstLaOuPas folds
+teresarl89 collected 1€ from pot
+*** SUMMARY ***
+Total pot 1€ | No rake
+Seat 1: teresarl89 (small blind) won 1€
+
+
+Winamax Poker - CashGame - HandId: #21360420-155-1755682875 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:41:15 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (18.13€)
+Seat 2: Aigre-Douce (10.05€)
+Seat 3: OnEstLaOuPas (24.82€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [7h 8s]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-156-1755682882 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:41:22 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (18.13€)
+Seat 2: Aigre-Douce (10€)
+Seat 3: OnEstLaOuPas (24.87€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [2c 3c]
+*** PRE-FLOP *** 
+Aigre-Douce folds
+OnEstLaOuPas raises 0.20€ to 0.30€
+teresarl89 calls 0.20€
+*** FLOP *** [Jc 6d Jd]
+OnEstLaOuPas checks
+teresarl89 checks
+*** TURN *** [Jc 6d Jd][Ah]
+OnEstLaOuPas bets 0.45€
+teresarl89 folds
+OnEstLaOuPas collected 1.02€ from pot
+*** SUMMARY ***
+Total pot 1.02€ | Rake 0.03€
+Board: [Jc 6d Jd Ah]
+Seat 3: OnEstLaOuPas (small blind) won 1.02€
+
+
+Winamax Poker - CashGame - HandId: #21360420-157-1755682903 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:41:43 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.83€)
+Seat 2: Aigre-Douce (10€)
+Seat 3: OnEstLaOuPas (25.14€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [3d 9d]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 raises 0.15€ to 0.25€
+Aigre-Douce raises 0.75€ to 1€
+teresarl89 folds
+Aigre-Douce collected 1.25€ from pot
+*** SUMMARY ***
+Total pot 1.25€ | No rake
+Seat 2: Aigre-Douce (big blind) won 1.25€
+
+
+Winamax Poker - CashGame - HandId: #21360420-158-1755682915 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:41:55 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.58€)
+Seat 2: Aigre-Douce (10.25€)
+Seat 3: OnEstLaOuPas (25.14€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Ad Jh]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+Aigre-Douce folds
+OnEstLaOuPas folds
+teresarl89 collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 1: teresarl89 (button) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-159-1755682927 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:42:07 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.73€)
+Seat 2: Aigre-Douce (10.20€)
+Seat 3: OnEstLaOuPas (25.04€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [5s 7c]
+*** PRE-FLOP *** 
+Aigre-Douce folds
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-160-1755682936 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:42:16 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.78€)
+Seat 2: Aigre-Douce (10.20€)
+Seat 3: OnEstLaOuPas (24.99€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [Qc 2c]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 raises 0.15€ to 0.25€
+Aigre-Douce raises 0.75€ to 1€
+teresarl89 folds
+Aigre-Douce collected 1.25€ from pot
+*** SUMMARY ***
+Total pot 1.25€ | No rake
+Seat 2: Aigre-Douce (big blind) won 1.25€
+
+
+Winamax Poker - CashGame - HandId: #21360420-161-1755682955 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:42:35 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.53€)
+Seat 2: Aigre-Douce (10.45€)
+Seat 3: OnEstLaOuPas (24.99€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Th 5c]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-162-1755682960 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:42:40 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.53€)
+Seat 2: Aigre-Douce (10.40€)
+Seat 3: OnEstLaOuPas (25.04€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Kh 9h]
+*** PRE-FLOP *** 
+Aigre-Douce folds
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-163-1755682967 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:42:47 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.58€)
+Seat 2: Aigre-Douce (10.40€)
+Seat 3: OnEstLaOuPas (24.99€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [3h 4d]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.10€ to 0.20€
+teresarl89 folds
+Aigre-Douce raises 1€ to 1.20€
+OnEstLaOuPas folds
+Aigre-Douce collected 1.45€ from pot
+*** SUMMARY ***
+Total pot 1.45€ | No rake
+Seat 2: Aigre-Douce (big blind) won 1.45€
+
+
+Winamax Poker - CashGame - HandId: #21360420-164-1755682984 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:43:04 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.53€)
+Seat 2: Aigre-Douce (10.65€)
+Seat 3: OnEstLaOuPas (24.79€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [6s 4s]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-165-1755682999 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:43:19 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.53€)
+Seat 2: Aigre-Douce (10.60€)
+Seat 3: OnEstLaOuPas (24.84€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [4s 6h]
+*** PRE-FLOP *** 
+Aigre-Douce raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 folds
+Aigre-Douce collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 2: Aigre-Douce (button) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-166-1755683009 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:43:29 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.43€)
+Seat 2: Aigre-Douce (10.75€)
+Seat 3: OnEstLaOuPas (24.79€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [5c 9d]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.10€ to 0.20€
+teresarl89 folds
+Aigre-Douce calls 0.10€
+*** FLOP *** [4h Th 3h]
+Aigre-Douce checks
+OnEstLaOuPas bets 0.11€
+Aigre-Douce calls 0.11€
+*** TURN *** [4h Th 3h][4c]
+Aigre-Douce checks
+OnEstLaOuPas checks
+*** RIVER *** [4h Th 3h 4c][Js]
+Aigre-Douce bets 0.44€
+OnEstLaOuPas folds
+Aigre-Douce collected 1.07€ from pot
+*** SUMMARY ***
+Total pot 1.07€ | Rake 0.04€
+Board: [4h Th 3h 4c Js]
+Seat 2: Aigre-Douce (big blind) won 1.07€
+
+
+Winamax Poker - CashGame - HandId: #21360420-167-1755683055 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:44:15 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.38€)
+Seat 2: Aigre-Douce (11.07€)
+Seat 3: OnEstLaOuPas (24.48€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [2s 9h]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-168-1755683064 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:44:24 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.38€)
+Seat 2: Aigre-Douce (11.02€)
+Seat 3: OnEstLaOuPas (24.53€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Jh 2d]
+*** PRE-FLOP *** 
+Aigre-Douce raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 folds
+Aigre-Douce collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 2: Aigre-Douce (button) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-169-1755683090 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:44:50 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.28€)
+Seat 2: Aigre-Douce (11.17€)
+Seat 3: OnEstLaOuPas (24.48€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [4c 8h]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.10€ to 0.20€
+teresarl89 folds
+Aigre-Douce folds
+OnEstLaOuPas collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 3: OnEstLaOuPas (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-170-1755683101 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:45:01 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.23€)
+Seat 2: Aigre-Douce (11.07€)
+Seat 3: OnEstLaOuPas (24.63€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Jd 4h]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce raises 0.20€ to 0.30€
+OnEstLaOuPas calls 0.20€
+*** FLOP *** [8d Ad 2d]
+Aigre-Douce bets 0.20€
+OnEstLaOuPas folds
+Aigre-Douce collected 0.77€ from pot
+*** SUMMARY ***
+Total pot 0.77€ | Rake 0.03€
+Board: [8d Ad 2d]
+Seat 2: Aigre-Douce (small blind) won 0.77€
+
+
+Winamax Poker - CashGame - HandId: #21360420-171-1755683120 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:45:20 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.23€)
+Seat 2: Aigre-Douce (11.34€)
+Seat 3: OnEstLaOuPas (24.33€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Jd 2s]
+*** PRE-FLOP *** 
+Aigre-Douce raises 0.15€ to 0.25€
+OnEstLaOuPas folds
+teresarl89 folds
+Aigre-Douce collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 2: Aigre-Douce (button) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-172-1755683131 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:45:31 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.13€)
+Seat 2: Aigre-Douce (11.49€)
+Seat 3: OnEstLaOuPas (24.28€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [6c 7s]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.10€ to 0.20€
+teresarl89 folds
+Aigre-Douce calls 0.10€
+*** FLOP *** [3s 2d 5h]
+Aigre-Douce checks
+OnEstLaOuPas bets 0.11€
+Aigre-Douce raises 0.39€ to 0.50€
+OnEstLaOuPas calls 0.39€
+*** TURN *** [3s 2d 5h][8c]
+Aigre-Douce bets 1.45€
+OnEstLaOuPas calls 1.45€
+*** RIVER *** [3s 2d 5h 8c][Ks]
+Aigre-Douce bets 3.48€
+OnEstLaOuPas calls 3.48€
+*** SHOW DOWN ***
+OnEstLaOuPas shows [9s 9c] (One pair : 9)
+Aigre-Douce shows [5d 3d] (Two pairs : 5 and 3)
+Aigre-Douce collected 10.66€ from pot
+*** SUMMARY ***
+Total pot 10.66€ | Rake 0.65€
+Board: [3s 2d 5h 8c Ks]
+Seat 2: Aigre-Douce (big blind) showed [5d 3d] and won 10.66€ with Two pairs : 5 and 3
+Seat 3: OnEstLaOuPas (button) showed [9s 9c] and lost with One pair : 9
+
+
+Winamax Poker - CashGame - HandId: #21360420-173-1755683197 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:46:37 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.08€)
+Seat 2: Aigre-Douce (16.52€)
+Seat 3: OnEstLaOuPas (18.65€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [Qh 8s]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-174-1755683204 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:46:44 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.08€)
+Seat 2: Aigre-Douce (16.47€)
+Seat 3: OnEstLaOuPas (18.70€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [6c Th]
+*** PRE-FLOP *** 
+Aigre-Douce folds
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-175-1755683216 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:46:56 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.13€)
+Seat 2: Aigre-Douce (16.47€)
+Seat 3: OnEstLaOuPas (18.65€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [3h Ts]
+*** PRE-FLOP *** 
+OnEstLaOuPas folds
+teresarl89 folds
+Aigre-Douce collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: Aigre-Douce (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-176-1755683234 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:47:14 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.08€)
+Seat 2: Aigre-Douce (16.52€)
+Seat 3: OnEstLaOuPas (18.65€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+OnEstLaOuPas posts big blind 0.10€
+Dealt to teresarl89 [4s 3s]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce folds
+OnEstLaOuPas collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 3: OnEstLaOuPas (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-177-1755683239 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:47:19 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.08€)
+Seat 2: Aigre-Douce (16.47€)
+Seat 3: OnEstLaOuPas (18.70€)
+*** ANTE/BLINDS ***
+OnEstLaOuPas posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [3d 8c]
+*** PRE-FLOP *** 
+Aigre-Douce folds
+OnEstLaOuPas folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-178-1755683253 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:47:33 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (17.13€)
+Seat 2: Aigre-Douce (16.47€)
+Seat 3: OnEstLaOuPas (18.65€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [9d Qh]
+*** PRE-FLOP *** 
+OnEstLaOuPas raises 0.15€ to 0.25€
+teresarl89 folds
+Aigre-Douce folds
+OnEstLaOuPas collected 0.40€ from pot
+*** SUMMARY ***
+Total pot 0.40€ | No rake
+Seat 3: OnEstLaOuPas (button) won 0.40€
+
+
+Winamax Poker - CashGame - HandId: #21360420-183-1755683400 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:50:00 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.08€)
+Seat 2: Aigre-Douce (16.52€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [4s 9c]
+*** PRE-FLOP *** 
+Aigre-Douce raises 0.15€ to 0.25€
+teresarl89 folds
+Aigre-Douce collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 2: Aigre-Douce (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-184-1755683406 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:50:06 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (16.98€)
+Seat 2: Aigre-Douce (16.62€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [3h 7s]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: Aigre-Douce (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-185-1755683411 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:50:11 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (16.93€)
+Seat 2: Aigre-Douce (16.67€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [3h Ac]
+*** PRE-FLOP *** 
+Aigre-Douce raises 0.15€ to 0.25€
+teresarl89 calls 0.15€
+*** FLOP *** [6h 6s 2s]
+teresarl89 checks
+Aigre-Douce checks
+*** TURN *** [6h 6s 2s][As]
+teresarl89 bets 0.30€
+Aigre-Douce folds
+teresarl89 collected 0.77€ from pot
+*** SUMMARY ***
+Total pot 0.77€ | Rake 0.03€
+Board: [6h 6s 2s As]
+Seat 1: teresarl89 (big blind) won 0.77€
+
+
+Winamax Poker - CashGame - HandId: #21360420-186-1755683432 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:50:32 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.15€)
+Seat 2: Aigre-Douce (16.42€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [3c 5s]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: Aigre-Douce (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-187-1755683436 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:50:36 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.10€)
+Seat 2: Aigre-Douce (16.47€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [4c 7h]
+*** PRE-FLOP *** 
+Aigre-Douce raises 0.15€ to 0.25€
+teresarl89 folds
+Aigre-Douce collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 2: Aigre-Douce (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-188-1755683441 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:50:41 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17€)
+Seat 2: Aigre-Douce (16.57€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [9s 8h]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+Aigre-Douce folds
+teresarl89 collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 1: teresarl89 (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-189-1755683448 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:50:48 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.10€)
+Seat 2: Aigre-Douce (16.47€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [3c 6h]
+*** PRE-FLOP *** 
+Aigre-Douce folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-190-1755683452 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:50:52 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.15€)
+Seat 2: Aigre-Douce (16.42€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [4d 7s]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: Aigre-Douce (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-191-1755683456 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:50:56 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.10€)
+Seat 2: Aigre-Douce (16.47€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Js Kd]
+*** PRE-FLOP *** 
+Aigre-Douce folds
+teresarl89 collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 1: teresarl89 (big blind) won 0.15€
+
+
+Winamax Poker - CashGame - HandId: #21360420-192-1755683460 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:51:00 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (17.15€)
+Seat 2: Aigre-Douce (16.42€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [7d 6d]
+*** PRE-FLOP *** 
+teresarl89 raises 0.15€ to 0.25€
+Aigre-Douce folds
+teresarl89 collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 1: teresarl89 (small blind) (button) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-201-1755683581 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:53:01 UTC
+Table: 'Havana' 3-max (real money) Seat #2 is the button
+Seat 1: teresarl89 (17.15€)
+Seat 2: Aigre-Douce (17.33€)
+Seat 3: WoodY Poker (9€)
+*** ANTE/BLINDS ***
+WoodY Poker posts small blind 0.05€
+teresarl89 posts big blind 0.10€
+Dealt to teresarl89 [Kc Qs]
+*** PRE-FLOP *** 
+Aigre-Douce raises 0.15€ to 0.25€
+WoodY Poker calls 0.20€
+teresarl89 calls 0.15€
+*** FLOP *** [8s 5h Qc]
+WoodY Poker checks
+teresarl89 checks
+Aigre-Douce checks
+*** TURN *** [8s 5h Qc][9d]
+WoodY Poker bets 0.26€
+teresarl89 calls 0.26€
+Aigre-Douce raises 0.59€ to 0.85€
+WoodY Poker folds
+teresarl89 calls 0.59€
+*** RIVER *** [8s 5h Qc 9d][3d]
+teresarl89 checks
+Aigre-Douce bets 1.88€
+teresarl89 calls 1.88€
+*** SHOW DOWN ***
+teresarl89 shows [Kc Qs] (One pair : Queens)
+Aigre-Douce shows [Ts Jd] (Straight Queen high)
+Aigre-Douce collected 6.10€ from pot
+*** SUMMARY ***
+Total pot 6.10€ | Rake 0.37€
+Board: [8s 5h Qc 9d 3d]
+Seat 1: teresarl89 (big blind) showed [Kc Qs] and lost with One pair : Queens
+Seat 2: Aigre-Douce (button) showed [Ts Jd] and won 6.10€ with Straight Queen high
+
+
+Winamax Poker - CashGame - HandId: #21360420-202-1755683629 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:53:49 UTC
+Table: 'Havana' 3-max (real money) Seat #3 is the button
+Seat 1: teresarl89 (14.17€)
+Seat 2: Aigre-Douce (20.45€)
+Seat 3: WoodY Poker (8.49€)
+*** ANTE/BLINDS ***
+teresarl89 posts small blind 0.05€
+Aigre-Douce posts big blind 0.10€
+Dealt to teresarl89 [Jd Ah]
+*** PRE-FLOP *** 
+WoodY Poker folds
+teresarl89 raises 0.15€ to 0.25€
+Aigre-Douce folds
+teresarl89 collected 0.35€ from pot
+*** SUMMARY ***
+Total pot 0.35€ | No rake
+Seat 1: teresarl89 (small blind) won 0.35€
+
+
+Winamax Poker - CashGame - HandId: #21360420-203-1755683636 - Holdem no limit (0.05€/0.10€) - 2025/08/20 09:53:56 UTC
+Table: 'Havana' 3-max (real money) Seat #1 is the button
+Seat 1: teresarl89 (14.27€)
+Seat 2: Aigre-Douce (20.35€)
+Seat 3: WoodY Poker (8.49€)
+*** ANTE/BLINDS ***
+Aigre-Douce posts small blind 0.05€
+WoodY Poker posts big blind 0.10€
+Dealt to teresarl89 [7c 8s]
+*** PRE-FLOP *** 
+teresarl89 folds
+Aigre-Douce raises 0.20€ to 0.30€
+WoodY Poker calls 0.20€
+*** FLOP *** [Ts 9c 9h]
+Aigre-Douce checks
+WoodY Poker checks
+*** TURN *** [Ts 9c 9h][7h]
+Aigre-Douce checks
+WoodY Poker checks
+*** RIVER *** [Ts 9c 9h 7h][5s]
+Aigre-Douce checks
+WoodY Poker checks
+*** SHOW DOWN ***
+Aigre-Douce shows [Qc Kh] (One pair : 9)
+WoodY Poker shows [Ah 5c] (Two pairs : 9 and 5)
+WoodY Poker collected 0.57€ from pot
+*** SUMMARY ***
+Total pot 0.57€ | Rake 0.03€
+Board: [Ts 9c 9h 7h 5s]
+Seat 2: Aigre-Douce (small blind) showed [Qc Kh] and lost with One pair : 9
+Seat 3: WoodY Poker (big blind) showed [Ah 5c] and won 0.57€ with Two pairs : 9 and 5
+
+

@@ -127,11 +127,27 @@
             import Pocker from '/src/js/pocker.js';
             const pocker = new Pocker();
             pocker.mesa.dealer.barajar();
-            pocker.mesa.dealer.entregaComunitarias(2);
+            pocker.mesa.dealer.quemarCarta();
+            //ENTREGA 2 CARTAS PERSONALES A CADA JUGADOR: 2 RONDAS DE 1 CARTA--> DE UNA EN UNA
+            pocker.mesa.dealer.repartir(2);
+            //RONDAS DE APUESTAS
+            //ENTREGA 3 CARTAS COMUNITARIAS (FLOP)
+            pocker.mesa.dealer.repartirFlop()
+            //RONDA DE APUESTAS
+            //ENTREGA 1 CARTA COMUNITARIA (TURN)
+            //RONDA DE APUESTAS   
+            //ENTREGA 1 CARTA COMUNITARIA (RIVER)
+            //RONDA DE APUESTAS   
+            //MOSTRAR GANADOR
+            //REPARTIR POZO   
             console.log(pocker.mesa.dealer);
             console.log(pocker.mesa.jugadores);
             document.getElementById("contenedor-cartas").innerHTML = pocker.mesa.verCartasHTML();
+    
+
         </script>
+
+        
         <!--
             Cargamos el script como un modulo luego de que se muestran los elementos 
         -->

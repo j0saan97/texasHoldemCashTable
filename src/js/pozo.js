@@ -1,8 +1,8 @@
-class Cartera {
+class Pozo {
 	constructor(amount) {
 		this.amount = amount;
-		this.saldoEnMesa = 0;
 	} 
+	
 	agregarFondos(amount) {
 		this.amount += amount;
 	}
@@ -22,4 +22,10 @@ class Cartera {
 	}	
 }
 
-export default Cartera;
+export default Pozo;
+
+
+/*
+
+pozoTotal = 0;
+*/

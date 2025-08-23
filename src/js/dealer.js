@@ -23,27 +23,20 @@ class Dealer {
 
     quemarCarta(){
         // quema una carta del mazo mostrandola boca abajo en el tapete, usar el css de la API que tiene cartas boca abajo
-        return false;
+        this.baraja.cartas.pop();
     }
 
     repartirFlop(){
-        /* Coloca 3 cartas comunitarias en la mesa 
-        for (let i = 0; i < 3; i++) {
-            this.mesa.cartas.push(this.baraja.cartas.pop());
-        } 
-        añadirlas a la variable cartas comunitarias y eliminarlas del mazo 
-        
-        */
+        this.repartirComunitarias(3);
+
     }
 
     repartirTurn(){
-        /* Coloca 1 carta comunitaria en la mesa 
-        this.mesa.cartas.push(this.baraja.cartas.pop()); */
+        this.repartirComunitarias(1);
     }
 
     repartirRiver(){
-        /* Coloca 1 carta comunitaria en la mesa 
-        this.mesa.cartas.push(this.baraja.cartas.pop()); */
+        this.repartirComunitarias(1);
     }
 
     repartirBoard(){
@@ -62,15 +55,12 @@ class Dealer {
         }
     }
 
-
-    repartir(jugadores, cartasPorJugador = 2) {
-        for (const jugador of jugadores) {
-            for (let i = 0; i < cartasPorJugador; i++) {
+    repartir(cartasPorJugador = 2) {
+        for (let i = 0; i < cartasPorJugador; i++) { 
+            for (const jugador of this.mesa.jugadores) {
                 jugador.cartas.push(this.baraja.cartas.pop());
             }
         }
-        return true;
-    
     }
 }
 
