@@ -125,3 +125,5 @@ class evaluadorManos {
         return this.rangoMano;
     }
 } 
+
+export default evaluadorManos;

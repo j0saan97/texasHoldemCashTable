@@ -18,7 +18,7 @@ export const ORDEN_ACCION_POSTFLOP = ["SB", "BB", "UTG", "MP", "CU", "BU"];
 export const DEFAULT_BLINDS = { 
   smallBlind: 0.5, 
   bigBlind: 1, 
-  ante: 0.1 // por jugador
+  // ante: 0.1 // por jugador
 };
 
 export const DEFAULT_BUYIN = { min: 40, max: 100 };

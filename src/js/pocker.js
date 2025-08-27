@@ -8,6 +8,7 @@ class Pocker {
     constructor(totalJugadores = 4) {
         this.mesa = this.crearMesa();
         this.dealer = this.crearDealer();
+        this.posiciones = ["UTG", "MP", "CU", "BU", "SB", "BB"];
         this.crearJugadores(totalJugadores);
     }
 
@@ -34,7 +35,7 @@ class Pocker {
     crearJugadores(total) {
 		/* Crea y agrega jugadores a la mesa */
         for (let i = 1; i <= total; i++) {
-			this.agregarJugador(new Jugador(`Jugador${i}`, i, this.mesa));
+			this.agregarJugador(new Jugador(`Jugador${i}`, i, this.mesa, this.posiciones[i-1]));
         }
     }
 }

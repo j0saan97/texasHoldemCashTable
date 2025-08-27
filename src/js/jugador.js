@@ -2,21 +2,28 @@ import Cartera from "./cartera.js";
 
 
 class Jugador {
-	constructor(nombre=null, codigo=null, mesa=null ) {
+
+	constructor(nombre=null, codigo=null, mesa=null, posicion=null ) {
         this.cartera = new Cartera(1000); // cada jugador empieza con 1000 de dinero
 		this.nombre = nombre;
         this.codigo = codigo;
         this.cartas = [];
         this.activo = true;
         this.mesa = mesa;
+        this.posicion = posicion;
 	}
 
-    agregarCarta(){
-        return false;
+    igualar(){
+
     }
 
+    foldear(){
+
+    }
+    
     apostarDinero(amount){
         this.mesa.apostarDinero(amount);
+        this.cartera.apostarDinero(amount);
     }
 
     retirarseDeMesa(){

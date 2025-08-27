@@ -1,6 +1,7 @@
 import Baraja from './baraja.js';
+import evaluadorManos from './evaluadorManos.js';
 
-class Dealer {
+class Dealer extends evaluadorManos {
     constructor(name = null, codigo = null, mesa = null) {
         this.nombre = name;
         this.codigo = codigo;
@@ -22,13 +23,12 @@ class Dealer {
     }
 
     quemarCarta(){
-        // quema una carta del mazo mostrandola boca abajo en el tapete, usar el css de la API que tiene cartas boca abajo
+        // Quema una carta del mazo mostrandola boca abajo en el tapete, usar el css de la API que tiene cartas boca abajo
         this.baraja.cartas.pop();
     }
 
     repartirFlop(){
         this.repartirComunitarias(3);
-
     }
 
     repartirTurn(){

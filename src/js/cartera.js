@@ -1,25 +1,41 @@
 class Cartera {
+
 	constructor(amount) {
-		this.amount = amount;
-		this.saldoEnMesa = 0;
+		this.saldoEnCuenta = amount; // TODO EL DINERO DEL JUGADOR
+		this.dineroEnMesa = 0;
 	} 
-	agregarFondos(amount) {
-		this.amount += amount;
+
+	/*
+        1. saldoEnCuenta --> 
+        2. dineroEnMesa --> 
+        3. saldoTotal = saldo en cuenta + dinero en mesa
+
+	*/
+	
+	get saldoTotal(){
+		return this.saldoEnCuenta + this.dineroEnMesa;
 	}
 
-	retirarFondos(amount) {
-		if (amount > this.amount) {
+	agregarFondos(monto) {
+		/* Agregar saldo a la cuenta */
+
+		this.saldoEnCuenta += monto;
+	}
+
+	apostarDinero(monto) {
+		/* 
+		*/
+		if (monto > this.saldoEnCuenta) {
 			console.log("Fondos insuficientes");
 			return false;
 		}
-		this.amount -= amount;
-		this.saldoEnMesa += amount;
+		this.saldoEnCuenta -= monto;
+		this.dineroEnMesa += monto;
 		return true;
 	}
 
-	verFondos() {
-		return this.amount;
-	}	
 }
 
 export default Cartera;
+
+
