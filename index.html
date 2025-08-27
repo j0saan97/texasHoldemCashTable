@@ -128,13 +128,17 @@
             const pocker = new Pocker();
             pocker.mesa.dealer.barajar();
             pocker.mesa.dealer.quemarCarta();
-            //ENTREGA 2 CARTAS PERSONALES A CADA JUGADOR: 2 RONDAS DE 1 CARTA--> DE UNA EN UNA
+                //ENTREGA 2 CARTAS PERSONALES A CADA JUGADOR: 2 RONDAS DE 1 CARTA--> DE UNA EN UNA
+            pocker.dealer.preflop = 'preflop';
             pocker.mesa.dealer.repartir(2);
-            //RONDAS DE APUESTAS
+                //1a RONDAS DE APUESTAS (preflop)
+            pocker.dealer.darTurno();
+            
             //ENTREGA 3 CARTAS COMUNITARIAS (FLOP)
             pocker.mesa.dealer.repartirFlop()
             //RONDA DE APUESTAS
             //ENTREGA 1 CARTA COMUNITARIA (TURN)
+            pocker.mesa.dealer.repartirTurn()
             //RONDA DE APUESTAS   
             //ENTREGA 1 CARTA COMUNITARIA (RIVER)
             //RONDA DE APUESTAS   

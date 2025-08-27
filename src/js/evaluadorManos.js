@@ -3,8 +3,6 @@ class evaluadorManos {
         this.mano = mano; // mano es un array de objetos carta 
         this.rangoMano = null; // rango de la mano, se asigna despues de evaluar
     }
-
-    
     
     /**
      * Evalúa si la mano es una Escalera Real.

@@ -6,9 +6,22 @@ class Dealer extends evaluadorManos {
         this.nombre = name;
         this.codigo = codigo;
         this.mesa = mesa;
+        this.preflop_fase = '';
+        this.pos_flop_actual = -1;
+        this.ORDEN_ACCION_PREFLOP = ["UTG", "MP", "CU", "BU", "SB", "BB"];
+        this.ORDEN_ACCION_POSTFLOP = ["SB", "BB", "UTG", "MP", "CU", "BU"];
         this.baraja = this.usarBaraja();
     }
 
+
+    /**
+     condicionespara que pase al siguiente jugador:
+     if jugaadordor actual checkea, foldea, iguala o apuesta, dar el turn al siguiente jugador activo
+     */
+    darTurno(){
+        if (this.pos_flop_actual < 5){
+            this.pos_flop_actual = 0;
+        }this.pos_flop_actual += 1;        if this
     usarBaraja(){
         /* Toma una baraja */
         return new Baraja();
@@ -44,8 +57,7 @@ class Dealer extends evaluadorManos {
         this.repartirFlop();
         this.repartirTurn();
         this.repartirRiver();
-    }   
-
+    }
 
     repartirComunitarias(total_comunitarias){
 
@@ -53,6 +65,10 @@ class Dealer extends evaluadorManos {
         for (let i = 0; i < total_comunitarias; i++) {
             this.mesa.cartas.push(this.baraja.cartas.pop());
         }
+    }
+
+    entregarBoteaGanador(){
+        // entrega el pot al jugador con la mejor mano
     }
 
     repartir(cartasPorJugador = 2) {
