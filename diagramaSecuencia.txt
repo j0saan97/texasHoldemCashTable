@@ -1,0 +1,47 @@
+CLASE JOSE:
+
+1.- ORDEN DE LAS ACCIONES A TOMAR EL PROGRAMA: HACEDLO Y DARSLEO:
+
+1. dealer.barajar(), dealer.repartir() reparte 2 cartas a cada jugador
+2. ronda de apuestas --> empieza el juego en ordenAccionPreflop
+3. jugadores apuestan, foldean, resuben, igualan...
+4. cuando el ultimo jugador de ordenAccionPreflop hable (si no resube y tienen que hablar de nuevo todos) dealer.repartirFlop()
+5.- De los jugadores que queden activos seguimos el ordenAccionPostflop para que vayan haciendo sus acciones cada uno de los jugadores.
+6.- cuando el ultimo jugador de ordenAccionPostflop haga su acción (si no resube y tienen que hablar de nuevo todos) --> dealer.repartirTurn()
+7.- pto 5 otra vez --> De los jugadores que queden activos seguimos el ordenAccionPostflop para que vayan haciendo sus acciones cada uno de los jugadores.
+8.- cuando el ultimo jugador de ordenAccionPostflop haga su acción (si no resube y tienen que hablar de nuevo todos) --> dealer.repartirRiver()
+9.- De los jugadores que queden activos seguimos el ordenAccionPostflop para que vayan haciendo sus acciones cada uno de los jugadores.
+10.- cuando el ultimo jugador de ordenAccionPostflop hable, de los jugadores que no han foldeado y han llegado hasta el river el programa tendrá que coger el array formado por
+     el board comunitario y sus 2 cartas personales (array o map de 7 objetos carta) y pasarselo a la clase que se encarga de evaluar cual es la mejor mano
+11.- cuando el programa conozca el ganador haciendo uso de la constante rankingManos entregará el total del pozo al jugador que tenga la mejor mano (siguiendo el ranking de manos establecido en la variable)
+12.- el dealer baraja las cartas y vuelve a crear una instancia nueva de mano: con los 6 jugadores otra vez y la baraja completa
+13.- vuelta a empezar
+
+
+CALLES POSTFLOP:
+- FLOP: SE REPARTEN 3 CARTAS COMUNITARIAS
+- TURN: SE REPARTE 1 CARTA COMUNITARIA
+- RIVER: SE REPARTE 1 CARTA COMUNITARIA
+
+RONDAS DE APUESTAS:
+1A RONDA D APUETAS: CUANDO SE HA REPARTIDO AL ULTIMO JUGADOR : EL JUGADOR SITUADO EN OrdenAccionPreFlop[0], será el 1o en hablar, luego será OrdenAccionPreFlop[1]... 
+2A RONDA D APUESTAS: UNA VEZ REPARTIDO EL FLOP SIGUIENDO EL ORDEN DE OrdenAccionPostFlop
+3A RONDA: UNA VEZ REPARTIDO EL TURN SIGUIENDO EL ORDEN DE OrdenAccionPostFlop
+4A RONDA: UNA VEZ REPARTIDO EL RIVER SIGUIENDO EL ORDEN DE OrdenAccionPostFlop
+
+* CONSIDERACIONES: 
+	- cada vez que un jugador resube una apuesta, todos los jgadores deben hablar otra vez para decidir si igualan, foldean, resuben..
+	- considerar la posibilidad de que en algún momento haya un pozo aparte, dado que un jugador puede ir all in con pocas fichas pero el resto 
+	   de jugadores siguen optando a ese pozo y al que se forme en las siguientes calles
+
+
+
+
+
+2.- QUE PARTE DEL PROGRAMA VA A CONTROLAR EL ORDEN DE LAS ACCIONES Y LOS JUGADORES? 
+	- FUNCION AUXILIAR QUE USE LAS CONSTANTES ORDEN_ACCION_PREFOP Y ORDEN_ACCION_PREFLOP
+	- LAS ACCIONES DE LOS JUGADORES SOLO PUEDEN ESTAR VISIBLES CUANDO ES SU TURNO
+	- VARIABLE ULTIMA_APUESTA ES NECESARIA PARA CONTROLAR CUAL ES EL IMPORTE A PAGAR POR LOS JUGADORES SIGUIENTES? O USAMOS EL JUGADOR.POSICIÓN.APUESTA.AMOUNT??
+
+
+ 
