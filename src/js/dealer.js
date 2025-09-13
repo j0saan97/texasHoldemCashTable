@@ -1,8 +1,9 @@
 import Baraja from './baraja.js';
 import evaluadorManos from './evaluadorManos.js';
 
-class Dealer extends evaluadorManos {
+class Dealer {
     constructor(name = null, codigo = null, mesa = null) {
+        this.evaluador = new evaluadorManos();
         this.nombre = name;
         this.codigo = codigo;
         this.mesa = mesa;
@@ -21,7 +22,10 @@ class Dealer extends evaluadorManos {
     darTurno(){
         if (this.pos_flop_actual < 5){
             this.pos_flop_actual = 0;
-        }this.pos_flop_actual += 1;        if this
+        }
+        this.pos_flop_actual += 1;
+    }
+
     usarBaraja(){
         /* Toma una baraja */
         return new Baraja();

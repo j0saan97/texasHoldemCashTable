@@ -16,6 +16,12 @@ class Mesa {
         this.pozo.agregarFondos(amount);
     }
     
+    verCartasJugadores(){
+        return `<div>
+                    ${this.jugadores.map(jugador => jugador.verCartas())}
+                </div>`;
+    }
+
     verCartasHTML() {
         if (this.cartas.length === 0) {
             return `<div>

@@ -1,9 +1,14 @@
 class evaluadorManos {
-    constructor(mano) {
-        this.mano = mano; // mano es un array de objetos carta 
-        this.rangoMano = null; // rango de la mano, se asigna despues de evaluar
+    #mano = null
+    #rangoMano = null
+    
+    constructor() {
     }
     
+    get mano(){
+        return this.mano;
+    }
+
     /**
      * Evalúa si la mano es una Escalera Real.
      * @returns {boolean}

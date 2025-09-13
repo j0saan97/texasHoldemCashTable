@@ -1,7 +1,6 @@
 CLASE JOSE:
 
 1.- ORDEN DE LAS ACCIONES A TOMAR EL PROGRAMA: HACEDLO Y DARSLEO:
-
 1. dealer.barajar(), dealer.repartir() reparte 2 cartas a cada jugador
 2. ronda de apuestas --> empieza el juego en ordenAccionPreflop
 3. jugadores apuestan, foldean, resuben, igualan...
@@ -24,7 +23,7 @@ CALLES POSTFLOP:
 - RIVER: SE REPARTE 1 CARTA COMUNITARIA
 
 RONDAS DE APUESTAS:
-1A RONDA D APUETAS: CUANDO SE HA REPARTIDO AL ULTIMO JUGADOR : EL JUGADOR SITUADO EN OrdenAccionPreFlop[0], será el 1o en hablar, luego será OrdenAccionPreFlop[1]... 
+1A RONDA D APUETAS: CUANDO SE HA REPARTIDO AL ULTIMO JUGADOR preflop: EL JUGADOR SITUADO EN OrdenAccionPreFlop[0], será el 1o en hablar, luego será OrdenAccionPreFlop[1]... 
 2A RONDA D APUESTAS: UNA VEZ REPARTIDO EL FLOP SIGUIENDO EL ORDEN DE OrdenAccionPostFlop
 3A RONDA: UNA VEZ REPARTIDO EL TURN SIGUIENDO EL ORDEN DE OrdenAccionPostFlop
 4A RONDA: UNA VEZ REPARTIDO EL RIVER SIGUIENDO EL ORDEN DE OrdenAccionPostFlop

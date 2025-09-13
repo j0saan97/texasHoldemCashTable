@@ -34,8 +34,9 @@ class Jugador {
         if (this.cartas.length === 0) {
             console.log("No tienes cartas.");
         } else {
-            const cartasStr = this.cartas.map(carta => `${carta.valor} de ${carta.palo}` ).join(', ');
-            console.log(`Tus cartas: ${cartasStr}`);
+            return `<div class="cartas-mesa">
+                        ${this.cartas.map(carta => carta.verCartaHTML()).join('')}
+                    </div>`;
         }
     }
 }

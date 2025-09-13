@@ -55,7 +55,11 @@
             <img src="./src/images/poker.png" style="max-width:200px"/>
         </div>
 
-        <div id="contenedor-cartas">
+        <!-- EL JUEGO -->
+        <div id="contenedor-cartas" style="display:flex;flex-direction:row;margin:10px;">
+            <div name="panel_izquierdo" id="c_jugadores" style="display:flex;flex-direction:column;border-style: dashed;border-width: 2px;">
+            </div>
+            <div name="panel_derecho" id="c_mesa" style="border-style: dashed;border-width: 2px"></div>
         </div>
 
         <footer class="bg-dark text-white pt-5 pb-4 mt-auto">
@@ -125,7 +129,7 @@
         
         <script type="module">
             import Pocker from '/src/js/pocker.js';
-            const pocker = new Pocker();
+            const pocker = new Pocker(4);
             pocker.mesa.dealer.barajar();
             pocker.mesa.dealer.quemarCarta();
                 //ENTREGA 2 CARTAS PERSONALES A CADA JUGADOR: 2 RONDAS DE 1 CARTA--> DE UNA EN UNA
@@ -146,12 +150,10 @@
             //REPARTIR POZO   
             console.log(pocker.mesa.dealer);
             console.log(pocker.mesa.jugadores);
-            document.getElementById("contenedor-cartas").innerHTML = pocker.mesa.verCartasHTML();
-    
-
+            document.getElementById("c_mesa").innerHTML = pocker.mesa.verCartasHTML();
+            document.getElementById("c_jugadores").innerHTML = pocker.mesa.verCartasJugadores();
         </script>
 
-        
         <!--
             Cargamos el script como un modulo luego de que se muestran los elementos 
         -->
