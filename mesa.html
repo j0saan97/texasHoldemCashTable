@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesa de Póker - Simulación</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Definimos la fuente */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif;
+            
+            /* Estilos de la Mesa de Póker (styles.css integrados) */
+            background-color: #1a1a1a;
+            /* Simulación del fondo oscuro con patrón hexagonal sutil */
+            background-image: radial-gradient(circle, #2d2d2d 1px, transparent 1px),
+                              radial-gradient(circle, #2d2d2d 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Define la forma ovalada de la mesa de póker */
+        .poker-table {
+            position: relative;
+            width: 80vw;
+            max-width: 1300px;
+            height: 65vh;
+            background-color: #0b5331; /* Fieltro verde oscuro */
+            border: 20px solid #202020; /* Borde oscuro y grueso */
+            border-radius: 50% / 60%; /* Forma ovalada */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), inset 0 0 15px rgba(0, 0, 0, 0.5);
+            margin-top: 50px; /* Espacio para el header */
+            margin-bottom: 20px; /* Espacio para la action bar */
+        }
+
+        /* Contenedor del jugador y sus stats */
+        .player-seat {
+            position: absolute;
+            width: 250px;
+            height: 150px;
+            z-index: 10;
+            
+            border: 1px solid #444; /* Borde sutil gris oscuro */
+            background-color: #1f1f1f; /* Fondo oscuro */
+            border-radius: 8px; /* Esquinas ligeramente redondeadas */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra para destacarlo */
+            padding: 10px; /* Pequeño padding interno para la info */
+        }
+
+        .player-info-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Estilo para el chip stack (número grande) */
+        .stack-display {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffff00; /* Amarillo brillante */
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+            margin-top: 5px;
+        }
+
+        /* Posicionamiento específico de los 6 asientos alrededor del óvalo */
+        .seat-1 { top: -20px; left: 15%; transform: translateX(-50%); }
+        .seat-2 { top: -20px; right: 15%; transform: translateX(50%); }
+        .seat-3 { top: 50%; right: -50px; transform: translateY(-50%); }
+        .seat-4 { bottom: -20px; right: 15%; transform: translateX(50%); }
+        .seat-5 { bottom: -20px; left: 15%; transform: translateX(-50%); }
+        .seat-6 { top: 50%; left: -50px; transform: translateY(-50%); }
+
+        /* Estilos de la carta comunitaria */
+        .card-placeholder {
+            width: 70px;
+            height: 95px;
+            border-radius: 6px;
+            background-color: white;
+            border: 1px solid #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* Icono de posición (Ciega, Dealer, etc) */
+        .position-chip {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #ffaa00; /* Naranja para el botón de dealer */
+            color: white;
+            font-size: 0.7rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            box-shadow: 0 0 5px rgba(255, 170, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bar Status Superior (Elementos fuera de la mesa) -->
+    <div class="absolute top-0 right-0 p-4 text-gray-400 text-sm flex gap-4 z-20">
+        <span>Niv. 4</span>
+        <span>Posición 70 / 127</span>
+        <span>Stack Medio: 28.818</span>
+    </div>
+
+    <!-- Contenedor principal de la mesa -->
+    <div class="poker-table" id="poker-table">
+        
+        <!-- Área Central: Cartas Comunitarias y Bote -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+            
+            <!-- Icono central del juego (W) -->
+            <div class="text-green-500 text-6xl font-extrabold mb-4">
+                W 
+            </div>
+
+            <!-- Bote total -->
+            <div class="text-white text-xl font-bold bg-black/40 px-3 py-1 rounded-lg mb-4">
+                Bote: 240 <span class="text-sm font-normal">€</span> <br>
+                Bote total: <span id="main-pot-amount" class="text-green-400">2.166</span> <span class="text-sm font-normal">€</span>
+            </div>
+            
+            <!-- Cartas Comunitarias (Board) -->
+            <div class="flex gap-2 justify-center" id="community-cards">
+                <!-- Flop 1 (ejemplo de carta abierta) -->
+                <div class="card-placeholder text-red-600">
+                    <span class="text-sm">3</span>
+                    <span>♥</span>
+                    <span class="text-sm self-end transform rotate-180">3</span>
+                </div>
+                <!-- Flop 2, 3, Turn, River (placeholders cerrados) -->
+                <div class="card-placeholder bg-gray-500/80 text-white shadow-inner"></div>
+                <div class="card-placeholder bg-gray-500/80 text-white shadow-inner"></div>
+                <div class="card-placeholder bg-gray-500/80 text-white shadow-inner"></div>
+                <div class="card-placeholder bg-gray-500/80 text-white shadow-inner"></div>
+            </div>
+        </div>
+
+        <!-- Contenedor para los asientos de los jugadores -->
+        <div id="player-seats-container">
+            <!-- Los 6 asientos se inyectarán aquí con JS -->
+        </div>
+
+    </div>
+
+    <!-- Action Bar (Barra de acciones y apuestas) -->
+    <div class="w-full max-w-4xl mx-auto flex flex-col items-center mt-4">
+        
+        <!-- Controles de bet sizing preestablecidos -->
+        <div class="flex gap-3 mb-4">
+            <button class="bg-gray-700 hover:bg-gray-600 text-white py-1 px-3 rounded-md font-semibold text-sm">X2.25</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white py-1 px-3 rounded-md font-semibold text-sm">X2.5</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white py-1 px-3 rounded-md font-semibold text-sm">X3</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white py-1 px-3 rounded-md font-semibold text-sm">BOTE</button>
+            <button class="bg-red-700 hover:bg-red-600 text-white py-1 px-3 rounded-md font-semibold text-sm">ALL-IN</button>
+        </div>
+
+        <!-- Bet Slider y Botones de Acción -->
+        <div class="flex items-center gap-4 bg-gray-800 p-4 rounded-xl shadow-2xl w-full">
+            
+            <!-- Slider de apuesta (Simulación) -->
+            <div class="flex-grow flex items-center gap-2">
+                <input type="range" min="0" max="19960" value="1226" class="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer">
+                <input type="number" value="1226" class="bg-blue-600 text-white font-bold w-20 py-1 text-center rounded-lg focus:outline-none">
+            </div>
+
+            <!-- Botones de Acción -->
+            <button class="bg-red-800 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg">
+                NO IR
+            </button>
+            <button class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 px-8 rounded-lg shadow-lg">
+                438 IGUALAR
+            </button>
+            <button class="bg-green-700 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg">
+                1.226 SUBIR A
+            </button>
+            
+        </div>
+    </div>
+    
+    <!-- JavaScript para inyectar los asientos de los jugadores -->
+    <script>
+        // Datos de ejemplo para simular la vista del diagrama
+        const jugadoresEjemplo = [
+            { id: 1, nombre: "Jugador 1", stack: 18.951, bet: 0.11, posClass: "seat-6", avatar: "🃏" },
+            { id: 2, nombre: "Jugador 2", stack: 16.879, bet: 0.11, posClass: "seat-1", avatar: "👤" },
+            { id: 3, nombre: "Jugador 3", stack: 35.080, bet: 0.11, posClass: "seat-2", avatar: "👱‍♀️", isDealer: true },
+            { id: 4, nombre: "Jugador 4", stack: 38.263, bet: 0.16, posClass: "seat-3", avatar: "👤" },
+            { id: 5, nombre: "Jugador 5", stack: 23.966, bet: 0.16, posClass: "seat-5", avatar: "👤" },
+            { id: 6, nombre: "Jugador 6", stack: 19.610, bet: 0, posClass: "seat-4", avatar: "👤", isAction: true, handRank: "Carta Alta: K" }
+        ];
+
+        /**
+         * Plantilla para generar el HTML de un jugador, replicando el estilo del mockup.
+         * @param {Object} jugador - Objeto con datos del jugador.
+         * @returns {string} HTML string del asiento del jugador.
+         */
+        function generarHTMLJugador(jugador) {
+            // Estructura de fichas de apuesta
+            const betChips = jugador.bet > 0 
+                ? `<div class="absolute -top-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                      <div class="text-sm font-semibold text-white bg-red-700/80 px-1 rounded-md mb-1">${jugador.bet} €</div>
+                      <div class="w-6 h-6 bg-red-700 rounded-full border-2 border-red-500 shadow-md"></div>
+                   </div>`
+                : '';
+                
+            // Cartas cerradas
+            const cardBacks = `
+                <div class="w-10 h-14 bg-gray-700 rounded-md border-2 border-gray-500 flex items-center justify-center shadow-inner">
+                    <span class="text-white text-xl">W</span>
+                </div>
+                <div class="w-10 h-14 bg-gray-700 rounded-md border-2 border-gray-500 flex items-center justify-center shadow-inner">
+                    <span class="text-white text-xl">W</span>
+                </div>
+            `;
+
+            // Información de la mano (solo para el jugador en acción en el mockup)
+            const handInfo = jugador.handRank 
+                ? `<div class="text-yellow-400 text-sm font-semibold">${jugador.handRank}</div>`
+                : '';
+
+            // Botón de dealer
+            const dealerButton = jugador.isDealer 
+                ? `<div class="position-chip absolute -right-2 top-1/2 transform -translate-y-1/2">D</div>`
+                : '';
+
+            return `
+                <div id="player-${jugador.id}" class="player-seat ${jugador.posClass} ${jugador.isAction ? 'ring-4 ring-yellow-500 ring-opacity-70' : ''}">
+                    
+                    ${dealerButton}
+                    
+                    <!-- Contenedor principal de info del jugador -->
+                    <div class="player-info-card relative p-2">
+                        
+                        <!-- Icono/Avatar del jugador -->
+                        <div class="w-10 h-10 bg-gray-600 rounded-full mb-1 flex items-center justify-center text-xl text-white border-2 border-gray-400">
+                            ${jugador.avatar}
+                        </div>
+                        
+                        <!-- Stack y nombre -->
+                        <div class="flex flex-col items-center w-full">
+                            <span class="stack-display">$${jugador.stack.toFixed(3)}</span>
+                            ${handInfo}
+                        </div>
+                        
+                        <!-- Cartas (Ocultas/Cerradas) -->
+                        <div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 flex gap-1">
+                            ${cardBacks}
+                        </div>
+                        
+                        <!-- Fichas de apuesta (Chips) -->
+                        <div class="absolute -bottom-16 left-1/2 transform -translate-x-1/2">
+                            <div class="flex flex-col items-center">
+                                ${betChips}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        /**
+         * Inicializa la mesa de póker inyectando los DIVs de los jugadores.
+         */
+        function inicializarMesa() {
+            const seatsContainer = document.getElementById('player-seats-container');
+            
+            // Genera e inyecta el HTML para cada jugador
+            const jugadoresHTML = jugadoresEjemplo.map(generarHTMLJugador).join('');
+            seatsContainer.innerHTML = jugadoresHTML;
+
+            console.log(`Mesa inicializada con ${jugadoresEjemplo.length} jugadores.`);
+        }
+
+        document.addEventListener('DOMContentLoaded', inicializarMesa);
+    </script>
+</body>
+</html>

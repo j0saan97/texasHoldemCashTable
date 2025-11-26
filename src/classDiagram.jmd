@@ -1,103 +1,103 @@
 classDiagram
+    direction LR
+
     class Carta {
-        -rank
-        -suit
-        -value
+        -rank : string
+        -suit : string
+        -numericValue : number
         +constructor(rank, suit)
-        +toString()
-        +valueOf()
+        +getRankValue() : number
+        +toNotation() : string
     }
 
     class Baraja {
-        -cards
-        +constructor({seeded, cards})
+        -cards : Carta[]
+        +constructor()
         +shuffle()
-        +draw(n)
+        +draw(n) : Carta[]
         +reset()
     }
 
     class Jugador {
-        -id
-        -nombre
-        -apellidos
-        -email
-        -telefono
-        -stack
-        -saldoEnCuenta
-        - saldoEnMesa
-        - saldoTotal = saldoEnCuenta + saldoEnMesa
-        -mano
-        -seat
-        -isAllIn
-        -isFolded
-        -currentBet
+        -id : string
+        -nombre : string
+        -stack : number // Dinero actualmente en la mesa (fichas)
+        -cartera : Cartera // Referencia al saldo total (sugiere nueva clase Cartera)
+        -holeCards : Carta[]
+        -seat : number
+        -isAllIn : boolean
+        -isFolded : boolean
+        -currentBet : number // Lo apostado en la ronda actual
         +constructor(opts)
         +apostar(amount)
         +igualar(amount)
         +check()
-        +retirarse()
-        +recibirCarta(carta)
-        +bancaTotal()
+        +foldear()
     }
-
+    
+    class Cartera {
+        -saldo : number
+        +deposit(amount)
+        +withdraw(amount) : boolean
+    }
+    
     class Mesa {
-        -id
-        -stakes
-        -pot
-        - BUTTON
-        - smallBlind
-        - bigBlind
-         AsidedPot
-        -sidePots
-        -players
-        -communityCards
-        -buttonPos
-        -phase
+        -id : string
+        -stakes : {sb: number, bb: number}
+        -pots : Pot[] // Contiene el bote principal y los secundarios
+        -players : Jugador[]
+        -communityCards : Carta[]
+        -buttonPos : number
+        -phase : string // PRE_FLOP, FLOP, TURN, RIVER, SHOWDOWN
+        -maxPlayers : number
+        -lastBet: number
         +constructor(opts)
         +resetMano()
+        +getPotForPlayer(jugadorID) : number
+    }
+
+    class Pot {
+        -amount : number
+        -eligiblePlayers : Jugador[]
+        -limiteApuesta : number
+        +constructor(amount, eligiblePlayers, limiteApuesta)
         +addToPot(amount)
+        
     }
 
     class Dealer {
-        -baraja
-        -mesa
-        +constructor(mesa, baraja)
+        -baraja : Baraja
+        -mesa : Mesa
+        -evaluador : EvaluadorDeManos
+        +constructor(mesa, baraja, evaluador)
         +dealHoleCards()
         +dealFlop()
         +dealTurn()
         +dealRiver()
-        +jugarManoCompleta()  
+        +startBettingRound()
+        +collectBetsAndManagePots()
     }
 
     class EvaluadorDeManos {
-        +evaluate(hand, community)
-        +compare(handA, handB)
-        +bestFiveFromSeven(cards)
+        +evaluate(cards: Carta[]) : ResultadoEvaluacion
+        +compare(manoA, manoB) : number
+    }
+    
+    class ResultadoEvaluacion {
+        -rank : number
+        -name : string
+        -bestHand : Carta[] // Las 5 cartas que forman la mejor mano
     }
 
-    class GestorDePartida {
-        -mesa
-        -dealer
-        -evaluador
-        +constructor(mesa, dealer, evaluador)
-        +startHand()
-        +runBettingRound()
-        +progressPhase()
-        +handleAllInsAndSidePots()
-        +showdown()
-    }
-
-    class SidePot {
-        -amount
-        -eligiblePlayers
-        +constructor(amount, players)
-    }
-
+    // --- Relaciones ---
     Carta <|-- Baraja : contiene
-    Baraja --> Dealer : usa
-    Mesa *-- Jugador : contiene
-    Mesa o-- Baraja : contiene (opcional)
-    Dealer --> Mesa : actua sobre
-    GestorDePartida --> Dealer : orquesta
-    GestorDePartida --> EvaluadorDeManos : usa
-    Mesa "1" o-- "n" SidePot : tiene
+    Carta <|-- Jugador : 0..2
+    Carta <|-- Mesa : 0..5 (comunitarias)
+    Jugador -- Cartera : tiene
+    Mesa *-- Jugador : "1".."n"
+    Mesa *-- Pot : "1".."n"
+    Mesa --> Dealer : usa
+    Dealer -- Baraja : usa
+    Dealer -- EvaluadorDeManos : usa
+    EvaluadorDeManos --> ResultadoEvaluacion : crea
+    Jugador --> ResultadoEvaluacion : 0..1 (manoEvaluada)
