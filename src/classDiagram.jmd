@@ -38,6 +38,7 @@ classDiagram
         -faseActual Preflop, Postflop {Flop, Turn, River} --> por defecto empieza en Preflop si usamos avanzarEstado() pasa a Postflop
         -turnoActual : Jugador[]
         +avanzarEstado()
+        +moverDealer() --> cuando acaba la mano mueve el botón de dealer al siguiente jugador
     }
     
     class user {
