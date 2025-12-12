@@ -25,27 +25,18 @@ export const RANKING_MANOS = {
   10: "Carta Alta"        // High Card (Ninguna de las anteriores)
 };
 
-// --- CONFIGURACIÓN DE POSICIONES Y ORDEN DE ACCIÓN ---
-
 /**
  * @constant {string[]} POSICIONES
- * Nombres de las posiciones estándar en una mesa 6-max (máximo 6 jugadores).
- * UTG: Under The Gun, MP: Middle Position, CU: Cutoff, BU: Button, SB: Small Blind, BB: Big Blind.
- */
 export const POSICIONES = ["UTG", "MP", "CU", "BU", "SB", "BB"];
 
 /**
  * @constant {string[]} ORDEN_ACCION_PREFLOP
- * Define el orden en que los jugadores actúan en la ronda PRE-FLOP.
- * La acción comienza después de la Big Blind (BB), en UTG.
- */
+ * Define el orden en que los jugadores actúan en la ronda PRE-FLOP. La acción comienza después de la Big Blind (BB), en UTG.*/
 export const ORDEN_ACCION_PREFLOP = ["UTG", "MP", "CU", "BU", "SB", "BB"];
 
 /**
  * @constant {string[]} ORDEN_ACCION_POSTFLOP
- * Define el orden en que los jugadores actúan en las rondas POST-FLOP (Flop, Turn, River).
- * La acción comienza siempre por la Small Blind (SB) o el primer jugador activo a su izquierda.
- */
+ * Define el orden en que los jugadores actúan en las rondas POST-FLOP (Flop, Turn, River).La acción comienza siempre por la Small Blind (SB) o el primer jugador activo a su izquierda.*/
 export const ORDEN_ACCION_POSTFLOP = ["SB", "BB", "UTG", "MP", "CU", "BU"];
 
 // --- CONFIGURACIÓN DE LÍMITES Y TIEMPOS ---
@@ -62,16 +53,17 @@ export const DEFAULT_BLINDS = {
 
 /**
  * @constant {Object} DEFAULT_BUYIN
- * Límites de dinero que un jugador puede llevar a la mesa (Buy-in).
- * Se suele definir en múltiplos de la Big Blind. (40BB a 100BB en este ejemplo).
- */
+ * Límites de dinero que un jugador puede llevar a la mesa (Buy-in).Se suele definir en múltiplos de la Big Blind. (40BB a 100BB en este ejemplo).*/
 export const DEFAULT_BUYIN = { min: 40, max: 100 };
 
 /**
- * @constant {number} MAX_PLAYERS
- * Número máximo de jugadores permitidos en la mesa (6 para 6-max).
- */
+ @constant {number} MAX_PLAYERS
+ * Número máximo de jugadores permitidos en la mesa (6 para 6-max).*/
 export const MAX_PLAYERS = 6;
+
+/** @constant {number} MIN_PLAYERS Número mínimo de jugadores permitidos en la mesa (4 para iniciar la partida).*/
+export const MIN_PLAYERS = 4;
+ 
 
 /**
  * @constant {number} TIME_PER_TURN_MS
@@ -83,8 +75,7 @@ export const TIME_PER_TURN_MS = 30000; // 30 segundos (configurable)
 
 /**
  * @constant {string[]} RANKS
- * Lista de los rangos o valores de las cartas, usando notación corta (T para 10).
- */
+ * Lista de los rangos o valores de las cartas, usando notación corta (T para 10).*/
 export const RANKS = ['A','2','3','4','5','6','7','8','9','T','J','Q','K'];
 
 /**
@@ -93,17 +84,6 @@ export const RANKS = ['A','2','3','4','5','6','7','8','9','T','J','Q','K'];
  * s: Spades (Picas), h: Hearts (Corazones), d: Diamonds (Diamantes), c: Clubs (Tréboles).
  */
 export const SUITS = ['s','h','d','c'];
-
-/**
- * @function generarBaraja
- * Genera un array con las 52 cartas utilizando la notación corta (ej. 'As', 'Kh').
- * Este formato es útil para algoritmos de evaluación de manos de póker.
- * @returns {string[]} Array de 52 cadenas de cartas.
- */
-export function generarBaraja() {
-  // flatMap combina los palos (s) con los rangos (r) y aplana el resultado en un único array.
-  return SUITS.flatMap(s => RANKS.map(r => `${r}${s}`));
-}
 
 /**
  * @constant {Object<string, number>} RANK_VALUE
@@ -115,12 +95,23 @@ export const RANK_VALUE = {
   '8': 8, '9': 9, 'T': 10, 'J': 11, 'Q': 12, 'K': 13, 'A': 14
 };
 
-// --- EXPORTACIÓN POR DEFECTO ---
 
-/**
- * Exportación por defecto de todas las constantes y funciones para facilitar la importación.
- */
-export default {
+export const GAME_PHASES = {
+    // Fase simple
+    preflop: 'PREFLOP', // O un objeto si necesitas más detalles
+
+    // Contenedor que agrupa las sub-fases de postflop
+    postflop: {
+        flop: 'FLOP',
+        turn: 'TURN',
+        river: 'RIVER',
+        showdown: 'SHOWDOWN'
+    }
+};
+
+
+
+const ConfiguracionJuego ={
   RANKING_MANOS,
   POSICIONES,
   ORDEN_ACCION_PREFLOP,
@@ -128,10 +119,11 @@ export default {
   DEFAULT_BLINDS,
   DEFAULT_BUYIN,
   MAX_PLAYERS,
+  MIN_PLAYERS,
   TIME_PER_TURN_MS,
   RANKS,
   SUITS,
-  generarBaraja,
+  GAME_PHASES,
   RANK_VALUE
 };
 

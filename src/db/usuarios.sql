@@ -1,4 +1,4 @@
-CREATE TABLE jugadores (
+CREATE TABLE usuarios(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255),
     apellidos VARCHAR(255),

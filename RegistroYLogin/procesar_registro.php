@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ciudad = $conn->real_escape_string($_POST['ciudad']);
     $pais = $conn->real_escape_string($_POST['pais']);
     $telefono = $conn->real_escape_string($_POST['telefono']);
+    $fecha_registro = date('Y-m-d H:i:s'); // Fecha y hora actual
     
     // 3. Hashear la contraseña para mayor seguridad
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);

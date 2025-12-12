@@ -11,7 +11,6 @@ classDiagram
     class Baraja {
         -cards : Carta[]
         +constructor()
-        +reset() // crea una baraja nueva 
     }
 
     class Jugador {
@@ -23,6 +22,7 @@ classDiagram
         -holeCards : Carta[] --> son 2 objetos de tipo carta
         -isAllIn : boolean
         -isFolded : boolean
+        - isActive : boolean --> si se ausenta se pasa a false
         +constructor()
         +seleccionarStack(amount): metodo para seleccionar el stack con el que quiere sentarse en la mesa
         +sentarse()
@@ -32,6 +32,12 @@ classDiagram
         +igualar(amount)
         +check()
         +foldear()
+    }
+
+    class flujoJuego {
+        -faseActual Preflop, Postflop {Flop, Turn, River} --> por defecto empieza en Preflop si usamos avanzarEstado() pasa a Postflop
+        -turnoActual : Jugador[]
+        +avanzarEstado()
     }
     
     class user {
@@ -50,12 +56,12 @@ classDiagram
     
     class Mesa {
         -id : string
-        -stake: 
-        -players : Jugador[]
+        -stake: --> tiene que coincidir con los stakes definidos 
+        -jugadores
+        -jugadoresActivos
         -seats : 6 asientos con un id identificativo cada uno
-        -communityCards : Carta[]
-        -phase : PRE_FLOP, POSTFLOP {FLOP, TURN, RIVER, SHOWDOWN}
         -maxPlayers : 6
+        -minPlayers : 4
         +constructor(opts)
     }
 
@@ -71,7 +77,6 @@ classDiagram
     class Dealer {
         -evaluador : EvaluadorDeManos --> le extendemos la funcionalidad de evaluar manos
         +constructor(mesa, baraja, evaluador)
-        +shuffle()
         +barajar()
         +quemarCarta()
         +repartir2CartasPorJugador()
