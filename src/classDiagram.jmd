@@ -1,5 +1,4 @@
 classDiagram
-    direction LR
 
     class Carta {
         -rank : string
@@ -7,87 +6,82 @@ classDiagram
         -numericValue : number
         +constructor(rank, suit)
         +getRankValue() : number
-        +toNotation() : string
     }
 
     class Baraja {
         -cards : Carta[]
         +constructor()
-        +shuffle()
-        +draw(n) : Carta[]
-        +reset()
+        +reset() // crea una baraja nueva 
     }
 
     class Jugador {
         -id : string
-        -nombre : string
+        -alias : string
         -stack : number // Dinero actualmente en la mesa (fichas)
-        -cartera : Cartera // Referencia al saldo total (sugiere nueva clase Cartera)
-        -holeCards : Carta[]
-        -seat : number
+        -banca: number // dinero fuera de la mesa en su cuenta
+        -dineroTotal: number // stack + banca
+        -holeCards : Carta[] --> son 2 objetos de tipo carta
         -isAllIn : boolean
         -isFolded : boolean
-        -currentBet : number // Lo apostado en la ronda actual
-        +constructor(opts)
+        +constructor()
+        +seleccionarStack(amount): metodo para seleccionar el stack con el que quiere sentarse en la mesa
+        +sentarse()
+        +ausentarse()
+        +abandonarMesa()
         +apostar(amount)
         +igualar(amount)
         +check()
         +foldear()
     }
     
-    class Cartera {
-        -saldo : number
-        +deposit(amount)
-        +withdraw(amount) : boolean
+    class user {
+        -id : number
+        - nombre : string
+        - apellidos : string
+        - username : string
+        - password : string
+        - email : string
+        - direction: string
+        - ciudad: string
+        - pais: string
+        - telefono: number;
+        - fechaRegistro: date 
     }
     
     class Mesa {
         -id : string
-        -stakes : {sb: number, bb: number}
-        -pots : Pot[] // Contiene el bote principal y los secundarios
+        -stake: 
         -players : Jugador[]
+        -seats : 6 asientos con un id identificativo cada uno
         -communityCards : Carta[]
-        -buttonPos : number
-        -phase : string // PRE_FLOP, FLOP, TURN, RIVER, SHOWDOWN
-        -maxPlayers : number
-        -lastBet: number
+        -phase : PRE_FLOP, POSTFLOP {FLOP, TURN, RIVER, SHOWDOWN}
+        -maxPlayers : 6
         +constructor(opts)
-        +resetMano()
-        +getPotForPlayer(jugadorID) : number
     }
 
     class Pot {
         -amount : number
         -eligiblePlayers : Jugador[]
-        -limiteApuesta : number
+        +crearAsidePot() : --> devuelve un objeto Pot que contiene los jugadores optantes a ese bote y el monto del asidePot
         +constructor(amount, eligiblePlayers, limiteApuesta)
-        +addToPot(amount)
+        +addToPot(amount) --> añade al pozo la cantidad apostada por los jugadores
         
     }
 
     class Dealer {
-        -baraja : Baraja
-        -mesa : Mesa
-        -evaluador : EvaluadorDeManos
+        -evaluador : EvaluadorDeManos --> le extendemos la funcionalidad de evaluar manos
         +constructor(mesa, baraja, evaluador)
-        +dealHoleCards()
+        +shuffle()
+        +barajar()
+        +quemarCarta()
+        +repartir2CartasPorJugador()
         +dealFlop()
         +dealTurn()
         +dealRiver()
-        +startBettingRound()
-        +collectBetsAndManagePots()
+        +dealBoard() // reparte las 5 cartas del board de una vez
+        darTurnoAjugador()
     }
 
-    class EvaluadorDeManos {
-        +evaluate(cards: Carta[]) : ResultadoEvaluacion
-        +compare(manoA, manoB) : number
-    }
-    
-    class ResultadoEvaluacion {
-        -rank : number
-        -name : string
-        -bestHand : Carta[] // Las 5 cartas que forman la mejor mano
-    }
 
     // --- Relaciones ---
     Carta <|-- Baraja : contiene

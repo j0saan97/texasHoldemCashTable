@@ -57,7 +57,7 @@ export const ORDEN_ACCION_POSTFLOP = ["SB", "BB", "UTG", "MP", "CU", "BU"];
 export const DEFAULT_BLINDS = { 
   smallBlind: 0.5, // Valor de la Ciega Pequeña (SB)
   bigBlind: 1,     // Valor de la Ciega Grande (BB)
-  // ante: 0.1     // Opcional: El 'ante' por jugador, si fuera necesario (descomentar si se usa).
+  ante: 0.1     // Opcional: El 'ante' por jugador, si fuera necesario (descomentar si se usa).
 };
 
 /**
