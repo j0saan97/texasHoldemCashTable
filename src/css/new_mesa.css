@@ -1,0 +1,102 @@
+/* Definimos la fuente */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+body { 
+    font-family: 'Inter', sans-serif;
+    
+    /* Estilos de la Mesa de Póker (styles.css integrados) */
+    background-color: #1a1a1a;
+    /* Simulación del fondo oscuro con patrón hexagonal sutil */
+    background-image: radial-gradient(circle, #2d2d2d 1px, transparent 1px),
+                        radial-gradient(circle, #2d2d2d 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Define la forma ovalada de la mesa de póker */
+.poker-table {
+    position: relative;
+    width: 80vw;
+    max-width: 1300px;
+    height: 65vh;
+    background-color: #0b5331; /* Fieltro verde oscuro */
+    border: 20px solid #202020; /* Borde oscuro y grueso */
+    border-radius: 50% / 60%; /* Forma ovalada */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), inset 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-top: 50px; /* Espacio para el header */
+    margin-bottom: 20px; /* Espacio para la action bar */
+}
+
+/* Contenedor del jugador y sus stats */
+.player-seat {
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    z-index: 10;
+    
+    border: 1px solid #444; /* Borde sutil gris oscuro */
+    background-color: #1f1f1f; /* Fondo oscuro */
+    border-radius: 8px; /* Esquinas ligeramente redondeadas */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra para destacarlo */
+    padding: 10px; /* Pequeño padding interno para la info */
+}
+
+.player-info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilo para el chip stack (número grande) */
+.stack-display {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffff00; /* Amarillo brillante */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    margin-top: 5px;
+}
+
+/* Posicionamiento específico de los 6 asientos alrededor del óvalo */
+.seat-1 { top: -20px; left: 15%; transform: translateX(-50%); }
+.seat-2 { top: -20px; right: 15%; transform: translateX(50%); }
+.seat-3 { top: 50%; right: -50px; transform: translateY(-50%); }
+.seat-4 { bottom: -20px; right: 15%; transform: translateX(50%); }
+.seat-5 { bottom: -20px; left: 15%; transform: translateX(-50%); }
+.seat-6 { top: 50%; left: -50px; transform: translateY(-50%); }
+
+/* Estilos de la carta comunitaria */
+.card-placeholder {
+    width: 70px;
+    height: 95px;
+    border-radius: 6px;
+    background-color: white;
+    border: 1px solid #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Icono de posición (Ciega, Dealer, etc) */
+.position-chip {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #ffaa00; /* Naranja para el botón de dealer */
+    color: white;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(255, 170, 0, 0.8);
+}

@@ -54,6 +54,7 @@ class Mesa {
      * Se usa principalmente para el *showdown* (revelación de manos).
      * @returns {string} HTML que contiene las cartas de cada jugador.
      */
+    
     verCartasJugadores() {
         // Itera sobre todos los jugadores y llama al método verCartas() de cada uno.
         return `<div>

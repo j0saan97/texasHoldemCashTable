@@ -20,7 +20,7 @@ classDiagram
         -banca: number // dinero fuera de la mesa en su cuenta
         -dineroTotal: number // stack + banca
         -holeCards : Carta[] --> son 2 objetos de tipo carta
-        -isAllIn : boolean
+        -isAllIn : boolean -->
         -isFolded : boolean
         - isActive : boolean --> si se ausenta se pasa a false
         +constructor()

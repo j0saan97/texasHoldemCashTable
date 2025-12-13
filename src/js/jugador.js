@@ -87,6 +87,14 @@ class Jugador {
     }
 
     /**
+     * @method di_nombre
+     * Muestra una alerta con el nombre del jugador.
+     */
+    di_nombre() {
+        console.log(`Mi nombre es ${this.nombre}`);
+    }
+
+    /**
      * @method verCartas
      * Genera la representación HTML de las dos cartas del jugador.
      * @returns {string | void} El HTML de las cartas o un mensaje de error si no tiene cartas.
@@ -96,11 +104,32 @@ class Jugador {
             console.log("No tienes cartas.");
         } else {
             // Utiliza el método verCartaHTML() de la clase Carta para cada carta.
-            return `<div class="cartas-mesa">
-                        ${this.cartas.map(carta => carta.verCartaHTML()).join('')}
-                    </div>`;
+            return `
+                <div id="player-${this.codigo}" class="player-seat seat-${this.codigo}">
+                    <!-- Contenedor principal de info del jugador -->
+                    <div class="player-info-card relative p-2">
+                        <!-- Icono/Avatar del jugador -->
+                        <div class="w-10 h-10 bg-gray-600 rounded-full mb-1 flex items-center justify-center text-xl text-white border-2 border-gray-400">
+                           👱‍♀️
+                        </div>
+                        <!-- Stack y nombre -->
+                        <div class="flex flex-col items-center w-full">
+                            <button id="btn-nombre-${this.codigo}" class="bg-red-800 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg" onclick="alert('Mi nombre es ${this.nombre}')">
+                                Di mi nombre ${this.nombre}
+                            </button>
+                        </div>
+                        <!-- Cartas (Ocultas/Cerradas) -->
+                        <div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 flex gap-1">
+                            ${this.cartas.map(carta => carta.verCartaHTML()).join('')}
+                        </div>
+                    </div>
+                </div>
+                `;
         }
     }
 }
 
 export default Jugador;
+
+
+
