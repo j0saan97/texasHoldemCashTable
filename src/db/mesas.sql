@@ -1,0 +1,1 @@
+-- aqui creamos instancias de mesas de poker, varias por cada stake

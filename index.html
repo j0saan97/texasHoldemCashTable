@@ -14,11 +14,13 @@
         <!-- Importamos Bootstrap -->
         <link rel="stylesheet" href="./src/css/common.css">
         <link rel="stylesheet" href="./src/css/cartas.css">
+        <link rel="stylesheet" href="./src/css/new_mesa.css">
+            <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-        <header class="bg-light shadow-sm">
+        <!--header class="bg-light shadow-sm">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
@@ -48,21 +50,86 @@
                     </div>
                 </div>
             </nav>
-        </header>
+        </header-->
 
+        <!-- ENCABEZADO -->
         <div class="container-fluid p-5 bg-primary text-white text-center">
             <h1>Texas Hold'em Pocker</h1>
             <img src="./src/images/poker.png" style="max-width:200px"/>
         </div>
 
         <!-- EL JUEGO -->
-        <div id="contenedor-cartas" style="display:flex;flex-direction:row;margin:10px;">
+
+
+        <!--div id="contenedor-cartas" style="display:flex;flex-direction:row;margin:10px;">
             <div name="panel_izquierdo" id="c_jugadores" style="display:flex;flex-direction:column;border-style: dashed;border-width: 2px;">
             </div>
             <div name="panel_derecho" id="c_mesa" style="border-style: dashed;border-width: 2px"></div>
+        </div-->
+        <!-- Contenedor principal de la mesa -->
+        <div class="poker-table" id="poker-table">
+            <!-- Área Central: Cartas Comunitarias y Bote -->
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <!-- Icono central del juego (W) -->
+                <div class="text-green-500 text-6xl font-extrabold mb-4">
+                    W 
+                </div>
+                <!-- Bote total -->
+                <div class="text-white text-xl font-bold bg-black/40 px-3 py-1 rounded-lg mb-4">
+                    Bote: 240 <span class="text-sm font-normal">€</span> <br>
+                    Bote total: <span id="main-pot-amount" class="text-green-400">2.166</span> <span class="text-sm font-normal">€</span>
+                </div>
+                <!-- Cartas Comunitarias (Board) -->
+                <div class="flex gap-2 justify-center" id="community-cards">
+                    <!-- Flop 1 (ejemplo de carta abierta) -->
+                    <div class="card-placeholder text-red-600">
+                        <span class="text-sm">3</span>
+                        <span>♥</span>
+                        <span class="text-sm self-end transform rotate-180">3</span>
+                    </div>
+                    <!-- Flop 2, 3, Turn, River (placeholders cerrados) -->
+                    <div class="card-placeholder bg-gray-500/80 text-white shadow-inner"></div>
+                    <div class="card-placeholder bg-gray-500/80 text-white shadow-inner"></div>
+                    <div class="card-placeholder bg-gray-500/80 text-white shadow-inner"></div>
+                    <div class="card-placeholder bg-gray-500/80 text-white shadow-inner"></div>
+                </div>
+            </div>
+            <!-- Contenedor para los asientos de los jugadores -->
+            <div id="player-seats-container">
+                <!-- Los 6 asientos se inyectarán aquí con JS -->
+            </div>
+        </div>
+        <!-- Action Bar (Barra de acciones y apuestas) -->
+        <div class="w-full max-w-4xl mx-auto flex flex-col items-center mt-4">
+            <!-- Controles de bet sizing preestablecidos -->
+            <div class="flex gap-3 mb-4">
+                <button class="bg-gray-700 hover:bg-gray-600 text-white py-1 px-3 rounded-md font-semibold text-sm">X2.25</button>
+                <button class="bg-gray-700 hover:bg-gray-600 text-white py-1 px-3 rounded-md font-semibold text-sm">X2.5</button>
+                <button class="bg-gray-700 hover:bg-gray-600 text-white py-1 px-3 rounded-md font-semibold text-sm">X3</button>
+                <button class="bg-gray-700 hover:bg-gray-600 text-white py-1 px-3 rounded-md font-semibold text-sm">BOTE</button>
+                <button class="bg-red-700 hover:bg-red-600 text-white py-1 px-3 rounded-md font-semibold text-sm">ALL-IN</button>
+            </div>
+            <!-- Bet Slider y Botones de Acción -->
+            <div class="flex items-center gap-4 bg-gray-800 p-4 rounded-xl shadow-2xl w-full">
+                <!-- Slider de apuesta (Simulación) -->
+                <div class="flex-grow flex items-center gap-2">
+                    <input type="range" min="0" max="19960" value="1226" class="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer">
+                    <input type="number" value="1226" class="bg-blue-600 text-white font-bold w-20 py-1 text-center rounded-lg focus:outline-none">
+                </div>
+                <!-- Botones de Acción -->
+                <button class="bg-red-800 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg">
+                    NO IR
+                </button>
+                <button class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 px-8 rounded-lg shadow-lg">
+                    438 IGUALAR
+                </button>
+                <button class="bg-green-700 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg">
+                    1.226 SUBIR A
+                </button>
+            </div>
         </div>
 
-        <footer class="bg-dark text-white pt-5 pb-4 mt-auto">
+        <!--footer class="bg-dark text-white pt-5 pb-4 mt-auto">
             <div class="container text-center text-md-start">
                 <div class="row text-center text-md-start justify-content-center">
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 text-center">
@@ -125,18 +192,18 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer-->
         
         <script type="module">
             import Pocker from '/src/js/pocker.js';
-            const pocker = new Pocker(4);
+            const pocker = new Pocker(6); // Creamos una mesa de poker para 6 jugadores
             pocker.mesa.dealer.barajar();
             pocker.mesa.dealer.quemarCarta();
                 //ENTREGA 2 CARTAS PERSONALES A CADA JUGADOR: 2 RONDAS DE 1 CARTA--> DE UNA EN UNA
             pocker.dealer.preflop = 'preflop';
             pocker.mesa.dealer.repartir(2);
                 //1a RONDAS DE APUESTAS (preflop)
-            pocker.dealer.darTurno();
+            // pocker.dealer.darTurno();
             
             //ENTREGA 3 CARTAS COMUNITARIAS (FLOP)
             pocker.mesa.dealer.repartirFlop()
@@ -145,13 +212,17 @@
             pocker.mesa.dealer.repartirTurn()
             //RONDA DE APUESTAS   
             //ENTREGA 1 CARTA COMUNITARIA (RIVER)
+            pocker.mesa.dealer.repartirRiver()
             //RONDA DE APUESTAS   
             //MOSTRAR GANADOR
             //REPARTIR POZO   
             console.log(pocker.mesa.dealer);
             console.log(pocker.mesa.jugadores);
-            document.getElementById("c_mesa").innerHTML = pocker.mesa.verCartasHTML();
-            document.getElementById("c_jugadores").innerHTML = pocker.mesa.verCartasJugadores();
+            //document.getElementById("c_mesa").innerHTML = pocker.mesa.verCartasHTML();
+            //document.getElementById("c_jugadores").innerHTML = pocker.mesa.verCartasJugadores();
+
+            document.getElementById("community-cards").innerHTML = pocker.mesa.verCartasHTML();
+            document.getElementById("player-seats-container").innerHTML = pocker.mesa.verCartasJugadores();
         </script>
 
         <!--

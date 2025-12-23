@@ -1,103 +1,103 @@
 classDiagram
+
     class Carta {
-        -rank
-        -suit
-        -value
+        -rank : string
+        -suit : string
+        -numericValue : number
         +constructor(rank, suit)
-        +toString()
-        +valueOf()
+        +getRankValue() : number
     }
 
     class Baraja {
-        -cards
-        +constructor({seeded, cards})
-        +shuffle()
-        +draw(n)
-        +reset()
+        -cards : Carta[]
+        +constructor()
     }
 
     class Jugador {
-        -id
-        -nombre
-        -apellidos
-        -email
-        -telefono
-        -stack
-        -saldoEnCuenta
-        - saldoEnMesa
-        - saldoTotal = saldoEnCuenta + saldoEnMesa
-        -mano
-        -seat
-        -isAllIn
-        -isFolded
-        -currentBet
-        +constructor(opts)
+        -id : string
+        -alias : string
+        -stack : number // Dinero actualmente en la mesa (fichas)
+        -banca: number // dinero fuera de la mesa en su cuenta
+        -dineroTotal: number // stack + banca
+        -holeCards : Carta[] --> son 2 objetos de tipo carta
+        -isAllIn : boolean -->
+        -isFolded : boolean
+        - isActive : boolean --> si se ausenta se pasa a false
+        +constructor()
+        +seleccionarStack(amount): metodo para seleccionar el stack con el que quiere sentarse en la mesa
+        +sentarse()
+        +ausentarse()
+        +abandonarMesa()
         +apostar(amount)
         +igualar(amount)
         +check()
-        +retirarse()
-        +recibirCarta(carta)
-        +bancaTotal()
+        +foldear()
     }
 
+    class flujoJuego {
+        -faseActual Preflop, Postflop {Flop, Turn, River} --> por defecto empieza en Preflop si usamos avanzarEstado() pasa a Postflop
+        -turnoActual : Jugador[]
+        +avanzarEstado()
+        +moverDealer() --> cuando acaba la mano mueve el botón de dealer al siguiente jugador
+    }
+    
+    class user {
+        -id : number
+        - nombre : string
+        - apellidos : string
+        - username : string
+        - password : string
+        - email : string
+        - direction: string
+        - ciudad: string
+        - pais: string
+        - telefono: number;
+        - fechaRegistro: date 
+    }
+    
     class Mesa {
-        -id
-        -stakes
-        -pot
-        - BUTTON
-        - smallBlind
-        - bigBlind
-         AsidedPot
-        -sidePots
-        -players
-        -communityCards
-        -buttonPos
-        -phase
+        -id : string
+        -stake: --> tiene que coincidir con los stakes definidos 
+        -jugadores
+        -jugadoresActivos
+        -seats : 6 asientos con un id identificativo cada uno
+        -maxPlayers : 6
+        -minPlayers : 4
         +constructor(opts)
-        +resetMano()
-        +addToPot(amount)
+    }
+
+    class Pot {
+        -amount : number
+        -eligiblePlayers : Jugador[]
+        +crearAsidePot() : --> devuelve un objeto Pot que contiene los jugadores optantes a ese bote y el monto del asidePot
+        +constructor(amount, eligiblePlayers, limiteApuesta)
+        +addToPot(amount) --> añade al pozo la cantidad apostada por los jugadores
+        
     }
 
     class Dealer {
-        -baraja
-        -mesa
-        +constructor(mesa, baraja)
-        +dealHoleCards()
+        -evaluador : EvaluadorDeManos --> le extendemos la funcionalidad de evaluar manos
+        +constructor(mesa, baraja, evaluador)
+        +barajar()
+        +quemarCarta()
+        +repartir2CartasPorJugador()
         +dealFlop()
         +dealTurn()
         +dealRiver()
-        +jugarManoCompleta()  
+        +dealBoard() // reparte las 5 cartas del board de una vez
+        darTurnoAjugador()
     }
 
-    class EvaluadorDeManos {
-        +evaluate(hand, community)
-        +compare(handA, handB)
-        +bestFiveFromSeven(cards)
-    }
 
-    class GestorDePartida {
-        -mesa
-        -dealer
-        -evaluador
-        +constructor(mesa, dealer, evaluador)
-        +startHand()
-        +runBettingRound()
-        +progressPhase()
-        +handleAllInsAndSidePots()
-        +showdown()
-    }
-
-    class SidePot {
-        -amount
-        -eligiblePlayers
-        +constructor(amount, players)
-    }
-
+    // --- Relaciones ---
     Carta <|-- Baraja : contiene
-    Baraja --> Dealer : usa
-    Mesa *-- Jugador : contiene
-    Mesa o-- Baraja : contiene (opcional)
-    Dealer --> Mesa : actua sobre
-    GestorDePartida --> Dealer : orquesta
-    GestorDePartida --> EvaluadorDeManos : usa
-    Mesa "1" o-- "n" SidePot : tiene
+    Carta <|-- Jugador : 0..2
+    Carta <|-- Mesa : 0..5 (comunitarias)
+    Jugador -- Cartera : tiene
+    Mesa *-- Jugador : "1".."n"
+    Mesa *-- Pot : "1".."n"
+    Mesa --> Dealer : usa
+    Dealer -- Baraja : usa
+    Dealer -- EvaluadorDeManos : usa
+    EvaluadorDeManos --> ResultadoEvaluacion : crea
+    Jugador --> ResultadoEvaluacion : 0..1 (manoEvaluada)
