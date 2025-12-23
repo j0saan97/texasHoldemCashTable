@@ -109,8 +109,6 @@ export const GAME_PHASES = {
     }
 };
 
-
-
 const ConfiguracionJuego ={
   RANKING_MANOS,
   POSICIONES,

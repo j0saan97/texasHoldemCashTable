@@ -14,11 +14,12 @@ class Pocker {
     /**
      * @constructor
      * @param {number} [totalJugadores=4] - El número de jugadores a sentar inicialmente en la mesa.
+     * @param {string} [stake="NL2"] - El tipo de juego (ej. "NL2", "NL5", etc.).
      */
-    constructor(totalJugadores = 4) {
+    constructor(totalJugadores = 4, stake="NL2") {
         // Inicializa la Mesa de juego.
         /** @type {Mesa} */
-        this.mesa = this.crearMesa();
+        this.mesa = this.crearMesa(stake);
         
         // Inicializa el Dealer y lo asigna a la Mesa.
         /** @type {Dealer} */
@@ -37,9 +38,9 @@ class Pocker {
      * Crea e inicializa una nueva instancia de la clase Mesa.
      * @returns {Mesa} La instancia de la Mesa creada.
      */
-    crearMesa() {
+    crearMesa(stake) {
         // El '0.0' en el constructor de Mesa parece ser un valor por defecto o límite.
-        return new Mesa('Mesa1', 0.0); 
+        return new Mesa('Mesa1', 0.0, stake); 
     }
 
     /**
@@ -81,12 +82,15 @@ class Pocker {
         // Itera para crear 'total' jugadores.
         for (let i = 1; i <= total; i++) {
             // Se crea el Jugador con su nombre, código, referencia a la mesa y la posición inicial.
+            console.log(this.posiciones[i-1]);
             this.agregarJugador(
                 new Jugador(
                     `Jugador${i}`, 
                     i, 
                     this.mesa, 
-                    this.posiciones[i-1] // Asigna posiciones secuencialmente.
+                    this.posiciones[i-1], // Asigna posiciones secuencialmente.
+                    // asigna el valor de this.posiciones[i-1] a
+                    this.ciegaActual = this.posiciones[i-1]
                 )
             );
         }

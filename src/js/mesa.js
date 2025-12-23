@@ -1,5 +1,6 @@
 import Dealer from "./dealer.js"; // Importa la clase Dealer, responsable del reparto y flujo.
 import Pozo from "./pozo.js";     // Importa la clase Pozo (Pot) para gestionar el bote de la partida.
+import ciegasPorStake from "./ciegasPorStake.js"; // Importa la configuración de ciegas por tipo de mesa.
 
 /**
  * @class Mesa
@@ -12,8 +13,9 @@ class Mesa {
      * Inicializa la mesa.
      * @param {string} codigo - Código o ID único de la mesa.
      * @param {number} amount - Monto o límite de la mesa (aunque 'amount' parece ser redundante con el 'pozo').
+     * @param {string} stake - El tipo de juego (ej. "NL2", "NL5", etc.).
      */
-    constructor(codigo, amount) {
+    constructor(codigo, amount, stake="NL2") {
         // Inicializa el bote (pot) de la mesa con un saldo inicial de 0.
         this.pozo = new Pozo(0); 
         
@@ -32,7 +34,14 @@ class Mesa {
         
         // Instancia de la clase Dealer, que gestionará la mano.
         /** @type {Dealer | null} */
-        this.dealer = null; 
+        this.dealer = null;
+
+        // Tipo de juego (stake), por defecto "NL2".
+        if (stake in ciegasPorStake) {
+            this.stake = ciegasPorStake[stake];
+        } else {
+            this.stake = ciegasPorStake["NL2"]; // Valor por defecto si el stake no es válido.
+        }
     }
 
     /**

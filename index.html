@@ -77,8 +77,7 @@
                 </div>
                 <!-- Bote total -->
                 <div class="text-white text-xl font-bold bg-black/40 px-3 py-1 rounded-lg mb-4">
-                    Bote: 240 <span class="text-sm font-normal">€</span> <br>
-                    Bote total: <span id="main-pot-amount" class="text-green-400">2.166</span> <span class="text-sm font-normal">€</span>
+                    Bote: <span id="main-pot-total" class="text-green-400">1</span> <span class="text-sm font-normal">€</span> <br>
                 </div>
                 <!-- Cartas Comunitarias (Board) -->
                 <div class="flex gap-2 justify-center" id="community-cards">
@@ -111,7 +110,7 @@
                 <button class="bg-red-700 hover:bg-red-600 text-white py-1 px-3 rounded-md font-semibold text-sm">ALL-IN</button>
             </div>
             <!-- Bet Slider y Botones de Acción -->
-            <div class="flex items-center gap-4 bg-gray-800 p-4 rounded-xl shadow-2xl w-full">
+            <div class="flex items-center gap-4 bg-gray-800 p-4 rounded-xl shadow-2xl w-full" id="user_controls">
                 <!-- Slider de apuesta (Simulación) -->
                 <div class="flex-grow flex items-center gap-2">
                     <input type="range" min="0" max="19960" value="1226" class="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer">
@@ -122,10 +121,13 @@
                     NO IR
                 </button>
                 <button class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 px-8 rounded-lg shadow-lg">
-                    438 IGUALAR
+                    IGUALAR
                 </button>
                 <button class="bg-green-700 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg">
-                    1.226 SUBIR A
+                    SUBIR A
+                </button>
+                <button class="bg-green-700 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg">
+                    CHEQUEAR
                 </button>
             </div>
         </div>
@@ -197,7 +199,7 @@
         
         <script type="module">
             import Pocker from '/src/js/pocker.js';
-            const pocker = new Pocker(6); // Creamos una mesa de poker para 6 jugadores
+            const pocker = new Pocker(6, "NL50"); // Creamos una mesa de poker para 6 jugadores
             pocker.mesa.dealer.barajar();
             pocker.mesa.dealer.quemarCarta();
                 //ENTREGA 2 CARTAS PERSONALES A CADA JUGADOR: 2 RONDAS DE 1 CARTA--> DE UNA EN UNA
@@ -222,8 +224,10 @@
             //document.getElementById("c_mesa").innerHTML = pocker.mesa.verCartasHTML();
             //document.getElementById("c_jugadores").innerHTML = pocker.mesa.verCartasJugadores();
 
+            //Inyectamos las cartas comunitarias y los asientos de los jugadores en el HTML
             document.getElementById("community-cards").innerHTML = pocker.mesa.verCartasHTML();
             document.getElementById("player-seats-container").innerHTML = pocker.mesa.verCartasJugadores();
+            document.getElementById("main-pot-total").innerHTML = pocker.mesa.amount;
         </script>
 
         <!--

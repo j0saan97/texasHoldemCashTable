@@ -14,3 +14,9 @@ export const ciegasPorStake = {
     "NL5000": { "SB": 25.00, "BB": 50.00, "Ante": 5.00 },
     "NL10000": { "SB": 50.00, "BB": 100.00, "Ante": 10.00 }
 };
+
+export default ciegasPorStake;
+
+
+// cada jugadortiene 100bb
+// pero el valor de cada bb (ficha grande) depende del stake

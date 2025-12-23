@@ -101,8 +101,6 @@ class evaluadorManos {
      */
     }
     
-
-    
     evaluarMano() {
         if (this.esEscaleraReal()) {
             this.rangoMano = "Escalera Real";
