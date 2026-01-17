@@ -85,7 +85,7 @@ class Pocker {
             console.log(this.posiciones[i-1]);
             this.agregarJugador(
                 new Jugador(
-                    `Jugador${i}`, 
+                    `Jugador${i}`,
                     i, 
                     this.mesa, 
                     this.posiciones[i-1], // Asigna posiciones secuencialmente.
