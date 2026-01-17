@@ -1,21 +1,9 @@
-CREATE DATABASE texas_holdem_cash_table;
+CREATE DATABASE IF NOT EXISTS texas_holdem_cash_table;
 USE texas_holdem_cash_table;
 
 -- ======================================
 -- POKER DATABASE - TEXAS HOLD'EM
 -- ======================================
-
--- Tabla de cartera (gestiona los fondos de cada jugador)
-CREATE TABLE IF NOT EXISTS cartera(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    usuario_id INT NOT NULL UNIQUE,
-    saldo_en_cuenta DECIMAL(12,2) DEFAULT 0.00,
-    dinero_en_mesa DECIMAL(12,2) DEFAULT 0.00,
-    saldo_total DECIMAL(12,2) GENERATED ALWAYS AS (saldo_en_cuenta + dinero_en_mesa) STORED,
-    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
-);
 
 -- Tabla de usuarios
 CREATE TABLE IF NOT EXISTS usuarios(
@@ -36,6 +24,22 @@ CREATE TABLE IF NOT EXISTS usuarios(
     user_type VARCHAR(20) DEFAULT 'player',
     activo BOOLEAN DEFAULT TRUE
 );
+
+-- Tabla de cartera (gestiona los fondos de cada jugador)
+CREATE TABLE IF NOT EXISTS cartera(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL UNIQUE,
+    saldo_en_cuenta DECIMAL(12,2) DEFAULT 0.00,
+    dinero_en_mesa DECIMAL(12,2) DEFAULT 0.00,
+    saldo_total DECIMAL(12,2) GENERATED ALWAYS AS (saldo_en_cuenta + dinero_en_mesa) STORED,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
+
+-- Agregar referencia de cartera en usuarios
+ALTER TABLE usuarios ADD COLUMN cartera_id INT UNIQUE AFTER activo;
+ALTER TABLE usuarios ADD CONSTRAINT fk_usuario_cartera FOREIGN KEY (cartera_id) REFERENCES cartera(id) ON DELETE SET NULL;
 
 -- Tabla de mesas
 CREATE TABLE IF NOT EXISTS mesas(
@@ -108,7 +112,7 @@ INSERT INTO usuarios (nombre, apellidos, username, alias, email, password, direc
 ('Laura', 'Gómez Martín', 'LauG', 'Gambito', 'laura.gomez@ejemplo.com', '1234_2', 'Av. Luna, 2A', 'Barcelona', 'España', '34611223344','👱‍♀️'),
 ('Carlos', 'Sánchez Pérez', 'SanCheez', 'MáquinaDeHacerDinero', 'carlos.sanchez@ejemplo.com', '1234_3', 'Pza. Mayor, 5', 'Valencia', 'España', '34622334455','👱‍♀️'),
 ('Sofía', 'Ruiz Fernández', 'SofiR', 'QueenOfHearts', 'sofia.ruiz@ejemplo.com', '1234_4', 'Ronda Exterior, 8', 'Sevilla', 'España', '34633445566','👱‍♀️'),
-('Javier', 'Hernández López', 'JaviH', 'ElProfesor', 'javier.hernandez@ejemplo.com', '1234_5', 'C/ Río Ebro, 12', 'Bilbao', 'España', '34644556677','👱‍♀️');
+('Javier', 'Hernández López', 'JaviH', 'ElProfesor', 'javier.hernandez@ejemplo.com', '1234_5', 'C/ Río Ebro, 12', 'Bilbao', 'España', '34644556677','👱‍♀️'),
 ('Beatriz', 'Herrera Díaz', 'BeaHD', 'TightBea', 'beatriz.herrera@ejemplo.com', '1234_42', 'C/ Río Duero, 3', 'Cuenca', 'España', '34632345678','👱‍♀️');
 
 -- Insertar mesas con diferentes stakes
@@ -126,6 +130,7 @@ INSERT INTO mesas (nombre, stake, descripcion, ciega_minima, ciega_maxima, ante,
 ('Mesa NL2000', 'NL2000', 'No Limit 2000 - High Stakes', 10.00, 20.00, 2.00, 6),
 ('Mesa NL5000', 'NL5000', 'No Limit 5000 - Very High Stakes', 25.00, 50.00, 5.00, 6),
 ('Mesa NL10000', 'NL10000', 'No Limit 10000 - Ultra High Stakes', 50.00, 100.00, 10.00, 6);
+
 -- Insertar carteras para los usuarios iniciales
 INSERT INTO cartera (usuario_id, saldo_en_cuenta, dinero_en_mesa) VALUES
 (1, 5000.00, 0.00),
@@ -133,3 +138,10 @@ INSERT INTO cartera (usuario_id, saldo_en_cuenta, dinero_en_mesa) VALUES
 (3, 7200.00, 0.00),
 (4, 4100.00, 0.00),
 (5, 6000.00, 0.00);
+
+-- Actualizar referencia de cartera en usuarios
+UPDATE usuarios SET cartera_id = 1 WHERE id = 1;
+UPDATE usuarios SET cartera_id = 2 WHERE id = 2;
+UPDATE usuarios SET cartera_id = 3 WHERE id = 3;
+UPDATE usuarios SET cartera_id = 4 WHERE id = 4;
+UPDATE usuarios SET cartera_id = 5 WHERE id = 5;

@@ -198,36 +198,9 @@
         </footer-->
         
         <script type="module">
-            import Pocker from '/src/js/pocker.js';
-            const pocker = new Pocker(6, "NL50"); // Creamos una mesa de poker para 6 jugadores
-            pocker.mesa.dealer.barajar();
-            pocker.mesa.dealer.quemarCarta();
-                //ENTREGA 2 CARTAS PERSONALES A CADA JUGADOR: 2 RONDAS DE 1 CARTA--> DE UNA EN UNA
-            pocker.dealer.preflop = 'preflop';
-            pocker.mesa.dealer.repartir(2);
-                //1a RONDAS DE APUESTAS (preflop)
-            // pocker.dealer.darTurno();
-            
-            //ENTREGA 3 CARTAS COMUNITARIAS (FLOP)
-            pocker.mesa.dealer.repartirFlop()
-            //RONDA DE APUESTAS
-            //ENTREGA 1 CARTA COMUNITARIA (TURN)
-            pocker.mesa.dealer.repartirTurn()
-            //RONDA DE APUESTAS   
-            //ENTREGA 1 CARTA COMUNITARIA (RIVER)
-            pocker.mesa.dealer.repartirRiver()
-            //RONDA DE APUESTAS   
-            //MOSTRAR GANADOR
-            //REPARTIR POZO   
-            console.log(pocker.mesa.dealer);
-            console.log(pocker.mesa.jugadores);
-            //document.getElementById("c_mesa").innerHTML = pocker.mesa.verCartasHTML();
-            //document.getElementById("c_jugadores").innerHTML = pocker.mesa.verCartasJugadores();
-
-            //Inyectamos las cartas comunitarias y los asientos de los jugadores en el HTML
-            document.getElementById("community-cards").innerHTML = pocker.mesa.verCartasHTML();
-            document.getElementById("player-seats-container").innerHTML = pocker.mesa.verCartasJugadores();
-            document.getElementById("main-pot-total").innerHTML = pocker.mesa.amount;
+            import Pocker from './src/js/pocker.js';
+            // La instancia de Pocker inicia automáticamente el juego
+            const pocker = new Pocker(6, "NL50");
         </script>
 
         <!--

@@ -1,6 +1,7 @@
 import Mesa from "./mesa.js";     // Importa la clase Mesa (el contenedor principal).
 import Dealer from "./dealer.js"; // Importa la clase Dealer (el gestor del juego).
 import Jugador from "./jugador.js"; // Importa la clase Jugador.
+import ApiClient from "./apiClient.js"; // Cliente para llamadas a la API
 
 // NOTA: Esta instancia global 'mesa' está redundante, ya que la clase Pocker crea su propia instancia.
 // const mesa = new Mesa('Mesa1', 0.0); 
@@ -29,8 +30,15 @@ class Pocker {
         // SUGERENCIA: Importar esto desde config.js para evitar duplicidad.
         this.posiciones = ["UTG", "MP", "CU", "BU", "SB", "BB"];
         
-        // Crea las instancias de Jugador y las sienta en la mesa.
-        this.crearJugadores(totalJugadores);
+        // Cliente API para obtener datos del servidor
+        /** @type {ApiClient} */
+        this.api = new ApiClient();
+        
+        // Almacenar el total de jugadores
+        this.totalJugadores = totalJugadores;
+        
+        // Iniciar el juego automáticamente
+        this.iniciarJuego();
     }
 
     /**
@@ -75,42 +83,115 @@ class Pocker {
 
     /**
      * @method crearJugadores
-     * Crea y añade un número específico de jugadores a la mesa, asignándoles posiciones iniciales.
-     * @param {number} total - Número de jugadores a crear.
+     * Obtiene usuarios de la API del servidor y los añade a la mesa con posiciones iniciales.
+     * @param {number} totalJugadores - Número máximo de jugadores a sentar (limita registros de API).
+     * @returns {Promise<void>}
      */
-    crearJugadores(total) {
-        // Itera para crear 'total' jugadores.
-        for (let i = 1; i <= total; i++) {
-            // Se crea el Jugador con su nombre, código, referencia a la mesa y la posición inicial.
-            console.log(this.posiciones[i-1]);
-            this.agregarJugador(
-                new Jugador(
-                    `Jugador${i}`,
-                    i, 
-                    this.mesa, 
-                    this.posiciones[i-1], // Asigna posiciones secuencialmente.
-                    // asigna el valor de this.posiciones[i-1] a
-                    this.ciegaActual = this.posiciones[i-1]
-                )
-            );
+    async crearJugadores(totalJugadores) {
+        try {
+            // Obtener usuarios desde la API
+            const usuarios = await this.api.obtenerUsuarios();
+            console.log(`✓ ${usuarios.length} usuario(s) obtenido(s) de la API`);
+
+            // Limitar la cantidad de jugadores al total solicitado
+            const jugadoresACargar = usuarios.slice(0, totalJugadores);
+
+            // Iterar sobre los usuarios obtenidos de la API
+            jugadoresACargar.forEach((usuario, indice) => {
+                const posicion = this.posiciones[indice] || "UTG"; // Asigna posición o por defecto UTG
+                
+                // Crear instancia del Jugador con datos reales de la API
+                console.log(`Añadiendo jugador: ${usuario.alias} (ID: ${usuario.id}) en posición ${posicion}`);
+                this.agregarJugador(
+                    new Jugador(
+                        usuario.nombre + ' ' + usuario.apellidos, // Nombre completo
+                        usuario.id, // ID real de la API
+                        this.mesa,
+                        posicion,
+                        usuario.alias // Alias del usuario
+                    )
+                );
+            });
+
+            console.log(`✓ ${jugadoresACargar.length} jugador(es) añadido(s) a la mesa`);
+        } catch (error) {
+            console.error('✗ Error al crear jugadores desde la API:', error.message);
+            throw error;
         }
-        // NOTA: Esta asignación de posición es fija. En el juego real, las posiciones deben rotar cada mano.
     }
     
     /**
      * @method iniciarMano
      * Método central para empezar una nueva mano de póker.
      */
-    iniciarMano() {
+    async iniciarMano() {
         // 1. Rotar posiciones (BU, SB, BB).
         // 2. dealer.barajar().
         // 3. mesa.colocarCiegas().
         // 4. dealer.repartir(2).
         // 5. dealer.iniciarRondaApuestas(PRE_FLOP).
     }
-}
 
-export default Pocker;
+    /**
+     * @method iniciarJuego
+     * Inicializa el flujo completo del juego.
+     * Se ejecuta automáticamente después de crear la instancia.
+     */
+    async iniciarJuego() {
+        try {
+            // Cargar jugadores de la base de datos
+            await this.crearJugadores(this.totalJugadores);
+
+            // Barajar y quemar carta
+            this.mesa.dealer.barajar();
+            this.mesa.dealer.quemarCarta();
+
+            // ENTREGA 2 CARTAS PERSONALES A CADA JUGADOR: 2 RONDAS DE 1 CARTA --> DE UNA EN UNA
+            this.dealer.preflop = 'preflop';
+            this.mesa.dealer.repartir(2);
+            // 1a RONDAS DE APUESTAS (preflop)
+            // this.dealer.darTurno();
+
+            // ENTREGA 3 CARTAS COMUNITARIAS (FLOP)
+            this.mesa.dealer.repartirFlop();
+            // RONDA DE APUESTAS
+
+            // ENTREGA 1 CARTA COMUNITARIA (TURN)
+            this.mesa.dealer.repartirTurn();
+            // RONDA DE APUESTAS
+
+            // ENTREGA 1 CARTA COMUNITARIA (RIVER)
+            this.mesa.dealer.repartirRiver();
+            // RONDA DE APUESTAS
+
+            // MOSTRAR GANADOR
+            // REPARTIR POZO
+
+            console.log('✓ Juego inicializado correctamente');
+            console.log(this.mesa.dealer);
+            console.log(this.mesa.jugadores);
+
+            // Inyectamos las cartas comunitarias y los asientos de los jugadores en el HTML
+            if (typeof document !== 'undefined') {
+                const communityCardsEl = document.getElementById('community-cards');
+                const playerSeatsEl = document.getElementById('player-seats-container');
+                const mainPotEl = document.getElementById('main-pot-total');
+
+                if (communityCardsEl) {
+                    communityCardsEl.innerHTML = this.mesa.verCartasHTML();
+                }
+                if (playerSeatsEl) {
+                    playerSeatsEl.innerHTML = this.mesa.verCartasJugadores();
+                }
+                if (mainPotEl) {
+                    mainPotEl.innerHTML = this.mesa.amount;
+                }
+            }
+        } catch (error) {
+            console.error('✗ Error al iniciar el juego:', error.message);
+        }
+    }
+}
 
 /*
 Sugerencia
@@ -123,3 +204,5 @@ Implementar rotarPosiciones()	La asignación de posiciones en crearJugadores es 
 Asignación de Roles y BoteSugerenciaDetalleEstablecer Roles en crearJugadoresAl crear los jugadores, podrías asignarles inmediatamente los roles iniciales de Small Blind (SB) y Big Blind (BB) para la primera mano (si tienes 2 jugadores,
  por ejemplo).Vincular el Bote a la MesaAsegúrate de que la clase Mesa tiene la referencia al Pozo (this.pozo) y que cualquier acción de apuesta pasa por la Mesa antes de llegar al Pozo, lo que te dará más control para manejar los side pots (botes secundarios).
 */
+
+export default Pocker;

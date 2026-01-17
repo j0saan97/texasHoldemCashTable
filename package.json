@@ -1,0 +1,24 @@
+{
+  "name": "texasHoldemCashTable",
+  "version": "1.0.0",
+  "description": "Aplicación de Texas Hold'em Cash Table - Sistema completo de poker online",
+  "type": "module",
+  "main": "src/js/pocker.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "poker",
+    "texas-holdem",
+    "cash-table",
+    "game"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "mysql2": "^3.16.1"
+  }
+}
