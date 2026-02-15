@@ -17,10 +17,10 @@ class Mesa {
      */
     constructor(codigo, amount, stake="NL2") {
         // Inicializa el bote (pot) de la mesa con un saldo inicial de 0.
-        this.pozo = new Pozo(0); 
+        this.pozo = new Pozo(amount);
         
         // Propiedad que puede representar el límite o ciegas de la mesa.
-        this.amount = amount; 
+        //this.amount = this.pozo.amount;
         
         this.codigo = codigo;
         

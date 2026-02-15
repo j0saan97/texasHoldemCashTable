@@ -67,6 +67,7 @@ class Cartera {
         // 3. Transacción: Aumenta el dinero disponible para jugar en la mesa (el stack).
         this.dineroEnMesa += monto;
         
+        console.log(`Jugador ha apostado ${monto}. Saldo en cuenta: ${this.saldoEnCuenta}, Dinero en mesa: ${this.dineroEnMesa}`);
         return true;
     }
 }

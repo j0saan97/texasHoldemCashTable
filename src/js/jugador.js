@@ -1,10 +1,5 @@
 import Cartera from "./cartera.js"; // Importa la clase Cartera para gestionar el dinero del jugador.
 
-/**
- * @class Jugador
- * @description Representa a un jugador en la mesa de póker.
- * Almacena su estado, fondos, cartas y la mano final evaluada.
- */
 class Jugador {
 
     /**
@@ -49,6 +44,7 @@ class Jugador {
     }
 
     igualar() {
+        console.log(`Jugador ${this.codigo} (${this.nombre}) ha igualado.`);
     }
 
     chequear(){
@@ -63,6 +59,12 @@ class Jugador {
     apostarDinero(amount) {
         this.mesa.apostarDinero(amount);
         this.cartera.apostarDinero(amount);
+
+        const mainPotEl = document.getElementById('main-pot-total');
+        if (mainPotEl) {
+            console.log(`Actualizando el pozo principal a ${this.mesa.pozo.amount} después de la apuesta de ${amount} por parte del jugador ${this.codigo} (${this.nombre}).`);
+            mainPotEl.innerHTML = this.mesa.pozo.amount;
+        }
     }
 
     verCartas() {
@@ -130,7 +132,7 @@ class Jugador {
     }
 }
 
-// Handler global para que el HTML pueda invocar el fold por `codigo`.
+// RELACION ENTRE HTML Y FUNCIONES DE LA INSTANCIA JUGADOR:
 if (typeof window !== 'undefined') {
     window.foldearJugador = function(codigo) {
         const player = window.__jugadores && window.__jugadores[codigo];
@@ -157,6 +159,7 @@ if (typeof window !== 'undefined') {
             if (amount !== null) {
                 const numericAmount = parseFloat(amount);
                 if (!isNaN(numericAmount) && numericAmount > 0) {
+                    console.log(`Jugador ${player.codigo} (${player.nombre}) intenta apostar ${numericAmount}.`);
                     return player.apostarDinero(numericAmount);
                 } else {
                     alert("Por favor, ingresa un número válido para apostar.");
