@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    background: #0f3b2e;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  section.hand-review {
+    background: #145c43;
+    padding: 16px;
+    border-radius: 12px;
+    width: fit-content;
+    color: white;
+  }
+
+  h3 {
+    margin: 0 0 10px;
+    text-align: center;
+  }
+
+  .drop-zone {
+    border: 2px dashed #ffffff88;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .drop-zone img {
+    max-width: 100%;
+    max-height: 220px;
+    margin-top: 10px;
+    border-radius: 6px;
+  }
+
+  .street-buttons {
+    display: flex;
+    gap: 6px;
+    margin: 12px 0;
+    flex-wrap: wrap;
+  }
+
+  .street-buttons button {
+    flex: 1;
+    min-width: 70px;
+    padding: 6px;
+    border: none;
+    border-radius: 6px;
+    background: #0b3d2e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .street-buttons button:hover {
+    background: #07291f;
+  }
+
+  textarea {
+    width: 100%;
+    min-width: 280px;
+    max-width: 420px;
+    height: 160px;
+    resize: vertical;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+  }
+</style>
+</head>
+
+<body>
+
+<section class="hand-review">
+
+  <h3>Sube tu mano</h3>
+
+  <div class="drop-zone" id="dropZone">
+    Arrastra la imagen aquí<br>o haz click
+    <input type="file" id="fileInput" accept="image/*" hidden>
+  </div>
+
+  <div class="street-buttons">
+    <button data-street="PREFLOP">Preflop</button>
+    <button data-street="FLOP">Flop</button>
+    <button data-street="TURN">Turn</button>
+    <button data-street="RIVER">River</button>
+  </div>
+
+  <textarea id="notes" placeholder="Describe la mano..."></textarea>
+
+</section>
+
+<script>
+  const textarea = document.getElementById("notes");
+  const buttons = document.querySelectorAll(".street-buttons button");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const tag = `[${btn.dataset.street}]`;
+
+      if (!textarea.value.includes(tag)) {
+        textarea.value += `\n\n${tag}\n`;
+        textarea.focus();
+        textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+      }
+    });
+  });
+
+  const dropZone = document.getElementById("dropZone");
+  const fileInput = document.getElementById("fileInput");
+
+  dropZone.addEventListener("click", () => fileInput.click());
+
+  dropZone.addEventListener("dragover", e => {
+    e.preventDefault();
+    dropZone.style.background = "#ffffff22";
+  });
+
+  dropZone.addEventListener("dragleave", () => {
+    dropZone.style.background = "transparent";
+  });
+
+  dropZone.addEventListener("drop", e => {
+    e.preventDefault();
+    dropZone.style.background = "transparent";
+    const file = e.dataTransfer.files[0];
+    if (!file || !file.type.startsWith("image/")) return;
+
+    const reader = new FileReader();
+    reader.onload = ev => {
+      dropZone.innerHTML = `<img src="${ev.target.result}">`;
+    };
+    reader.readAsDataURL(file);
+  });
+</script>
+
+</body>
+</html>
+

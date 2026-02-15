@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker Lobby - Texas Hold'em</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        :root {
+            --lobby-bg: #121212;
+            --card-bg: #1e1e1e;
+            --winamax-red: #e41e26;
+            --poker-gold: #ffc107;
+            --text-muted: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--lobby-bg);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Navbar estilo Winamax */
+        .lobby-header {
+            background: black;
+            border-bottom: 2px solid var(--winamax-red);
+            padding: 1rem 0;
+        }
+
+        /* Contenedor de Mesas (Grid) */
+        .tables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        /* Tarjeta de Mesa */
+        .poker-table-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .poker-table-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--winamax-red);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .card-header-poker {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stake-badge {
+            background: var(--winamax-red);
+            color: white;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .table-body {
+            padding: 15px;
+        }
+
+        .blind-info {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--poker-gold);
+            margin-bottom: 5px;
+        }
+
+        .table-stats {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-join {
+            background: var(--winamax-red);
+            border: none;
+            color: white;
+            font-weight: bold;
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            transition: 0.2s;
+        }
+
+        .btn-join:hover {
+            background: #b3171d;
+            letter-spacing: 1px;
+        }
+
+        /* Filtros */
+        .filter-bar {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="lobby-header shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h2 class="m-0 fw-bold"><i class="bi bi-suit-spade-fill text-danger"></i> CRAZY CASH</h2>
+            <h2 class="m-0 fw-bold"><i class="bi bi-suit-spade-fill text-danger"></i> CASH GAMES</h2>
+            <div class="user-info text-end">
+                <span class="d-block small text-muted">Banca Actual</span>
+                <span class="fw-bold text-success">4,520.00 €</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-4">
+        
+        <div class="filter-bar d-flex flex-wrap gap-3 align-items-center justify-content-between">
+            <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-outline-light active">Todas</button>
+                <button class="btn btn-sm btn-outline-light">Micro</button>
+                <button class="btn btn-sm btn-outline-light">High Stakes</button>
+            </div>
+            <div class="input-group" style="max-width: 300px;">
+                <span class="input-group-text bg-dark border-secondary text-white"><i class="bi bi-search"></i></span>
+                <input type="text" class="form-control bg-dark border-secondary text-white" placeholder="Buscar mesa...">
+            </div>
+        </div>
+
+        <div id="lobby-tables" class="tables-grid">
+            </div>
+
+    </main>
+
+    <script type="module">
+        // Export de la variable según lo solicitado
+        export const ciegasPorStake = {
+            "NL2": { "SB": 0.01, "BB": 0.02, "Ante": 0.002 },
+            "NL5": { "SB": 0.02, "BB": 0.05, "Ante": 0.005 },
+            "NL10": { "SB": 0.05, "BB": 0.10, "Ante": 0.01 },
+            "NL25": { "SB": 0.10, "BB": 0.25, "Ante": 0.02 },
+            "NL50": { "SB": 0.25, "BB": 0.50, "Ante": 0.05 },
+            "NL100": { "SB": 0.50, "BB": 1.00, "Ante": 0.10 },
+            "NL200": { "SB": 1.00, "BB": 2.00, "Ante": 0.20 },
+            "NL400": { "SB": 2.00, "BB": 4.00, "Ante": 0.40 },
+            "NL600": { "SB": 3.00, "BB": 6.00, "Ante": 0.60 },
+            "NL1000": { "SB": 5.00, "BB": 10.00, "Ante": 1.00 },
+            "NL2000": { "SB": 10.00, "BB": 20.00, "Ante": 2.00 },
+            "NL5000": { "SB": 25.00, "BB": 50.00, "Ante": 5.00 },
+            "NL10000": { "SB": 50.00, "BB": 100.00, "Ante": 10.00 }
+        };
+
+        const lobbyContainer = document.getElementById('lobby-tables');
+
+        // Función para renderizar el lobby
+        function renderLobby() {
+            let html = '';
+            
+            // Recorremos cada stake
+            Object.keys(ciegasPorStake).forEach(stakeName => {
+                const data = ciegasPorStake[stakeName];
+                
+                // Creamos 2 instancias por stake
+                for (let i = 1; i <= 2; i++) {
+                    // Generamos datos aleatorios para realismo (jugadores sentados)
+                    const players = Math.floor(Math.random() * 6) + 1; 
+
+                    html += `
+                    <div class="poker-table-card shadow-sm">
+                        <div class="card-header-poker">
+                            <span class="stake-badge">${stakeName}</span>
+                            <small class="text-muted"><i class="bi bi-clock"></i> Turbo</small>
+                        </div>
+                        <div class="table-body text-center">
+                            <div class="blind-info">
+                                ${data.SB.toFixed(2)}€ / ${data.BB.toFixed(2)}€
+                            </div>
+                            <div class="text-muted small mb-3">Ante: ${data.Ante.toFixed(3)}€</div>
+                            
+                            <div class="table-stats">
+                                <span><i class="bi bi-people-fill"></i> ${players}/6 Jug.</span>
+                                <span><i class="bi bi-graph-up"></i> ${ (Math.random()*40 + 20).toFixed(0) }% Plrs/Flop</span>
+                            </div>
+
+                            <button class="btn-join">Ocupar Asiento</button>
+                        </div>
+                    </div>
+                    `;
+                }
+            });
+            
+            lobbyContainer.innerHTML = html;
+        }
+
+        renderLobby();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

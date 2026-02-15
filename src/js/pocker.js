@@ -153,15 +153,15 @@ class Pocker {
             // this.dealer.darTurno();
 
             // ENTREGA 3 CARTAS COMUNITARIAS (FLOP)
-            this.mesa.dealer.repartirFlop();
+            //this.mesa.dealer.repartirFlop();
             // RONDA DE APUESTAS
 
             // ENTREGA 1 CARTA COMUNITARIA (TURN)
-            this.mesa.dealer.repartirTurn();
+            //this.mesa.dealer.repartirTurn();
             // RONDA DE APUESTAS
 
             // ENTREGA 1 CARTA COMUNITARIA (RIVER)
-            this.mesa.dealer.repartirRiver();
+            //this.mesa.dealer.repartirRiver();
             // RONDA DE APUESTAS
 
             // MOSTRAR GANADOR
