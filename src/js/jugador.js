@@ -42,22 +42,17 @@ class Jugador {
             window.__jugadores[this.codigo] = this;
             // Para rastrear el último jugador que realizó una acción, útil para controlar el flujo del juego.
             window.__ultimoJugadorQueActuo = null;
-            // Para rastrear la posición del último jugador que actuó, útil para el orden de acción.
-            window.__posicionUltimoJugadorQueActuo = null; 
             // Para controlar a quién le toca actuar
             window.__jugadorEnTurno = null;
         }
     }
 
     confirmaTurno() {
-        console.log(`Valor de window.__jugadorEnTurno: "${window.__jugadorEnTurno}" (tipo: ${typeof window.__jugadorEnTurno})`);
-        console.log(`Valor de this.codigo: "${this.codigo}" (tipo: ${typeof this.codigo})`);
-        
         // Convertir ambos a string para comparación segura
         const turnoActual = String(window.__jugadorEnTurno);
         const codigoJugador = String(this.codigo);
         
-        if (turnoActual !== codigoJugador) {
+        if (this.codigo == window.__ultimoJugadorQueActuo) {
             console.warn(`No es el turno del jugador ${this.codigo} (${this.nombre}). Acción ignorada. Turno actual: ${turnoActual}`);
             return false;
         }else{

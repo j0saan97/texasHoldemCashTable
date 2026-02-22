@@ -197,8 +197,8 @@
 
                 // Registrar que este jugador accionó y avanzar al siguiente
                 window.__ultimoJugadorQueActuo = codigo;
-                window.__posicionUltimoJugadorQueActuo = window.__jugadores[codigo].posicion;
                 console.log(`Turno completado por ${codigo}. Próximo turno...`);
+
             };
         </script>
         <script type="module">
@@ -206,15 +206,6 @@
             // La instancia de Pocker inicia automáticamente el juego
             const pocker = new Pocker(6, "NL50");
         </script>
-        <!--
-            Cargamos el script como un modulo luego de que se muestran los elementos 
-        -->
-        <!--
-            La etiqueta <script type="module"> permite usar módulos ES6 en JavaScript. Esto significa que puedes 
-            importar y exportar funciones, clases y variables entre archivos JS usando import y export. Además, 
-            el código dentro de este script se ejecuta en modo estricto y tiene su propio ámbito.
-        -->
-    
         
     </body>
 </html>
