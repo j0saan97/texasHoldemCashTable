@@ -40,30 +40,60 @@ class Jugador {
         if (typeof window !== 'undefined' && this.codigo != null) {
             window.__jugadores = window.__jugadores || {};
             window.__jugadores[this.codigo] = this;
+            // Para rastrear el último jugador que realizó una acción, útil para controlar el flujo del juego.
+            window.__ultimoJugadorQueActuo = null;
+            // Para rastrear la posición del último jugador que actuó, útil para el orden de acción.
+            window.__posicionUltimoJugadorQueActuo = null; 
+            // Para controlar a quién le toca actuar
+            window.__jugadorEnTurno = null;
+        }
+    }
+
+    confirmaTurno() {
+        console.log(`Valor de window.__jugadorEnTurno: "${window.__jugadorEnTurno}" (tipo: ${typeof window.__jugadorEnTurno})`);
+        console.log(`Valor de this.codigo: "${this.codigo}" (tipo: ${typeof this.codigo})`);
+        
+        // Convertir ambos a string para comparación segura
+        const turnoActual = String(window.__jugadorEnTurno);
+        const codigoJugador = String(this.codigo);
+        
+        if (turnoActual !== codigoJugador) {
+            console.warn(`No es el turno del jugador ${this.codigo} (${this.nombre}). Acción ignorada. Turno actual: ${turnoActual}`);
+            return false;
+        }else{
+            return true;
         }
     }
 
     igualar() {
-        console.log(`Jugador ${this.codigo} (${this.nombre}) ha igualado.`);
+        if (this.confirmaTurno()){
+            console.log(`Jugador ${this.codigo} (${this.nombre}) ha igualado.`);
+        }        
     }
 
     chequear(){
-        console.log(`Jugador ${this.codigo} (${this.nombre}) ha chequeado.`);
+        if (this.confirmaTurno()){
+            console.log(`Jugador ${this.codigo} (${this.nombre}) ha chequeado.`);
+        }
     }
 
     foldear() {
-        this.activo = false; // El jugador ya no participa en la mano actual.
-        console.log(`Jugador ${this.codigo} (${this.nombre}) ha foldeado.`);
+        if (this.confirmaTurno()){
+            this.activo = false; // El jugador ya no participa en la mano actual.
+            console.log(`Jugador ${this.codigo} (${this.nombre}) ha foldeado.`);
+        }
     }
     
     apostarDinero(amount) {
-        this.mesa.apostarDinero(amount);
-        this.cartera.apostarDinero(amount);
+        if (this.confirmaTurno()){
+            this.mesa.apostarDinero(amount);
+            this.cartera.apostarDinero(amount);
 
-        const mainPotEl = document.getElementById('main-pot-total');
-        if (mainPotEl) {
-            console.log(`Actualizando el pozo principal a ${this.mesa.pozo.amount} después de la apuesta de ${amount} por parte del jugador ${this.codigo} (${this.nombre}).`);
-            mainPotEl.innerHTML = this.mesa.pozo.amount;
+            const mainPotEl = document.getElementById('main-pot-total');
+            if (mainPotEl) {
+                console.log(`Actualizando el pozo principal a ${this.mesa.pozo.amount} después de la apuesta de ${amount} por parte del jugador ${this.codigo} (${this.nombre}).`);
+                mainPotEl.innerHTML = this.mesa.pozo.amount;
+            }
         }
     }
 

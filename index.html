@@ -135,83 +135,48 @@
                 </div>
             </div>
         </div>
-
-        <!--footer class="bg-dark text-white pt-5 pb-4 mt-auto">
-            <div class="container text-center text-md-start">
-                <div class="row text-center text-md-start justify-content-center">
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 text-center">
-                        <h5 class="text-uppercase mb-4 fw-bold text-primary">Contacto</h5>
-                        <p>
-                            <i class="bi bi-geo-alt-fill me-2"></i>Calle de Ejemplo, 123
-                        </p>
-                        <p>
-                            <i class="bi bi-envelope-fill me-2"></i>info@ejemplo.com
-                        </p>
-                        <p>
-                            <i class="bi bi-phone-fill me-2"></i>+34 123 456 789
-                        </p>
-                    </div>
-                    <div id="contacto-form" class="col-md-5 col-lg-4 col-xl-4 mx-auto mt-3 text-center">
-                        <h5 class="text-uppercase mb-4 fw-bold text-primary">Envíanos un mensaje</h5>
-                        <form>
-                            <div class="mb-3">
-                                <label for="contact-email" class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-control" id="contact-email" placeholder="Tu correo" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="contact-message" class="form-label">Mensaje</label>
-                                <textarea class="form-control" id="contact-message" rows="3" placeholder="Tu mensaje" required></textarea>
-                            </div>
-                            <div class="d-grid gap-2">
-                                <button type="submit" class="btn btn-primary">Enviar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                
-                <hr class="mb-4">
-                
-                <div class="row align-items-center">
-                    <div class="col-md-7 col-lg-8">
-                        <p class="text-center text-md-start">© 2024 Todos los derechos reservados por
-                            <a href="#" class="text-decoration-none">
-                                <strong class="text-warning">Tu Empresa</strong>
-                            </a>
-                        </p>
-                    </div>
-                    <div class="col-md-5 col-lg-4">
-                        <div class="text-center text-md-end">
-                            <ul class="list-unstyled list-inline">
-                                <li class="list-inline-item">
-                                    <a href="#" class="btn-floating btn-sm text-white fs-4"><i class="bi bi-facebook"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="btn-floating btn-sm text-white fs-4"><i class="bi bi-twitter"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="btn-floating btn-sm text-white fs-4"><i class="bi bi-instagram"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="btn-floating btn-sm text-white fs-4"><i class="bi bi-linkedin"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer-->
-        
         <script>
+            // Función para obtener el siguiente jugador en la ronda
+            window.obtenerSiguienteJugador = function() {
+                if (!window.__jugadores || Object.keys(window.__jugadores).length === 0) {
+                    return null;
+                }
+
+                const codigos = Object.keys(window.__jugadores);
+                
+                // Si es la primera acción, buscar el jugador con posición UTG
+                if (!window.__ultimoJugadorQueActuo) {
+                    for (const cod of codigos) {
+                        if (window.__jugadores[cod].posicion === 'UTG') {
+                            return cod;
+                        }
+                    }
+                    // Si no hay UTG, devolver el primero
+                    return codigos[0];
+                }
+
+                // Si ya hay un último jugador, buscar el siguiente
+                const indexActual = codigos.indexOf(window.__ultimoJugadorQueActuo);
+                if (indexActual === -1) return codigos[0];
+
+                // Avanzar al siguiente
+                const siguienteIndex = (indexActual + 1) % codigos.length;
+                return codigos[siguienteIndex];
+            };
+
             // Función global para ejecutar acciones de jugadores desde index.html
             window.ejecutarAccionJugador = function(accion) {
-                // Obtener el primer jugador disponible en window.__jugadores
-                if (!window.__jugadores || Object.keys(window.__jugadores).length === 0) {
+                // Obtener el jugador actual
+                let codigo = window.obtenerSiguienteJugador();
+
+                if (!codigo) {
                     console.warn('No hay jugadores disponibles');
                     return;
                 }
 
-                // Tomar el primer jugador del objeto
-                const codigo = Object.keys(window.__jugadores)[0];
+                // Establecer a quién le toca actuar
+                window.__jugadorEnTurno = codigo;
+                console.log(`Es el turno del jugador: ${codigo}`);
                 
                 switch(accion) {
                     case 'apostar':
@@ -229,15 +194,18 @@
                     default:
                         console.warn(`Acción desconocida: ${accion}`);
                 }
+
+                // Registrar que este jugador accionó y avanzar al siguiente
+                window.__ultimoJugadorQueActuo = codigo;
+                window.__posicionUltimoJugadorQueActuo = window.__jugadores[codigo].posicion;
+                console.log(`Turno completado por ${codigo}. Próximo turno...`);
             };
         </script>
-
         <script type="module">
             import Pocker from './src/js/pocker.js';
             // La instancia de Pocker inicia automáticamente el juego
             const pocker = new Pocker(6, "NL50");
         </script>
-
         <!--
             Cargamos el script como un modulo luego de que se muestran los elementos 
         -->
