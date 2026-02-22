@@ -102,60 +102,60 @@ class Jugador {
                           (this.stakeAntes || 0);
 
     return `
-        <div id="player-${this.codigo}" class="player-seat seat-${this.codigo}" style="width: 100%; max-width: 280px; margin: auto;">
-            <div class="player-info-card relative p-3 bg-gray-800/40 rounded-xl border border-gray-700 shadow-lg">
+        <div id="player-${this.codigo}" class="player-seat seat-${this.codigo}" 
+            style="width: 230px; transform: scale(0.95); transform-origin: bottom; z-index: 10; margin-bottom: 20px; display: inline-block;">
+            
+            <div class="player-info-card relative p-3 bg-gray-900/90 rounded-xl border border-gray-700 shadow-2xl backdrop-blur-sm flex flex-col items-center">
                 
-                <div class="flex items-center justify-between mb-3">
-                    <div class="flex flex-col items-center gap-1">
-                        <div class="w-8 h-8 bg-gradient-to-br from-gray-500 to-gray-700 rounded-full flex items-center justify-center text-[10px] text-white border-2 border-yellow-500 font-black shadow-inner">
-                            ${this.ciegaActual || 'P'}
-                        </div>
-                        
-                        <h1 class="text-white font-bold text-[11px] leading-tight truncate m-0 p-0 text-center" style="max-width: 90px;">
-                            ${this.nombre}
-                        </h1>
+                <div class="flex flex-col items-center w-full gap-1 mb-3">
+                    
+                    <div class="w-8 h-8 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center text-[10px] text-white border-2 border-yellow-500 font-black shadow-inner">
+                        ${this.ciegaActual || 'P'}
                     </div>
-                    <div class="bg-yellow-600/20 px-3 py-1 rounded-full border border-yellow-600/50">
-                        <span class="text-yellow-400 font-black text-sm">${dineroAMostrar}€</span>
+                    
+                    <h1 class="text-white font-bold text-[10px] leading-tight truncate m-0 p-0 text-center w-full" style="max-width: 100%;">
+                        ${this.nombre}
+                    </h1>
+
+                    <div class="bg-black/60 px-3 py-0.5 rounded-lg border border-yellow-600/40 shadow-inner mt-0.5">
+                        <span class="text-yellow-400 font-black text-[11px]">
+                            ${dineroAMostrar}€
+                        </span>
                     </div>
                 </div>
 
-                
-
-                <div class="flex gap-1 justify-center mb-2" style="transform: scale(0.65); transform-origin: center;">
+                <div class="flex gap-1 justify-center mb-3" style="transform: scale(0.7); height: 50px; align-items: center;">
                     ${this.cartas.map(carta => carta.verCartaHTML()).join('')}
                 </div>
 
-
-
-                <div id="user_controls_${this.codigo}" class="flex flex-col gap-3">
+                <div id="user_controls_${this.codigo}" class="flex flex-col gap-2 w-full">
                     
-                    <div class="flex items-center gap-2 bg-black/30 p-2 rounded-lg">
+                    <div class="flex items-center gap-2 bg-black/50 p-1.5 rounded-lg border border-gray-800">
                         <input type="range" min="0" 
                             max="${this.cartera?.saldoEnCuenta || 0}" 
                             value="${this.cartera?.saldoEnCuenta || 0}" 
-                            class="flex-grow h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer accent-yellow-500">
+                            class="flex-grow h-1.5 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-yellow-500">
                         <input type="number" 
                             value="${this.cartera?.saldoEnCuenta || 0}" 
-                            class="bg-gray-900 text-yellow-400 font-bold w-16 py-1 text-center rounded border border-gray-600 text-xs focus:outline-none">
+                            class="bg-gray-950 text-yellow-500 font-bold w-14 py-0.5 text-center rounded border border-gray-700 text-[10px] focus:outline-none">
                     </div>
 
-                    <div class="grid grid-cols-2 gap-2">
-                        <button class="btn btn-sm btn-success w-full font-bold shadow-sm" onclick="window.apostarJugador?.('${this.codigo}')">
+                    <div class="grid grid-cols-2 gap-1.5">
+                        <button class="btn btn-xs btn-success w-full font-bold py-1 text-[10px] uppercase tracking-tighter" onclick="window.apostarJugador?.('${this.codigo}')">
                             Apostar
                         </button>
-                        <button class="btn btn-sm btn-info w-full font-bold shadow-sm text-white" onclick="window.igualarJugador?.('${this.codigo}')">
+                        <button class="btn btn-xs btn-info w-full font-bold py-1 text-[10px] text-white uppercase tracking-tighter" onclick="window.igualarJugador?.('${this.codigo}')">
                             Igualar
                         </button>
-                        <button class="btn btn-sm btn-danger w-full font-bold shadow-sm" onclick="window.foldearJugador?.('${this.codigo}')">
+                        <button class="btn btn-xs btn-danger w-full font-bold py-1 text-[10px] uppercase tracking-tighter" onclick="window.foldearJugador?.('${this.codigo}')">
                             Fold
                         </button>
-                        <button class="btn btn-sm btn-secondary w-full font-bold shadow-sm" onclick="window.chequearJugador?.('${this.codigo}')">
+                        <button class="btn btn-xs btn-secondary w-full font-bold py-1 text-[10px] uppercase tracking-tighter" onclick="window.chequearJugador?.('${this.codigo}')">
                             Check
                         </button>
                     </div>
-
                 </div>
+
             </div>
         </div>
     `;
