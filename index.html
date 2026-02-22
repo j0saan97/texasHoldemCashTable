@@ -119,16 +119,16 @@
 
                     <!-- Botones principales -->
                     <div class="flex flex-wrap gap-3 justify-center">
-                        <button class="bg-green-700 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg" onclick="window.apostarJugador && window.apostarJugador('${this.codigo}')">
+                        <button class="bg-green-700 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg" onclick="ejecutarAccionJugador('apostar')">
                             APOSTAR
                         </button>
-                        <button class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg" onclick="window.igualarJugador && window.igualarJugador('${this.codigo}')">
+                        <button class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg" onclick="ejecutarAccionJugador('igualar')">
                             IGUALAR
                         </button>
-                        <button class="bg-red-800 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg" onclick="window.foldearJugador && window.foldearJugador('${this.codigo}')">
+                        <button class="bg-red-800 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg" onclick="ejecutarAccionJugador('foldear')">
                             FOLD   
                         </button>
-                        <button class="bg-green-700 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg" onclick="window.chequearJugador && window.chequearJugador('${this.codigo}')">
+                        <button class="bg-green-700 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg" onclick="ejecutarAccionJugador('chequear')">
                             CHEQUEAR
                         </button>
                     </div>
@@ -201,6 +201,37 @@
             </div>
         </footer-->
         
+        <script>
+            // Función global para ejecutar acciones de jugadores desde index.html
+            window.ejecutarAccionJugador = function(accion) {
+                // Obtener el primer jugador disponible en window.__jugadores
+                if (!window.__jugadores || Object.keys(window.__jugadores).length === 0) {
+                    console.warn('No hay jugadores disponibles');
+                    return;
+                }
+
+                // Tomar el primer jugador del objeto
+                const codigo = Object.keys(window.__jugadores)[0];
+                
+                switch(accion) {
+                    case 'apostar':
+                        if (window.apostarJugador) window.apostarJugador(codigo);
+                        break;
+                    case 'igualar':
+                        if (window.igualarJugador) window.igualarJugador(codigo);
+                        break;
+                    case 'foldear':
+                        if (window.foldearJugador) window.foldearJugador(codigo);
+                        break;
+                    case 'chequear':
+                        if (window.chequearJugador) window.chequearJugador(codigo);
+                        break;
+                    default:
+                        console.warn(`Acción desconocida: ${accion}`);
+                }
+            };
+        </script>
+
         <script type="module">
             import Pocker from './src/js/pocker.js';
             // La instancia de Pocker inicia automáticamente el juego
