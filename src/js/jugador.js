@@ -93,69 +93,77 @@ class Jugador {
     }
 
     verCartas() {
-        if (this.cartas.length === 0) {
-            console.log("No tienes cartas.");
-        } else {
-            // Utiliza el método verCartaHTML() de la clase Carta para cada carta.
-            return `
-                <div id="player-${this.codigo}" class="player-seat seat-${this.codigo}">
-                    <!-- Contenedor principal de info del jugador -->
-                    <div class="player-info-card relative p-2">
-                        <!-- Icono/Avatar del jugador -->
-                        <div class="flex flex-row items-center">
-                            <div class="w-10 h-10 bg-gray-600 rounded-full mb-1 flex items-center justify-center text-xl text-white border-2 border-gray-400">
-                            👱‍♀️
-                            </div>
-                            <div class="w-10 h-10 bg-gray-600 rounded-full mb-1 flex items-center justify-center text-xl text-white border-2 border-gray-400">
-                                ${this.ciegaActual}
-                            </div>
-                            <div class="w-10 h-10 mb-1 flex items-center justify-center text-xl text-white">
-                                ${this.ciegaActual === 'BB' ? this.stakeBB + '€' : this.ciegaActual === 'SB' ? this.stakeSB + '€' : this.stakeAntes + '€'}
-                            </div>
-                        </div>
+    if (!this.cartas || this.cartas.length === 0) {
+        return ``;
+    }
 
-                        <!-- Stack y nombre -->
-                        <!-- Cartas (Ocultas/Cerradas) -->
-                        <div class="absolute -bottom-20 left-1/2 transform -translate-x-1/2 flex gap-1">
-                            ${this.cartas.map(carta => carta.verCartaHTML()).join('')}
-                        </div>
-                        <div class="flex flex-col items-center" style="margin-top:10px">
-                            <div class="flex items-center gap-4" id="user_controls_${this.codigo}">
+    const dineroAMostrar = this.ciegaActual === 'BB' ? this.stakeBB : 
+                          this.ciegaActual === 'SB' ? this.stakeSB : 
+                          (this.stakeAntes || 0);
 
-                                <!-- Slider de apuesta y botones de acción -->
-                                <div>
-                                    <div class="flex-grow flex items-center gap-2" style="min-width:150px">
-                                        <input type="range" min="0" max="${this.cartera.saldoEnCuenta}" value="${this.cartera.saldoEnCuenta}" class="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer">
-                                        <input type="number" value="${this.cartera.saldoEnCuenta}" class="bg-blue-600 text-white font-bold w-20 py-1 text-center rounded-lg focus:outline-none">
-                                    </div>
-                                </div>
-
-                                <!-- Botones de acción del jugador -->
-                                <div class="flex flex-row gap-1">
-                                    <button id="btn-nombre-${this.codigo}" class="btn btn-sm btn-info" style="width:100%">
-                                        ${this.nombre}
-                                    </button>
-                                    <button class="btn btn-sm btn-success"  style="width:100%;max-height:30px" onclick="window.apostarJugador && window.apostarJugador('${this.codigo}')">
-                                        Apostar
-                                    </button>
-                                    <button class="btn btn-sm btn-info"  style="width:100%;max-height:30px" onclick="window.igualarJugador && window.igualarJugador('${this.codigo}')">
-                                        Igualar
-                                    </button>
-                                    <button class="btn btn-sm btn-danger" style="width:100%;max-height:30px" onclick="window.foldearJugador && window.foldearJugador('${this.codigo}')">
-                                        Fold
-                                    </button>
-                                    <button class="btn btn-sm btn-danger" style="width:100%;max-height:30px" onclick="window.chequearJugador && window.chequearJugador('${this.codigo}')">
-                                        Chequear
-                                    </button>
-                                </div>
-                            </div>
+    return `
+        <div id="player-${this.codigo}" class="player-seat seat-${this.codigo}" style="width: 100%; max-width: 280px; margin: auto;">
+            <div class="player-info-card relative p-3 bg-gray-800/40 rounded-xl border border-gray-700 shadow-lg">
+                
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex flex-col items-center gap-1">
+                        <div class="w-8 h-8 bg-gradient-to-br from-gray-500 to-gray-700 rounded-full flex items-center justify-center text-[10px] text-white border-2 border-yellow-500 font-black shadow-inner">
+                            ${this.ciegaActual || 'P'}
                         </div>
+                        
+                        <h1 class="text-white font-bold text-[11px] leading-tight truncate m-0 p-0 text-center" style="max-width: 90px;">
+                            ${this.nombre}
+                        </h1>
+                    </div>
+                    <div class="bg-yellow-600/20 px-3 py-1 rounded-full border border-yellow-600/50">
+                        <span class="text-yellow-400 font-black text-sm">${dineroAMostrar}€</span>
                     </div>
                 </div>
-                `;
-        }
-    }
+
+                
+
+                <div class="flex gap-1 justify-center mb-2" style="transform: scale(0.65); transform-origin: center;">
+                    ${this.cartas.map(carta => carta.verCartaHTML()).join('')}
+                </div>
+
+
+
+                <div id="user_controls_${this.codigo}" class="flex flex-col gap-3">
+                    
+                    <div class="flex items-center gap-2 bg-black/30 p-2 rounded-lg">
+                        <input type="range" min="0" 
+                            max="${this.cartera?.saldoEnCuenta || 0}" 
+                            value="${this.cartera?.saldoEnCuenta || 0}" 
+                            class="flex-grow h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer accent-yellow-500">
+                        <input type="number" 
+                            value="${this.cartera?.saldoEnCuenta || 0}" 
+                            class="bg-gray-900 text-yellow-400 font-bold w-16 py-1 text-center rounded border border-gray-600 text-xs focus:outline-none">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="btn btn-sm btn-success w-full font-bold shadow-sm" onclick="window.apostarJugador?.('${this.codigo}')">
+                            Apostar
+                        </button>
+                        <button class="btn btn-sm btn-info w-full font-bold shadow-sm text-white" onclick="window.igualarJugador?.('${this.codigo}')">
+                            Igualar
+                        </button>
+                        <button class="btn btn-sm btn-danger w-full font-bold shadow-sm" onclick="window.foldearJugador?.('${this.codigo}')">
+                            Fold
+                        </button>
+                        <button class="btn btn-sm btn-secondary w-full font-bold shadow-sm" onclick="window.chequearJugador?.('${this.codigo}')">
+                            Check
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    `;
 }
+} 
+
+
+   
 
 // RELACION ENTRE HTML Y FUNCIONES DE LA INSTANCIA JUGADOR:
 if (typeof window !== 'undefined') {
