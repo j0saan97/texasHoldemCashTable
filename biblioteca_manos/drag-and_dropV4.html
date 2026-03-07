@@ -187,6 +187,18 @@
 
       const dropZone = document.getElementById("dropZone");
       const fileInput = document.getElementById("fileInput");
+      let selectedFile = null; // Variable para almacenar el archivo seleccionado
+
+      // Manejar selección de archivo desde input
+      fileInput.addEventListener("change", () => {
+        if (fileInput.files.length > 0) {
+          selectedFile = fileInput.files[0];
+          const reader = new FileReader();
+          reader.onload = ev => dropZone.innerHTML = `<img src="${ev.target.result}">`;
+          reader.readAsDataURL(selectedFile);
+        }
+      });
+
       dropZone.addEventListener("click", () => fileInput.click());
       dropZone.addEventListener("dragover", e => { e.preventDefault(); dropZone.style.background = "#ffffff22"; });
       dropZone.addEventListener("dragleave", () => dropZone.style.background = "transparent");
@@ -195,11 +207,7 @@
         dropZone.style.background = "transparent";
         const file = e.dataTransfer.files[0];
         if (file && file.type.startsWith("image/")) {
-          // Asignar el archivo al input file
-          const dt = new DataTransfer();
-          dt.items.add(file);
-          fileInput.files = dt.files;
-
+          selectedFile = file; // Guardar el archivo en la variable
           const reader = new FileReader();
           reader.onload = ev => dropZone.innerHTML = `<img src="${ev.target.result}">`;
           reader.readAsDataURL(file);
@@ -216,24 +224,25 @@
         return;
     }
 
-    // 3. Creamos el objeto de datos
-    const data = {
-      modalidad: modSelect.value,
-      variedad: varSelect.value,
-      subtipo: subSelect.value,
-      nivel: nivelSelect.value,
-      rival: rivalSelect.value,
-      notas: textarea.value,
-      categorias: selectedTypes
-    };
+    // 3. Creamos FormData para enviar archivos e datos
+    const formData = new FormData();
+    formData.append('modalidad', modSelect.value);
+    formData.append('variedad', varSelect.value);
+    formData.append('subtipo', subSelect.value);
+    formData.append('nivel', nivelSelect.value);
+    formData.append('rival', rivalSelect.value);
+    formData.append('notas', textarea.value);
+    formData.append('categorias', JSON.stringify(selectedTypes));
 
-    // 4. Envío al servidor (Node.js API)
+    // 4. Agregar imagen si existe
+    if (selectedFile) {
+      formData.append('foto_mano', selectedFile);
+    }
+
+    // 5. Envío al servidor (Node.js API)
     fetch('http://localhost:3000/api/manos/viewer', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
+      body: formData  // No necesitamos Content-Type, fetch lo pone automáticamente
     })
     .then(response => {
       if (!response.ok) {
@@ -245,6 +254,13 @@
       console.log("Respuesta del servidor:", result);
       if (result.status === 'success') {
         alert("¡Mano guardada con éxito en la base de datos!");
+        // Limpiar formulario después de envío exitoso
+        textarea.value = '';
+        selectedFile = null;
+        fileInput.value = '';
+        dropZone.innerHTML = '<p>Arrastra una imagen aquí o haz clic para seleccionar</p>';
+        // Desmarcar checkboxes
+        document.querySelectorAll('.checkbox-grid input:checked').forEach(cb => cb.checked = false);
       } else {
         alert("Error: " + result.message);
       }
