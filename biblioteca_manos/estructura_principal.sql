@@ -19,7 +19,7 @@ CREATE TABLE categorias (
 );
 
 -- 4. Tabla Principal de Manos
-CREATE TABLE manos (
+CREATE TABLE manos_review (
     id INT AUTO_INCREMENT PRIMARY KEY,
     modalidad ENUM('NoLimitHoldem', 'PotLimitOmaha') NOT NULL,
     variedad_id INT,
@@ -38,6 +38,6 @@ CREATE TABLE mano_categorias (
     mano_id INT,
     categoria_id INT,
     PRIMARY KEY (mano_id, categoria_id),
-    FOREIGN KEY (mano_id) REFERENCES manos(id) ON DELETE CASCADE,
+    FOREIGN KEY (mano_id) REFERENCES manos_review(id) ON DELETE CASCADE,
     FOREIGN KEY (categoria_id) REFERENCES categorias(id)
 );

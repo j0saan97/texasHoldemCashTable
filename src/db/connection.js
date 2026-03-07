@@ -217,6 +217,27 @@ class DatabaseConnection {
             throw error;
         }
     }
+
+    /**
+     * @method ejecutarConsulta
+     * @description Ejecuta una consulta SQL con parámetros opcionales
+     * @param {string} sql - La consulta SQL
+     * @param {Array} params - Parámetros para la consulta
+     * @returns {Promise<Array|Object>} Resultado de la consulta
+     */
+    async ejecutarConsulta(sql, params = []) {
+        let connection;
+        try {
+            connection = await this.obtenerConexion();
+            const [rows] = await connection.execute(sql, params);
+            return rows;
+        } catch (error) {
+            console.error('Error al ejecutar consulta:', error);
+            throw error;
+        } finally {
+            if (connection) connection.release();
+        }
+    }
 }
 
 export default DatabaseConnection;

@@ -65,6 +65,165 @@ const server = http.createServer(async (req, res) => {
     const query = parseQuery(parsedUrl.search.substring(1));
 
     // API ENDPOINTS
+    if (pathname === '/api/manos' && req.method === 'POST') {
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk.toString();
+        });
+        req.on('end', async () => {
+            try {
+                const data = JSON.parse(body);
+                await db.inicializar();
+
+                // Obtener datos
+                const { modalidad, variedad, subtipo, nivel, rival, notas, categorias } = data;
+
+                // Insertar en variedades si no existe
+                let variedad_id = null;
+                const variedadesResult = await db.ejecutarConsulta('SELECT id FROM variedades WHERE nombre = ?', [variedad]);
+                if (variedadesResult.length > 0) {
+                    variedad_id = variedadesResult[0].id;
+                } else {
+                    const insertVar = await db.ejecutarConsulta('INSERT INTO variedades (nombre) VALUES (?)', [variedad]);
+                    variedad_id = insertVar.insertId;
+                }
+
+                // Insertar en subtipos si no existe
+                let subtipo_id = null;
+                const subtiposResult = await db.ejecutarConsulta('SELECT id FROM subtipos WHERE nombre = ? AND variedad_id = ?', [subtipo, variedad_id]);
+                if (subtiposResult.length > 0) {
+                    subtipo_id = subtiposResult[0].id;
+                } else {
+                    const insertSub = await db.ejecutarConsulta('INSERT INTO subtipos (variedad_id, nombre) VALUES (?, ?)', [variedad_id, subtipo]);
+                    subtipo_id = insertSub.insertId;
+                }
+
+                // Insertar en manos_review
+                const insertMano = await db.ejecutarConsulta(
+                    'INSERT INTO manos_review (modalidad, variedad_id, subtipo_id, nivel_stake, tipo_rival, notas) VALUES (?, ?, ?, ?, ?, ?)',
+                    [modalidad, variedad_id, subtipo_id, nivel, rival, notas]
+                );
+                const mano_id = insertMano.insertId;
+
+                // Insertar categorías
+                for (const catId of categorias) {
+                    await db.ejecutarConsulta('INSERT INTO mano_categorias (mano_id, categoria_id) VALUES (?, ?)', [mano_id, catId]);
+                }
+
+                await db.cerrarConexion();
+
+                res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+                res.end(JSON.stringify({ status: 'success', message: 'Mano guardada con éxito' }));
+            } catch (error) {
+                console.error('Error al guardar la mano:', error);
+                res.writeHead(500, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+                res.end(JSON.stringify({ status: 'error', message: error.message }));
+            }
+        });
+        return;
+    }
+
+    if (pathname === '/api/manos/viewer' && req.method === 'GET') {
+        try {
+            await db.inicializar();
+            // Consulta para obtener todas las manos con sus detalles
+            const query = `
+                SELECT 
+                    m.id,
+                    m.modalidad,
+                    v.nombre AS variedad,
+                    s.nombre AS subtipo,
+                    m.nivel_stake,
+                    m.tipo_rival,
+                    m.notas,
+                    m.ruta_imagen,
+                    m.fecha_registro,
+                    GROUP_CONCAT(c.nombre) AS categorias
+                FROM manos_review m
+                LEFT JOIN variedades v ON m.variedad_id = v.id
+                LEFT JOIN subtipos s ON m.subtipo_id = s.id
+                LEFT JOIN mano_categorias mc ON m.id = mc.mano_id
+                LEFT JOIN categorias c ON mc.categoria_id = c.id
+                GROUP BY m.id
+                ORDER BY m.fecha_registro DESC
+            `;
+            const manos = await db.ejecutarConsulta(query);
+            await db.cerrarConexion();
+            
+            res.writeHead(200, { 
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            });
+            res.end(JSON.stringify(manos), 'utf-8');
+        } catch (error) {
+            res.writeHead(500, { 
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            });
+            res.end(JSON.stringify({ error: error.message }), 'utf-8');
+        }
+        return;
+    }
+
+    if (pathname === '/api/manos/viewer' && req.method === 'POST') {
+        console.log('POST /api/manos/viewer - Recibiendo datos para filtrado');
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk.toString();
+        });
+        req.on('end', async () => {
+            try {
+                const data = JSON.parse(body);
+                await db.inicializar();
+
+                // Obtener datos
+                const { modalidad, variedad, subtipo, nivel, rival, notas, categorias } = data;
+
+                // Insertar en variedades si no existe
+                let variedad_id = null;
+                const variedadesResult = await db.ejecutarConsulta('SELECT id FROM variedades WHERE nombre = ?', [variedad]);
+                if (variedadesResult.length > 0) {
+                    variedad_id = variedadesResult[0].id;
+                } else {
+                    const insertVar = await db.ejecutarConsulta('INSERT INTO variedades (nombre) VALUES (?)', [variedad]);
+                    variedad_id = insertVar.insertId;
+                }
+
+                // Insertar en subtipos si no existe
+                let subtipo_id = null;
+                const subtiposResult = await db.ejecutarConsulta('SELECT id FROM subtipos WHERE nombre = ? AND variedad_id = ?', [subtipo, variedad_id]);
+                if (subtiposResult.length > 0) {
+                    subtipo_id = subtiposResult[0].id;
+                } else {
+                    const insertSub = await db.ejecutarConsulta('INSERT INTO subtipos (variedad_id, nombre) VALUES (?, ?)', [variedad_id, subtipo]);
+                    subtipo_id = insertSub.insertId;
+                }
+
+                // Insertar en manos_review
+                const insertMano = await db.ejecutarConsulta(
+                    'INSERT INTO manos_review (modalidad, variedad_id, subtipo_id, nivel_stake, tipo_rival, notas) VALUES (?, ?, ?, ?, ?, ?)',
+                    [modalidad, variedad_id, subtipo_id, nivel, rival, notas]
+                );
+                const mano_id = insertMano.insertId;
+
+                // Insertar categorías
+                for (const catId of categorias) {
+                    await db.ejecutarConsulta('INSERT INTO mano_categorias (mano_id, categoria_id) VALUES (?, ?)', [mano_id, catId]);
+                }
+
+                await db.cerrarConexion();
+
+                res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+                res.end(JSON.stringify({ status: 'success', message: 'Mano guardada con éxito' }));
+            } catch (error) {
+                console.error('Error al guardar la mano:', error);
+                res.writeHead(500, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+                res.end(JSON.stringify({ status: 'error', message: error.message }));
+            }
+        });
+        return;
+    }
+
     if (pathname === '/api/usuarios') {
         try {
             await db.inicializar();
@@ -125,6 +284,24 @@ const server = http.createServer(async (req, res) => {
             });
             res.end(JSON.stringify({ error: error.message }), 'utf-8');
         }
+        return;
+    }
+
+    // Servir archivos de uploads
+    if (pathname.startsWith('/uploads/')) {
+        const filePath = path.join(__dirname, pathname);
+        const ext = path.extname(filePath).toLowerCase();
+        const mimeType = mimeTypes[ext] || 'application/octet-stream';
+
+        fs.readFile(filePath, (err, content) => {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                res.end('<h1>404 - Archivo no encontrado</h1>', 'utf-8');
+            } else {
+                res.writeHead(200, { 'Content-Type': mimeType });
+                res.end(content, 'utf-8');
+            }
+        });
         return;
     }
 
