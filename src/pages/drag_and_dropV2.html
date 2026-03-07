@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    background: #0f3b2e;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  section.hand-review {
+    background: #145c43;
+    padding: 20px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  h3 { margin: 0 0 15px; text-align: center; }
+
+  /* Contenedor de Selects con Placeholder Style */
+  .selectors-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  select {
+    background: #0b3d2e;
+    color: white;
+    border: 1px solid #ffffff44;
+    padding: 8px;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  /* Grid de Checkboxes para Tipo de Mano */
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    background: #0b3d2e;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    border: 1px solid #ffffff22;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .drop-zone {
+    border: 2px dashed #ffffff88;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+  }
+
+  .drop-zone img {
+    max-width: 100%;
+    max-height: 220px;
+    margin-top: 10px;
+    border-radius: 6px;
+  }
+
+  .street-buttons {
+    display: flex;
+    gap: 6px;
+    margin: 12px 0;
+  }
+
+  .street-buttons button {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    background: #0b3d2e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #ffffff22;
+  }
+
+  .street-buttons button:hover { background: #07291f; }
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 120px;
+    resize: vertical;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    background: #eee;
+    color: #333;
+  }
+
+  .btn-send {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #2ecc71;
+    color: #0f3b2e;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .btn-send:hover { background: #27ae60; }
+</style>
+</head>
+
+<body>
+
+<section class="hand-review">
+  <h3>Sube tu mano</h3>
+
+  <div class="selectors-container">
+    <select id="modalidad">
+      <option value="" disabled selected hidden>Selecciona Modalidad...</option>
+      <option value="NoLimitHoldem">NoLimitHoldem</option>
+      <option value="PotLimitOmaha">PotLimitOmaha</option>
+    </select>
+
+    <select id="variedad">
+      <option value="" disabled selected hidden>Selecciona Variedad...</option>
+      <option value="MTT">MTT</option>
+      <option value="CASH_GAME">CASH GAME</option>
+      <option value="MTT">Spin and Go</option>
+    </select>
+
+    <select id="subtipo">
+      <option value="" disabled selected hidden>Selecciona Subtipo...</option>
+    </select>
+  </div>
+
+  <p style="font-size: 12px; margin-bottom: 5px; color: #aaa; font-weight: bold;">TIPO DE MANO (Múltiple):</p>
+  <div class="checkbox-grid">
+    <label class="check-item"><input type="checkbox" value="1"> 1-ERRORES GRAVES</label>
+    <label class="check-item"><input type="checkbox" value="2"> 2-MANOS TOP VALUE</label>
+    <label class="check-item"><input type="checkbox" value="3"> 3-Pozos Grandes</label>
+    <label class="check-item"><input type="checkbox" value="4"> 4-ERRORES PREFLOP</label>
+    <label class="check-item"><input type="checkbox" value="5"> 5-Pozos 3beteados</label>
+    <label class="check-item"><input type="checkbox" value="6"> 6-vs LOCO</label>
+    <label class="check-item"><input type="checkbox" value="7"> 7-CALL-FOLD vs agresion</label>
+    <label class="check-item"><input type="checkbox" value="8"> 8-DudaSize</label>
+    <label class="check-item"><input type="checkbox" value="9"> 9-Inducimos</label>
+  </div>
+
+  <div class="drop-zone" id="dropZone">
+    Arrastra la imagen aquí<br>o haz click
+    <input type="file" id="fileInput" accept="image/*" hidden>
+  </div>
+
+  <div class="street-buttons">
+    <button data-street="PREFLOP">Pre</button>
+    <button data-street="FLOP">Flop</button>
+    <button data-street="TURN">Turn</button>
+    <button data-street="RIVER">River</button>
+  </div>
+
+  <textarea id="notes" placeholder="Describe la mano..."></textarea>
+
+  <button class="btn-send" id="btnSend">ENVIAR A BIBLIOTECA</button>
+
+</section>
+
+<script>
+  const variedadSelect = document.getElementById('variedad');
+  const subtipoSelect = document.getElementById('subtipo');
+  const textarea = document.getElementById("notes");
+  const dropZone = document.getElementById("dropZone");
+  const fileInput = document.getElementById("fileInput");
+
+  // Estructura de subtipos según tu TXT
+  const opcionesSubtipo = {
+    'MTT': [
+      'vanilla (sin bounty)', 
+      'PKO', 
+      'MisteryBounty', 
+      'Hyper_PKO', 
+      'Hyper_vanilla'
+    ],
+    'CASH_GAME': [
+      '6Max - SIN ANTE', 
+      '6Max - CON ANTE', 
+      '9max - SIN ANTE', 
+      '9max - CON ANTE', 
+      '9max - CON ANTE DOBLADO (200bb)', 
+      'ZOOM',
+    ],
+    'Spin and Go': [
+      'velocidad normal', 
+      'NITRO', 
+    ]
+  };
+
+  // Lógica de Selects Dependientes
+  variedadSelect.addEventListener('change', function() {
+    subtipoSelect.innerHTML = '<option value="" disabled selected hidden>Selecciona Subtipo...</option>';
+    
+    if (opcionesSubtipo[this.value]) {
+      opcionesSubtipo[this.value].forEach(sub => {
+        const opt = document.createElement('option');
+        opt.value = sub; 
+        opt.textContent = sub;
+        subtipoSelect.appendChild(opt);
+      });
+    }
+  });
+
+  // Botones de calles
+  document.querySelectorAll(".street-buttons button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const tag = `[${btn.dataset.street}]`;
+      if (!textarea.value.includes(tag)) {
+        textarea.value += `\n\n${tag}\n`;
+        textarea.focus();
+      }
+    });
+  });
+
+  // Drag and Drop
+  dropZone.addEventListener("click", () => fileInput.click());
+  dropZone.addEventListener("dragover", e => { e.preventDefault(); dropZone.style.background = "#ffffff22"; });
+  dropZone.addEventListener("dragleave", () => dropZone.style.background = "transparent");
+  dropZone.addEventListener("drop", e => {
+    e.preventDefault();
+    dropZone.style.background = "transparent";
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith("image/")) {
+      const reader = new FileReader();
+      reader.onload = ev => dropZone.innerHTML = `<img src="${ev.target.result}">`;
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Botón enviar
+  document.getElementById('btnSend').addEventListener('click', () => {
+    const selectedTypes = Array.from(document.querySelectorAll('.checkbox-grid input:checked'))
+                               .map(cb => cb.value);
+
+    console.log("Datos capturados:", {
+      modalidad: document.getElementById('modalidad').value,
+      variedad: variedadSelect.value,
+      subtipo: subtipoSelect.value,
+      tiposMano: selectedTypes,
+      notas: textarea.value
+    });
+    
+    alert("¡Mano enviada! Revisa la consola para ver el objeto final.");
+  });
+</script>
+
+</body>
+</html>
