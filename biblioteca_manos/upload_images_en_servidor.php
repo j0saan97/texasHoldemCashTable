@@ -1,5 +1,7 @@
 <?php
 // Configuración de la base de datos
+
+// Cambia estos valores por los de credentials.txt
 $host = "localhost";
 $user = "tu_usuario_db";
 $pass = "tu_password_db";
