@@ -5,127 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-  body {
-    background: #0f3b2e;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-
-  section.hand-review {
-    background: #145c43;
-    padding: 20px;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 450px;
-    color: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  }
-
+  body { background: #0f3b2e; display: flex; justify-content: center; padding: 20px; font-family: Arial, sans-serif; }
+  section.hand-review { background: #145c43; padding: 20px; border-radius: 12px; width: 100%; max-width: 450px; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
   h3 { margin: 0 0 15px; text-align: center; }
-
-  .selectors-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 15px;
-  }
-
-  select {
-    background: #0b3d2e;
-    color: white;
-    border: 1px solid #ffffff44;
-    padding: 8px;
-    border-radius: 6px;
-    outline: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 5px;
-  }
-
-  .checkbox-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    background: #0b3d2e;
-    padding: 12px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    font-size: 13px;
-    border: 1px solid #ffffff22;
-  }
-
-  .check-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-  }
-
-  .drop-zone {
-    border: 2px dashed #ffffff88;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
-    margin-bottom: 10px;
-    transition: background 0.3s;
-  }
-
-  .drop-zone img {
-    max-width: 100%;
-    max-height: 220px;
-    margin-top: 10px;
-    border-radius: 6px;
-  }
-
-  .street-buttons {
-    display: flex;
-    gap: 6px;
-    margin: 12px 0;
-  }
-
-  .street-buttons button {
-    flex: 1;
-    padding: 8px;
-    border: none;
-    border-radius: 6px;
-    background: #0b3d2e;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    border: 1px solid #ffffff22;
-  }
-
+  .selectors-container { display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; }
+  select { background: #0b3d2e; color: white; border: 1px solid #ffffff44; padding: 8px; border-radius: 6px; outline: none; cursor: pointer; width: 100%; margin-bottom: 5px; }
+  .checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; background: #0b3d2e; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 13px; border: 1px solid #ffffff22; }
+  .check-item { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+  .drop-zone { border: 2px dashed #ffffff88; border-radius: 8px; padding: 20px; text-align: center; cursor: pointer; margin-bottom: 10px; transition: background 0.3s; }
+  .drop-zone img { max-width: 100%; max-height: 220px; margin-top: 10px; border-radius: 6px; }
+  .street-buttons { display: flex; gap: 6px; margin: 12px 0; }
+  .street-buttons button { flex: 1; padding: 8px; border: none; border-radius: 6px; background: #0b3d2e; color: white; font-weight: bold; cursor: pointer; border: 1px solid #ffffff22; }
   .street-buttons button:hover { background: #07291f; }
-
-  textarea {
-    width: 100%;
-    box-sizing: border-box;
-    height: 120px;
-    resize: vertical;
-    border-radius: 8px;
-    border: none;
-    padding: 10px;
-    font-size: 14px;
-    background: #eee;
-    color: #333;
-  }
-
-  .btn-send {
-    width: 100%;
-    margin-top: 15px;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    background: #2ecc71;
-    color: #0f3b2e;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-  }
-
+  textarea { width: 100%; box-sizing: border-box; height: 120px; resize: vertical; border-radius: 8px; border: none; padding: 10px; font-size: 14px; background: #eee; color: #333; }
+  .btn-send { width: 100%; margin-top: 15px; padding: 12px; border-radius: 8px; border: none; background: #2ecc71; color: #0f3b2e; font-weight: bold; font-size: 16px; cursor: pointer; }
   .btn-send:hover { background: #27ae60; }
 </style>
 </head>
@@ -150,14 +43,17 @@
       <option value="" disabled selected hidden>Selecciona Subtipo...</option>
     </select>
 
+    <select id="nivel">
+      <option value="" disabled selected hidden>Nivel / Buy-in...</option>
+    </select>
+
     <select id="tipoRival">
       <option value="" disabled selected hidden>Tipo Rival</option>
-      </select>
+    </select>
   </div>
 
   <p style="font-size: 12px; margin-bottom: 5px; color: #aaa; font-weight: bold;">CATEGORIA</p>
-  <div class="checkbox-grid" id="checkboxGrid">
-    </div>
+  <div class="checkbox-grid" id="checkboxGrid"></div>
 
   <div class="drop-zone" id="dropZone">
     Arrastra la imagen aquí<br>o haz click
@@ -172,12 +68,10 @@
   </div>
 
   <textarea id="notes" placeholder="Describe la mano..."></textarea>
-
   <button class="btn-send" id="btnSend">ENVIAR A BIBLIOTECA</button>
 </section>
 
 <script>
-  // EL OBJETO MAESTRO QUE CENTRALIZA TODO
   const POKER_CONFIG = {
     modalidades: {
         'NoLimitHoldem': {
@@ -187,8 +81,15 @@
         },
         'PotLimitOmaha': {
             'CASH_GAME': ['PLO 6Max', 'PLO 9Max', 'PLO ZOOM'],
-            'MTT': ['PLO vanilla', 'PLO PKO']
+            'MTT': ['PLO vanilla', 'PLO PKO'],
+            'SPIN_AND_GO': ['PLO Spin']
         }
+    },
+    // Definición de niveles según tus requerimientos
+    nivelesConfig: {
+        'CASH_GAME': ["NL2", "NL5", "NL10", "NL25", "NL50", "NL100", "NL200", "NL400", "NL600", "NL1000"],
+        'MTT': [2, 5, 10, 25, 50, 100, 200, 400, 600, 1000], // Se extraen del objeto BuyIn
+        'SPIN_AND_GO': ["0.25", "0.50", "1", "2", "3", "5", "10", "20", "50", "100"]
     },
     tiposDeRival: ['Desconocido (Default)', 'Fish', 'Reg Agresivo', 'Nit', 'Whale / Ballena', 'Loco-Maniatico', 'Pagón'],
     clasificaciones: [
@@ -207,20 +108,18 @@
   const modSelect = document.getElementById('modalidad');
   const varSelect = document.getElementById('variedad');
   const subSelect = document.getElementById('subtipo');
+  const nivelSelect = document.getElementById('nivel');
   const rivalSelect = document.getElementById('tipoRival');
   const grid = document.getElementById('checkboxGrid');
   const textarea = document.getElementById("notes");
 
-  // INICIALIZACIÓN: Llenar Rivales y Checkboxes
   function init() {
-    // Llenar Rivales
     POKER_CONFIG.tiposDeRival.forEach(r => {
         const opt = document.createElement('option');
         opt.value = r; opt.textContent = r;
         rivalSelect.appendChild(opt);
     });
 
-    // Llenar Checkboxes de Clasificación
     POKER_CONFIG.clasificaciones.forEach(c => {
         const label = document.createElement('label');
         label.className = 'check-item';
@@ -230,10 +129,10 @@
   }
   init();
 
-  // Lógica de Selects en Cascada
   modSelect.addEventListener('change', function() {
     varSelect.innerHTML = '<option value="" disabled selected hidden>Selecciona Variedad...</option>';
     subSelect.innerHTML = '<option value="" disabled selected hidden>Selecciona Subtipo...</option>';
+    nivelSelect.innerHTML = '<option value="" disabled selected hidden>Nivel / Buy-in...</option>';
     
     const variedades = POKER_CONFIG.modalidades[this.value];
     if (variedades) {
@@ -247,7 +146,12 @@
 
   varSelect.addEventListener('change', function() {
     subSelect.innerHTML = '<option value="" disabled selected hidden>Selecciona Subtipo...</option>';
-    const subtipos = POKER_CONFIG.modalidades[modSelect.value][this.value];
+    nivelSelect.innerHTML = '<option value="" disabled selected hidden>Nivel / Buy-in...</option>';
+    
+    const variedadActual = this.value;
+    const subtipos = POKER_CONFIG.modalidades[modSelect.value][variedadActual];
+    
+    // Llenar subtipos
     if (subtipos) {
         subtipos.forEach(s => {
             const opt = document.createElement('option');
@@ -255,20 +159,32 @@
             subSelect.appendChild(opt);
         });
     }
+
+    // Llenar niveles dinámicamente según la VARIEDAD
+    const niveles = POKER_CONFIG.nivelesConfig[variedadActual];
+    if (niveles) {
+        niveles.forEach(n => {
+            const opt = document.createElement('option');
+            // Si es MTT, n es el valor del BuyIn, si no, es el string directo
+            const valor = (variedadActual === 'MTT') ? n : n;
+            const texto = (variedadActual === 'MTT') ? `Buy-in: $${n}` : n;
+            opt.value = valor; 
+            opt.textContent = texto;
+            nivelSelect.appendChild(opt);
+        });
+    }
   });
 
-  // Botones de calles
   document.querySelectorAll(".street-buttons button").forEach(btn => {
     btn.addEventListener("click", () => {
       const tag = `[${btn.dataset.street}]`;
       if (!textarea.value.includes(tag)) {
-        textarea.value += `\n\n${tag}\n`;
+        textarea.value += (textarea.value ? "\n\n" : "") + tag + "\n";
         textarea.focus();
       }
     });
   });
 
-  // Drag and Drop
   const dropZone = document.getElementById("dropZone");
   const fileInput = document.getElementById("fileInput");
   dropZone.addEventListener("click", () => fileInput.click());
@@ -285,7 +201,6 @@
     }
   });
 
-  // Botón enviar
   document.getElementById('btnSend').addEventListener('click', () => {
     const selectedTypes = Array.from(document.querySelectorAll('.checkbox-grid input:checked')).map(cb => cb.value);
     
@@ -293,13 +208,14 @@
       modalidad: modSelect.value,
       variedad: varSelect.value,
       subtipo: subSelect.value,
+      nivel: nivelSelect.value,
       rival: rivalSelect.value,
       clasificaciones: selectedTypes,
       notas: textarea.value
     };
 
     console.log("Objeto Final para BD:", data);
-    alert("Datos listos. Revisa la consola (F12) para ver el objeto JSON.");
+    alert("Datos listos en consola.");
   });
 </script>
 

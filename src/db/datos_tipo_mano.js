@@ -25,3 +25,17 @@ const nivelTorneo = [
     { "BuyIn": 600 },
     { "BuyIn": 1000 }
 ];
+
+// 3. SOLO APLICA A LA VARIANTE SPIN AND GO, INDEPENDIENTEMENTE DE SI ES NOLIMIThOLDEM O POT LIMIToMAHA
+const nivelSpinAndGo = [
+    "0.25",
+    "0.50",
+    "1",
+    "2",
+    "3",
+    "5",
+    "10",
+    "20",
+    "50",
+    "100",
+]
