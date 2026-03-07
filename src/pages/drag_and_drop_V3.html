@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    background: #0f3b2e;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  section.hand-review {
+    background: #145c43;
+    padding: 20px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  h3 { margin: 0 0 15px; text-align: center; }
+
+  .selectors-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  select {
+    background: #0b3d2e;
+    color: white;
+    border: 1px solid #ffffff44;
+    padding: 8px;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    background: #0b3d2e;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    border: 1px solid #ffffff22;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .drop-zone {
+    border: 2px dashed #ffffff88;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+  }
+
+  .drop-zone img {
+    max-width: 100%;
+    max-height: 220px;
+    margin-top: 10px;
+    border-radius: 6px;
+  }
+
+  .street-buttons {
+    display: flex;
+    gap: 6px;
+    margin: 12px 0;
+  }
+
+  .street-buttons button {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    background: #0b3d2e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #ffffff22;
+  }
+
+  .street-buttons button:hover { background: #07291f; }
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 120px;
+    resize: vertical;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    background: #eee;
+    color: #333;
+  }
+
+  .btn-send {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #2ecc71;
+    color: #0f3b2e;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .btn-send:hover { background: #27ae60; }
+</style>
+</head>
+
+<body>
+
+<section class="hand-review">
+  <h3>Sube tu mano</h3>
+
+  <div class="selectors-container">
+    <select id="modalidad">
+      <option value="" disabled selected hidden>Selecciona Modalidad...</option>
+      <option value="NoLimitHoldem">NoLimitHoldem</option>
+      <option value="PotLimitOmaha">PotLimitOmaha</option>
+    </select>
+
+    <select id="variedad">
+      <option value="" disabled selected hidden>Selecciona Variedad...</option>
+    </select>
+
+    <select id="subtipo">
+      <option value="" disabled selected hidden>Selecciona Subtipo...</option>
+    </select>
+
+    <select id="tipoRival">
+      <option value="" disabled selected hidden>Tipo Rival</option>
+      </select>
+  </div>
+
+  <p style="font-size: 12px; margin-bottom: 5px; color: #aaa; font-weight: bold;">CATEGORIA</p>
+  <div class="checkbox-grid" id="checkboxGrid">
+    </div>
+
+  <div class="drop-zone" id="dropZone">
+    Arrastra la imagen aquí<br>o haz click
+    <input type="file" id="fileInput" accept="image/*" hidden>
+  </div>
+
+  <div class="street-buttons">
+    <button data-street="PREFLOP">Pre</button>
+    <button data-street="FLOP">Flop</button>
+    <button data-street="TURN">Turn</button>
+    <button data-street="RIVER">River</button>
+  </div>
+
+  <textarea id="notes" placeholder="Describe la mano..."></textarea>
+
+  <button class="btn-send" id="btnSend">ENVIAR A BIBLIOTECA</button>
+</section>
+
+<script>
+  // EL OBJETO MAESTRO QUE CENTRALIZA TODO
+  const POKER_CONFIG = {
+    modalidades: {
+        'NoLimitHoldem': {
+            'MTT': ['vanilla (sin bounty)', 'PKO', 'MisteryBounty', 'Hyper_PKO', 'Hyper_vanilla'],
+            'CASH_GAME': ['6Max - SIN ANTE', '6Max - CON ANTE', '9max - SIN ANTE', '9max - CON ANTE', '9max - 200bb', 'ZOOM'],
+            'SPIN_AND_GO': ['velocidad normal', 'NITRO']
+        },
+        'PotLimitOmaha': {
+            'CASH_GAME': ['PLO 6Max', 'PLO 9Max', 'PLO ZOOM'],
+            'MTT': ['PLO vanilla', 'PLO PKO']
+        }
+    },
+    tiposDeRival: ['Desconocido (Default)', 'Fish', 'Reg Agresivo', 'Nit', 'Whale / Ballena', 'Loco-Maniatico', 'Pagón'],
+    clasificaciones: [
+        { id: 1, name: 'ERRORES GRAVES' },
+        { id: 2, name: 'MANOS TOP VALUE' },
+        { id: 3, name: 'Pozos Grandes' },
+        { id: 4, name: 'ERRORES PREFLOP' },
+        { id: 5, name: 'Pozos 3beteados' },
+        { id: 6, name: 'vs LOCO' },
+        { id: 7, name: 'CALL-FOLD vs agresion' },
+        { id: 8, name: 'DudaSize' },
+        { id: 9, name: 'Inducimos' }
+    ]
+  };
+
+  const modSelect = document.getElementById('modalidad');
+  const varSelect = document.getElementById('variedad');
+  const subSelect = document.getElementById('subtipo');
+  const rivalSelect = document.getElementById('tipoRival');
+  const grid = document.getElementById('checkboxGrid');
+  const textarea = document.getElementById("notes");
+
+  // INICIALIZACIÓN: Llenar Rivales y Checkboxes
+  function init() {
+    // Llenar Rivales
+    POKER_CONFIG.tiposDeRival.forEach(r => {
+        const opt = document.createElement('option');
+        opt.value = r; opt.textContent = r;
+        rivalSelect.appendChild(opt);
+    });
+
+    // Llenar Checkboxes de Clasificación
+    POKER_CONFIG.clasificaciones.forEach(c => {
+        const label = document.createElement('label');
+        label.className = 'check-item';
+        label.innerHTML = `<input type="checkbox" value="${c.id}"> ${c.name}`;
+        grid.appendChild(label);
+    });
+  }
+  init();
+
+  // Lógica de Selects en Cascada
+  modSelect.addEventListener('change', function() {
+    varSelect.innerHTML = '<option value="" disabled selected hidden>Selecciona Variedad...</option>';
+    subSelect.innerHTML = '<option value="" disabled selected hidden>Selecciona Subtipo...</option>';
+    
+    const variedades = POKER_CONFIG.modalidades[this.value];
+    if (variedades) {
+        Object.keys(variedades).forEach(v => {
+            const opt = document.createElement('option');
+            opt.value = v; opt.textContent = v.replace(/_/g, ' ');
+            varSelect.appendChild(opt);
+        });
+    }
+  });
+
+  varSelect.addEventListener('change', function() {
+    subSelect.innerHTML = '<option value="" disabled selected hidden>Selecciona Subtipo...</option>';
+    const subtipos = POKER_CONFIG.modalidades[modSelect.value][this.value];
+    if (subtipos) {
+        subtipos.forEach(s => {
+            const opt = document.createElement('option');
+            opt.value = s; opt.textContent = s;
+            subSelect.appendChild(opt);
+        });
+    }
+  });
+
+  // Botones de calles
+  document.querySelectorAll(".street-buttons button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const tag = `[${btn.dataset.street}]`;
+      if (!textarea.value.includes(tag)) {
+        textarea.value += `\n\n${tag}\n`;
+        textarea.focus();
+      }
+    });
+  });
+
+  // Drag and Drop
+  const dropZone = document.getElementById("dropZone");
+  const fileInput = document.getElementById("fileInput");
+  dropZone.addEventListener("click", () => fileInput.click());
+  dropZone.addEventListener("dragover", e => { e.preventDefault(); dropZone.style.background = "#ffffff22"; });
+  dropZone.addEventListener("dragleave", () => dropZone.style.background = "transparent");
+  dropZone.addEventListener("drop", e => {
+    e.preventDefault();
+    dropZone.style.background = "transparent";
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith("image/")) {
+      const reader = new FileReader();
+      reader.onload = ev => dropZone.innerHTML = `<img src="${ev.target.result}">`;
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Botón enviar
+  document.getElementById('btnSend').addEventListener('click', () => {
+    const selectedTypes = Array.from(document.querySelectorAll('.checkbox-grid input:checked')).map(cb => cb.value);
+    
+    const data = {
+      modalidad: modSelect.value,
+      variedad: varSelect.value,
+      subtipo: subSelect.value,
+      rival: rivalSelect.value,
+      clasificaciones: selectedTypes,
+      notas: textarea.value
+    };
+
+    console.log("Objeto Final para BD:", data);
+    alert("Datos listos. Revisa la consola (F12) para ver el objeto JSON.");
+  });
+</script>
+
+</body>
+</html>
