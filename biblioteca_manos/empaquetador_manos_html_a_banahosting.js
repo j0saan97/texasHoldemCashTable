@@ -10,7 +10,10 @@ document.getElementById('btnSend').addEventListener('click', async () => {
         return;
     }
 
-    // 3. Creamos el objeto EMPAQUETADOR (FormData)
+    // 3. Recoger la fecha de creación
+    const fechaCreacion = document.getElementById('fecha').value;
+
+    // 4. Creamos el objeto EMPAQUETADOR (FormData)
     const formData = new FormData();
     
     // Metemos los textos
@@ -21,6 +24,7 @@ document.getElementById('btnSend').addEventListener('click', async () => {
     formData.append('rival', rivalSelect.value);
     formData.append('notas', textarea.value);
     formData.append('categorias', JSON.stringify(selectedTypes)); // Enviamos el array como string JSON
+    formData.append('fecha_creacion', fechaCreacion); // Agregamos la fecha de creación
 
     // Metemos el archivo de imagen
     formData.append('foto_mano', imagen);

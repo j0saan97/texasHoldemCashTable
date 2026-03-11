@@ -1,0 +1,87 @@
+/*
+! ¿Qué he cambiado exactamente?
+Nombres de Tabla: Cambiado manos_review por hands_review_library.
+
+Nombres de Columnas: Ajustado notas por descripcion_texto, ruta_imagen por url_imagen y fecha_registro por fecha_creacion.
+
+Simplificación: Eliminados los JOIN y las inserciones en tablas extras (variedades, subtipos) porque en tu captura de pantalla la tabla principal ya guarda los textos directamente.
+
+Fecha: He incluido el campo fecha_creacion en el proceso de guardado.
+
+Con esto, cuando vuelvas del trabajo y reinicies el server, las manos deberían aparecer tanto en la web como en Workbench. ¡A por esas 11bb/100!
+*/
+
+
+// GET /api/manos/viewer - Obtener manos
+    if (pathname === '/api/manos/viewer' && req.method === 'GET') {
+        try {
+            await db.inicializar();
+            const query = `
+                SELECT 
+                    id_mano AS id,
+                    modalidad,
+                    tipo_juego AS variedad,
+                    etapa AS subtipo,
+                    descripcion_texto AS notas,
+                    url_imagen AS ruta_imagen,
+                    fecha_creacion AS fecha_registro
+                FROM hands_review_library
+                ORDER BY fecha_creacion DESC
+            `;
+            const manos = await db.ejecutarConsulta(query);
+            await db.cerrarConexion();
+            
+            res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+            res.end(JSON.stringify(manos), 'utf-8');
+        } catch (error) {
+            res.writeHead(500, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+            res.end(JSON.stringify({ error: error.message }), 'utf-8');
+        }
+        return;
+    }
+
+    // POST /api/manos/viewer - Guardar mano con imagen
+    if (pathname === '/api/manos/viewer' && req.method === 'POST') {
+        upload.single('foto_mano')(req, res, async (err) => {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+                res.end(JSON.stringify({ status: 'error', message: err.message }));
+                return;
+            }
+
+            try {
+                await db.inicializar();
+                const { modalidad, variedad, subtipo, nivel, rival, notas, fecha_creacion } = req.body;
+                let foto_path = req.file ? req.file.filename : null;
+
+                // INSERT corregido con los nombres de tu tabla hands_review_library
+                const insertQuery = `
+                    INSERT INTO hands_review_library 
+                    (id_usuario, modalidad, tipo_juego, etapa, descripcion_texto, url_imagen, fecha_creacion) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                `;
+
+                // Usamos id_usuario = 1 por defecto (como en tu imagen) y la fecha enviada o la actual
+                const values = [
+                    1, 
+                    modalidad, 
+                    variedad, 
+                    subtipo, 
+                    notas, 
+                    foto_path, 
+                    fecha_creacion || new Date()
+                ];
+
+                await db.ejecutarConsulta(insertQuery, values);
+                await db.cerrarConexion();
+
+                res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+                res.end(JSON.stringify({ status: 'success', message: 'Mano guardada en hands_review_library' }));
+            } catch (error) {
+                console.error('Error SQL:', error);
+                res.writeHead(500, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+                res.end(JSON.stringify({ status: 'error', message: error.message }));
+            }
+        });
+        return;
+    }

@@ -50,7 +50,17 @@
         <select id="tipoRival">
           <option value="" disabled selected hidden>Tipo Rival</option>
         </select>
+
+        <div class="selectors-container">
+          <div id="fechaContainer">
+              <input type="date" id="fecha" 
+                    style="background: #0b3d2e; color: white; border: 1px solid #ffffff44; 
+                            padding: 8px; border-radius: 6px; outline: none; cursor: pointer; 
+                            width: 100%; box-sizing: border-box; font-family: Arial, sans-serif;">
+        </div>
+
       </div>
+        
 
       <p style="font-size: 12px; margin-bottom: 5px; color: #aaa; font-weight: bold;">CATEGORIA</p>
       <div class="checkbox-grid" id="checkboxGrid"></div>
@@ -126,6 +136,10 @@
             label.innerHTML = `<input type="checkbox" value="${c.id}"> ${c.name}`;
             grid.appendChild(label);
         });
+
+        // Establecer la fecha actual
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('fecha').value = today;
       }
       init();
 
@@ -224,7 +238,10 @@
         return;
     }
 
-    // 3. Creamos FormData para enviar archivos e datos
+    // 3. Recoger la fecha de creación
+    const fechaCreacion = document.getElementById('fecha').value;
+
+    // 4. Creamos FormData para enviar archivos e datos
     const formData = new FormData();
     formData.append('modalidad', modSelect.value);
     formData.append('variedad', varSelect.value);
@@ -233,8 +250,9 @@
     formData.append('rival', rivalSelect.value);
     formData.append('notas', textarea.value);
     formData.append('categorias', JSON.stringify(selectedTypes));
+    formData.append('fecha_creacion', fechaCreacion);
 
-    // 4. Agregar imagen si existe
+    // 5. Agregar imagen si existe
     if (selectedFile) {
       formData.append('foto_mano', selectedFile);
     }
