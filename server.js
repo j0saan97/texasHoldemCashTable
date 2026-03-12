@@ -9,6 +9,213 @@ import multer from 'multer';
 // Cargar variables de entorno
 dotenv.config();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const PORT = process.env.PORT || 3000;
+
+const db = new DatabaseConnection();
+
+// Configurar multer
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        const uploadDir = path.join(__dirname, 'uploads');
+        if (!fs.existsSync(uploadDir)) {
+            fs.mkdirSync(uploadDir, { recursive: true });
+        }
+        cb(null, uploadDir);
+    },
+    filename: (req, file, cb) => {
+        const uniqueName = Date.now() + '-' + file.originalname;
+        cb(null, uniqueName);
+    }
+});
+const upload = multer({ storage: storage });
+
+const mimeTypes = {
+    '.html': 'text/html',
+    '.css': 'text/css',
+    '.js': 'application/javascript',
+    '.json': 'application/json',
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg',
+    '.jpeg': 'image/jpeg',
+    '.gif': 'image/gif',
+    '.svg': 'image/svg+xml',
+    '.ico': 'image/x-icon'
+};
+
+function parseQuery(queryString) {
+    const query = {};
+    if (queryString) {
+        queryString.split('&').forEach(param => {
+            const [key, value] = param.split('=');
+            query[decodeURIComponent(key)] = decodeURIComponent(value || '');
+        });
+    }
+    return query;
+}
+
+const server = http.createServer(async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+    if (req.method === 'OPTIONS') {
+        res.writeHead(200);
+        res.end();
+        return;
+    }
+
+    const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
+    const pathname = parsedUrl.pathname;
+    const query = parseQuery(parsedUrl.search.substring(1));
+
+    // --- ENDPOINT ACTUALIZADO PARA HANDS_REVIEW_LIBRARY ---
+    if (pathname === '/api/manos/viewer' && req.method === 'POST') {
+        upload.single('foto_mano')(req, res, async (err) => {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ status: 'error', message: err.message }));
+                return;
+            }
+
+            try {
+                await db.inicializar();
+
+                // 1. Extraer campos del body (FormData)
+                const { 
+                    modalidad, variedad, subtipo, nivel, rival, 
+                    notas, duda, categorias, fecha_creacion,
+                    id_usuario, jugador_verificado, id_usuario_verificado 
+                } = req.body;
+
+                // 2. Manejar imagen
+                const foto_path = req.file ? req.file.filename : null;
+
+                // 3. Insertar en la tabla profesional hands_review_library
+                const sql = `
+                    INSERT INTO hands_review_library 
+                    (id_usuario, modalidad, tipo_juego, etapa, nivel_stake, tipo_rival, descripcion_texto, duda, url_imagen, categorias_json, jugador_verificado, id_usuario_verificado, fecha_creacion) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                `;
+
+                const values = [
+                    id_usuario || 1, // Por defecto ID 1 si no viene
+                    modalidad,
+                    variedad,      // tipo_juego
+                    subtipo,       // etapa
+                    nivel,         // nivel_stake
+                    rival,         // tipo_rival
+                    notas,         // descripcion_texto
+                    duda,
+                    foto_path,
+                    categorias,    // El JSON stringificado de los checkboxes
+                    jugador_verificado || 0,
+                    id_usuario_verificado || null,
+                    fecha_creacion || new Date().toISOString().split('T')[0]
+                ];
+
+                await db.ejecutarConsulta(sql, values);
+                await db.cerrarConexion();
+
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ status: 'success', message: 'Mano guardada en biblioteca con éxito' }));
+                
+            } catch (error) {
+                console.error('Error:', error);
+                res.writeHead(500, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ status: 'error', message: error.message }));
+            }
+        });
+        return;
+    }
+
+    // --- ENDPOINT PARA FILTROS (LECTURA CON JOIN) ---
+    if (pathname === '/api/manos/viewer' && req.method === 'GET') {
+        try {
+            await db.inicializar();
+            // JOIN para traer el nombre del coach verificado
+            const sql = `
+                SELECT h.*, u.nombre as nombre_verificador
+                FROM hands_review_library h
+                LEFT JOIN usuarios u ON h.id_usuario_verificado = u.id
+                ORDER BY h.fecha_creacion DESC
+            `;
+            const manos = await db.ejecutarConsulta(sql);
+            await db.cerrarConexion();
+            
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(manos));
+        } catch (error) {
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: error.message }));
+        }
+        return;
+    }
+
+    // --- MANTENER OTROS ENDPOINTS (Usuarios, Cartera, etc.) ---
+    if (pathname === '/api/usuarios') {
+        try {
+            await db.inicializar();
+            const usuarios = await db.consultarUsuarios();
+            await db.cerrarConexion();
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(usuarios));
+        } catch (error) {
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: error.message }));
+        }
+        return;
+    }
+
+    // Servir imágenes de uploads
+    if (pathname.startsWith('/uploads/')) {
+        const filePath = path.join(__dirname, pathname);
+        fs.readFile(filePath, (err, content) => {
+            if (err) {
+                res.writeHead(404);
+                res.end('No encontrado');
+            } else {
+                const ext = path.extname(filePath).toLowerCase();
+                res.writeHead(200, { 'Content-Type': mimeTypes[ext] || 'image/jpeg' });
+                res.end(content);
+            }
+        });
+        return;
+    }
+
+    // Servir archivos estáticos (HTML, CSS, JS)
+    let filePath = path.join(__dirname, pathname === '/' ? 'index.html' : pathname);
+    const ext = path.extname(filePath).toLowerCase();
+    const mimeType = mimeTypes[ext] || 'application/octet-stream';
+
+    fs.readFile(filePath, (err, content) => {
+        if (err) {
+            res.writeHead(404, { 'Content-Type': 'text/html' });
+            res.end('<h1>404 - No encontrado</h1>');
+        } else {
+            res.writeHead(200, { 'Content-Type': mimeType });
+            res.end(content);
+        }
+    });
+});
+
+server.listen(PORT, () => {
+    console.log(`✓ Servidor activo en http://localhost:${PORT}`);
+});
+
+/* FUNCIONA
+import http from 'http';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+import DatabaseConnection from './src/db/connection.js';
+import multer from 'multer';
+
+// Cargar variables de entorno
+dotenv.config();
+
 // Obtener directorio actual
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -374,3 +581,5 @@ server.listen(PORT, () => {
     console.log(`✓ Abre tu navegador y ve a: http://localhost:${PORT}`);
     console.log(`✓ API disponible en: http://localhost:${PORT}/api/usuarios`);
 });
+*/
+
