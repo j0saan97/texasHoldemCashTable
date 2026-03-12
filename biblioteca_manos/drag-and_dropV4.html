@@ -238,10 +238,7 @@
         return;
     }
 
-    // 3. Recoger la fecha de creación
-    const fechaCreacion = document.getElementById('fecha').value;
-
-    // 4. Creamos FormData para enviar archivos e datos
+    // 3. Creamos FormData para enviar archivos e datos
     const formData = new FormData();
     formData.append('modalidad', modSelect.value);
     formData.append('variedad', varSelect.value);
@@ -250,9 +247,8 @@
     formData.append('rival', rivalSelect.value);
     formData.append('notas', textarea.value);
     formData.append('categorias', JSON.stringify(selectedTypes));
-    formData.append('fecha_creacion', fechaCreacion);
 
-    // 5. Agregar imagen si existe
+    // 4. Agregar imagen si existe
     if (selectedFile) {
       formData.append('foto_mano', selectedFile);
     }
