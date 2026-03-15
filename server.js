@@ -85,6 +85,16 @@ const server = http.createServer(async (req, res) => {
     const query = parseQuery(parsedUrl.search.substring(1));
 
     // API ENDPOINTS
+    if (pathname === '/example' && req.method === 'GET') {
+        try {
+            await db.inicializar();
+            /* LOGICA APLICADA */
+            await db.cerrarConexion();
+        } catch (error) {
+            console.error('Error en el endpoint /example:', error);
+        }
+    }
+
     if (pathname === '/api/manos' && req.method === 'POST') {
         let body = '';
         req.on('data', chunk => {
