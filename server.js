@@ -5,6 +5,9 @@ import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import DatabaseConnection from './src/db/connection.js';
 import multer from 'multer';
+import { load } from 'cheerio';
+
+
 
 // Cargar variables de entorno
 dotenv.config();
@@ -138,6 +141,55 @@ const server = http.createServer(async (req, res) => {
             }
         });
         return;
+    }
+
+    if (pathname === '/api/filter/hands' && req.method === 'GET') {
+        try {
+            await db.inicializar();
+
+            const query = `
+                SELECT 
+                    *
+                FROM manos_review m
+                WHERE (TRUE);
+            `;
+
+            const manos = await db.ejecutarConsulta(query);
+
+            // Plantilla HTML que contiene el div donde quieres inyectar la tabla
+            const $ = load(`
+                <div id="data_table_container">
+                    <table class="table">
+                        <tbody id="table-hands-body"></tbody>
+                    </table>
+                </div>
+            `);
+            const tableBody = $('#table-hands-body');
+            if (manos.length > 0) {
+                for (const mano of manos) {
+                    tableBody.append(`
+                        <tr>
+                            <td>${mano.id}</td>
+                            <td>${mano.modalidad}</td>
+                        </tr>
+                    `);
+                }
+            }
+            const htmlGenerado = $('#data_table_container').html();
+            await db.cerrarConexion();
+            /*res.writeHead(200, { 
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*' 
+            });
+
+            res.end(JSON.stringify({ html: htmlGenerado }));*/
+        } catch (error) {
+            res.writeHead(500, {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            });
+            res.end(JSON.stringify({ error: error.message }), 'utf-8');
+        }
     }
 
     if (pathname === '/api/manos/viewer' && req.method === 'GET') {
