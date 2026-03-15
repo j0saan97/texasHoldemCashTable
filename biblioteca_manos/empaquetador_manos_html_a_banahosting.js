@@ -13,10 +13,19 @@ document.getElementById('btnSend').addEventListener('click', async () => {
     // 3. Recoger la fecha de creación
     const fechaCreacion = document.getElementById('fecha').value;
 
+    // Recoger otros campos
+    const dateRangeType = document.getElementById('dateRangeType').value;
+    const fechaInicio = document.getElementById('fechaInicio').value;
+    const fechaFin = document.getElementById('fechaFin').value;
+
     // 4. Creamos el objeto EMPAQUETADOR (FormData)
     const formData = new FormData();
-    
+
     // Metemos los textos
+    formData.append('dateRangeType', dateRangeType);
+    formData.append('fechaInicio', fechaInicio);
+    formData.append('fechaFin', fechaFin);
+    
     formData.append('modalidad', modSelect.value);
     formData.append('variedad', varSelect.value);
     formData.append('subtipo', subSelect.value);

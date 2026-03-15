@@ -1,0 +1,56 @@
+<!-- FECHA -->
+         <fieldset class="mb-4 border-0 p-0 text-center">
+            <legend class="text-white-50 fw-normal mb-2" style="font-size: 0.7rem; letter-spacing: 1px; float: none; text-transform: uppercase;">
+                Filtro por Fecha
+            </legend>
+            <select id="dateRangeType" class="form-select custom-poker-input text-center mx-auto" style="max-width: 90%;">
+                <option value="all" selected>All Dates</option>
+                <option value="today">Today</option>
+                <option value="yesterday">Yesterday</option>
+                <option value="this_month">This Month</option>
+                <option value="this_year">This Year</option>
+                <option value="since">Since Date...</option>
+                <option value="between">Between Dates...</option>
+            </select>
+            
+            <nav id="specificDatesContainer" class="d-none mt-2">
+                <div class="d-flex gap-2 justify-content-center">
+                    <input type="date" id="fechaInicio" class="form-control custom-poker-input" style="max-width: 44%;">
+                    <input type="date" id="fechaFin" class="form-control custom-poker-input d-none" style="max-width: 44%;">
+                </div>
+            </nav>
+        </fieldset>
+        <!--FIN FECHA-->
+
+        <!-- FILTRO POSICIÓN -->
+        <section class="filters-panel" style="background: #0b3d2e; border-radius: 8px; border: 1px solid #ffffff22; max-width: 500px; margin: 0 auto; padding: 1.2rem;">
+            
+            <fieldset class="border-0 p-0 text-center">
+                <legend class="text-white-50 fw-normal mb-2" style="font-size: 0.7rem; letter-spacing: 1px; float: none; text-transform: uppercase;">
+                    HERO POSITION
+                </legend>
+                
+                <select id="positionFilter" class="form-select custom-poker-input text-center mx-auto" style="max-width: 90%;">
+                    <option value="all" selected>ALL POSITION</option> 
+                    <optgroup label="Relativas">
+                        <option value="ALL Positions">ALL POSITION</option>
+                        <option value="IP">In Position (IP)</option>
+                        <option value="OOP">Out of Position (OOP)</option>
+                    </optgroup>
+
+                    <optgroup label="Específicas (9-Max)">
+                        <option value="SB">SB</option>
+                        <option value="BB">BB</option>
+                        <option value="UTG">UTG</option>
+                        <option value="UTG1">EP</option>
+                        <option value="MP">MP</option>
+                        <option value="MP1">LJ </option>
+                        <option value="HJ">HJ</option>
+                        <option value="CO">CO</option>
+                        <option value="BTN">BU</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+
+            <!--fin filtro posicion-->
+        </section>

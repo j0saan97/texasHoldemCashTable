@@ -53,18 +53,38 @@
         </select>
 
         <div class="selectors-container">
-          <div id="fechaContainer">
-              <input type="date" id="fecha" 
-                    style="background: #0b3d2e; color: white; border: 1px solid #ffffff44; 
+            <div id="fechaContainer">
+              <input type="date" id="fecha" style="background: #0b3d2e; color: white; border: 1px solid #ffffff44; 
                             padding: 8px; border-radius: 6px; outline: none; cursor: pointer; 
                             width: 100%; box-sizing: border-box; font-family: Arial, sans-serif;">
-        </div>
+            </div>
 
-        <p style="font-size: 11px; margin: 10px 0 5px; color: #2ecc71; font-weight: bold;">TU DUDA TÉCNICA (MÁX. 140)</p>
-          <textarea id="duda" maxlength="140" placeholder="¿Cuál es tu duda principal?" 
+            <p style="font-size: 11px; margin: 10px 0 5px; color: #2ecc71; font-weight: bold;">TU DUDA TÉCNICA (MÁX. 140)</p>
+            <textarea id="duda" maxlength="140" placeholder="¿Cuál es tu duda principal?" 
                     style="height: 60px; border: 1px solid #2ecc71; background: #0b3d2e; color: white;"></textarea>
-          <p id="charCount" style="font-size: 10px; color: #aaa; text-align: right; margin-top: 2px;">0 / 140</p>
-
+            <p id="charCount" style="font-size: 10px; color: #aaa; text-align: right; margin-top: 2px;">0 / 140</p>
+            
+            <fieldset class="mb-4 border-0 p-0 text-center">
+                <legend class="text-white-50 fw-normal mb-2" style="font-size: 0.7rem; letter-spacing: 1px; float: none; text-transform: uppercase;">
+                    Filtro por Fecha
+                </legend>
+                <select id="dateRangeType" class="form-select custom-poker-input text-center mx-auto" style="max-width: 90%;">
+                    <option value="all" selected>All Dates</option>
+                    <option value="today">Today</option>
+                    <option value="yesterday">Yesterday</option>
+                    <option value="this_month">This Month</option>
+                    <option value="this_year">This Year</option> 
+                    <option value="since">Since Date...</option>
+                    <option value="between">Between Dates...</option>
+                </select>
+                
+                <nav id="specificDatesContainer" class="d-none mt-2">
+                    <div class="d-flex gap-2 justify-content-center">
+                        <input type="date" id="fechaInicio" class="form-control custom-poker-input" style="max-width: 44%;">
+                        <input type="date" id="fechaFin" class="form-control custom-poker-input d-none" style="max-width: 44%;">
+                    </div>
+                </nav>
+            </fieldset>
       </div>
 
       <p style="font-size: 11px; margin: 10px 0 2px; color: #2ecc71; font-weight: bold;">VERIFICAR JUGADOR (OPCIONAL)</p>
