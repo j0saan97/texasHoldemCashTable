@@ -81,9 +81,27 @@
                     <label class="compact-label">Modalidad</label>
                     <select class="form-select form-select-sm" id="f_modalidad">
                         <option value="">Todas</option>
-                        <option value="Cash">Cash</option>
-                        <option value="MTT">MTT</option>
-                        <option value="Spin">Spin & Go</option>
+                        <option value="Cash">No Limit holdemn</option>
+                        <option value="MTT">Pot Limit Omaha</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <label class="compact-label">Variedad</label>
+                    <select class="form-select form-select-sm" id="f_modalidad">
+                        <option value="">MTT</option>
+                        <option value="Cash">CASH</option>
+                        <option value="MTT">SPIN AND GO</option>
+                    </select>
+                </div>
+
+                <!-- El subtipo se refiere a cosas como Zoom, Rush, Hyper, PKO, ESTO RENDERIZA SEGÚN LA VARIEDAD ELEGIDA-->
+                <div class="col-md-2">
+                    <label class="compact-label">Subtipo</label>
+                    <select class="form-select form-select-sm" id="f_modalidad">
+                        <option value="">1</option>
+                        <option value="Cash">2</option>
+                        <option value="MTT">3</option>
                     </select>
                 </div>
 
@@ -94,6 +112,7 @@
                         </select>
                 </div>
 
+                <!--renderiza segun la variedad elegida, igual que hace el form del drag_and_drop-->
                 <div class="col-md-2">
                     <label class="compact-label">Nivel / Stake</label>
                     <input type="text" class="form-control form-control-sm" id="f_stake" placeholder="Ej: NL500">
@@ -108,14 +127,45 @@
                     </select>
                 </div>
 
-                <div class="col-md-3">
-                    <label class="compact-label">Buscar en Notas/Dudas</label>
-                    <input type="text" class="form-control form-control-sm" id="f_search" placeholder="Palabra clave...">
-                </div>
+                <fieldset class="border-0 p-0 text-center" style="max-width: 100%; overflow: hidden;">
+                    <legend class="text-white-50 fw-normal mb-1" style="font-size: 0.6rem; letter-spacing: 1px; float: none; text-transform: uppercase;">
+                        HERO POSITION
+                    </legend>
+                    
+                    <select id="positionFilter" 
+                            class="form-select form-select-sm text-center mx-auto" 
+                            style="max-width: 90%; 
+                                font-size: 0.75rem; 
+                                padding-top: 2px; 
+                                padding-bottom: 2px; 
+                                height: auto; 
+                                background-position: right 0.5rem center;">
+                        
+                        <option value="all" selected>ALL POSITIONS</option> 
+                        
+                        <optgroup label="Relativas" style="font-size: 0.7rem;">
+                            <option value="IP">In Position (IP)</option>
+                            <option value="OOP">Out of Position (OOP)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Específicas (9-Max)" style="font-size: 0.7rem;">
+                            <option value="SB">SB</option>
+                            <option value="BB">BB</option>
+                            <option value="UTG">UTG</option>
+                            <option value="UTG1">EP</option>
+                            <option value="MP">MP</option>
+                            <option value="MP1">LJ</option>
+                            <option value="HJ">HJ</option>
+                            <option value="CO">CO</option>
+                            <option value="BTN">BU</option>
+                        </optgroup>
+                    </select>
+                </fieldset>
 
                 <div class="col-md-1 d-flex align-items-end">
                     <button type="button" class="btn btn-outline-secondary btn-sm w-100">Limpiar</button>
                 </div>
+
             </form>
         </div>
     </header>
