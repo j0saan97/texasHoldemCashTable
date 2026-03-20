@@ -143,6 +143,8 @@
       const rivalSelect = document.getElementById('tipoRival');
       const grid = document.getElementById('checkboxGrid');
       const textarea = document.getElementById("notes");
+      const duda = document.getElementById("duda");
+      const posicionHero = document.getElementById("positionFilter");
 
       function init() {
         POKER_CONFIG.tiposDeRival.forEach(r => {
@@ -264,6 +266,8 @@
           formData.append('rival', rivalSelect.value);
           formData.append('notas', textarea.value);
           formData.append('categorias', JSON.stringify(selectedTypes));
+          formData.append('duda', duda.value);
+          formData.append('posicion', posicionHero.value);
 
           // 4. Agregar imagen si existe
           if (selectedFile) {
