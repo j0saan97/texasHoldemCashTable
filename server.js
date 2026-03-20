@@ -7,8 +7,6 @@ import DatabaseConnection from './src/db/connection.js';
 import multer from 'multer';
 import { load } from 'cheerio';
 
-
-
 // Cargar variables de entorno
 dotenv.config();
 
@@ -66,157 +64,30 @@ function parseQuery(queryString) {
 
 // Crear servidor HTTP
 const server = http.createServer(async (req, res) => {
-    // Configurar CORS - Agregar a TODAS las respuestas
+    // Configurar CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.setHeader('Access-Control-Max-Age', '3600');
 
-    // Manejo de preflight CORS
     if (req.method === 'OPTIONS') {
         res.writeHead(200);
         res.end();
         return;
     }
 
-    // Parsear URL
     const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
     const pathname = parsedUrl.pathname;
     const query = parseQuery(parsedUrl.search.substring(1));
 
-    // API ENDPOINTS
-    if (pathname === '/example' && req.method === 'GET') {
-        try {
-            await db.inicializar();
-            /* LOGICA APLICADA */
-            await db.cerrarConexion();
-        } catch (error) {
-            console.error('Error en el endpoint /example:', error);
-        }
-    }
-
-    if (pathname === '/api/manos' && req.method === 'POST') {
-        let body = '';
-        req.on('data', chunk => {
-            body += chunk.toString();
-        });
-        req.on('end', async () => {
-            try {
-                const data = JSON.parse(body);
-                await db.inicializar();
-
-                // Obtener datos
-                const { modalidad, variedad, subtipo, nivel, rival, notas, categorias } = data;
-
-                // Insertar en variedades si no existe
-                let variedad_id = null;
-                const variedadesResult = await db.ejecutarConsulta('SELECT id FROM variedades WHERE nombre = ?', [variedad]);
-                if (variedadesResult.length > 0) {
-                    variedad_id = variedadesResult[0].id;
-                } else {
-                    const insertVar = await db.ejecutarConsulta('INSERT INTO variedades (nombre) VALUES (?)', [variedad]);
-                    variedad_id = insertVar.insertId;
-                }
-
-                // Insertar en subtipos si no existe
-                let subtipo_id = null;
-                const subtiposResult = await db.ejecutarConsulta('SELECT id FROM subtipos WHERE nombre = ? AND variedad_id = ?', [subtipo, variedad_id]);
-                if (subtiposResult.length > 0) {
-                    subtipo_id = subtiposResult[0].id;
-                } else {
-                    const insertSub = await db.ejecutarConsulta('INSERT INTO subtipos (variedad_id, nombre) VALUES (?, ?)', [variedad_id, subtipo]);
-                    subtipo_id = insertSub.insertId;
-                }
-
-                // Insertar en manos_review
-                const insertMano = await db.ejecutarConsulta(
-                    'INSERT INTO manos_review (modalidad, variedad_id, subtipo_id, nivel_stake, tipo_rival, notas) VALUES (?, ?, ?, ?, ?, ?)',
-                    [modalidad, variedad_id, subtipo_id, nivel, rival, notas]
-                );
-                const mano_id = insertMano.insertId;
-
-                // Insertar categorías
-                for (const catId of categorias) {
-                    await db.ejecutarConsulta('INSERT INTO mano_categorias (mano_id, categoria_id) VALUES (?, ?)', [mano_id, catId]);
-                }
-
-                await db.cerrarConexion();
-
-                res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
-                res.end(JSON.stringify({ status: 'success', message: 'Mano guardada con éxito' }));
-            } catch (error) {
-                console.error('Error al guardar la mano:', error);
-                res.writeHead(500, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
-                res.end(JSON.stringify({ status: 'error', message: error.message }));
-            }
-        });
-        return;
-    }
-
-    if (pathname === '/api/filter/hands' && req.method === 'GET') {
-        try {
-            await db.inicializar();
-
-            const query = `
-                SELECT 
-                    *
-                FROM manos_review m
-                WHERE (TRUE);
-            `;
-
-            const manos = await db.ejecutarConsulta(query);
-
-            // Plantilla HTML que contiene el div donde quieres inyectar la tabla
-            const $ = load(`
-                <div id="data_table_container">
-                    <table class="table">
-                        <tbody id="table-hands-body"></tbody>
-                    </table>
-                </div>
-            `);
-            const tableBody = $('#table-hands-body');
-            if (manos.length > 0) {
-                for (const mano of manos) {
-                    tableBody.append(`
-                        <tr>
-                            <td>${mano.id}</td>
-                            <td>${mano.modalidad}</td>
-                        </tr>
-                    `);
-                }
-            }
-            const htmlGenerado = $('#data_table_container').html();
-            await db.cerrarConexion();
-            /*res.writeHead(200, { 
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*' 
-            });
-
-            res.end(JSON.stringify({ html: htmlGenerado }));*/
-        } catch (error) {
-            res.writeHead(500, {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            });
-            res.end(JSON.stringify({ error: error.message }), 'utf-8');
-        }
-    }
-
+    // --- API: OBTENER MANOS (GET) ---
     if (pathname === '/api/manos/viewer' && req.method === 'GET') {
         try {
             await db.inicializar();
-            // Consulta para obtener todas las manos con sus detalles
-            const query = `
+            const querySql = `
                 SELECT 
-                    m.id,
-                    m.modalidad,
-                    v.nombre AS variedad,
-                    s.nombre AS subtipo,
-                    m.nivel_stake,
-                    m.tipo_rival,
-                    m.notas,
-                    m.ruta_imagen,
-                    m.fecha_registro,
+                    m.id, m.modalidad, v.nombre AS variedad, s.nombre AS subtipo,
+                    m.nivel_stake, m.tipo_rival, m.notas, m.duda, m.posicion,
+                    m.ruta_imagen, m.fecha_registro,
                     GROUP_CONCAT(c.nombre) AS categorias
                 FROM manos_review m
                 LEFT JOIN variedades v ON m.variedad_id = v.id
@@ -226,30 +97,23 @@ const server = http.createServer(async (req, res) => {
                 GROUP BY m.id
                 ORDER BY m.fecha_registro DESC
             `;
-            const manos = await db.ejecutarConsulta(query);
+            const manos = await db.ejecutarConsulta(querySql);
             await db.cerrarConexion();
             
-            res.writeHead(200, { 
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            });
-            res.end(JSON.stringify(manos), 'utf-8');
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(manos));
         } catch (error) {
-            res.writeHead(500, { 
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            });
-            res.end(JSON.stringify({ error: error.message }), 'utf-8');
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: error.message }));
         }
         return;
     }
 
+    // --- API: GUARDAR MANO (POST) ---
     if (pathname === '/api/manos/viewer' && req.method === 'POST') {
-        console.log('POST /api/manos/viewer - Recibiendo datos con imagen');
         upload.single('foto_mano')(req, res, async (err) => {
             if (err) {
-                console.error('Error en multer:', err);
-                res.writeHead(500, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+                res.writeHead(500, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ status: 'error', message: err.message }));
                 return;
             }
@@ -257,44 +121,28 @@ const server = http.createServer(async (req, res) => {
             try {
                 await db.inicializar();
 
-                // Obtener datos del body (FormData)
-                const { modalidad, variedad, subtipo, nivel, rival, notas, categorias } = req.body;
-                let categoriasArray = [];
-                if (categorias) {
-                    categoriasArray = JSON.parse(categorias);
-                }
+                // 1. EXTRAER DUDA Y POSICION DEL BODY
+                const { modalidad, variedad, subtipo, nivel, rival, notas, duda, posicion, categorias } = req.body;
+                
+                let categoriasArray = categorias ? JSON.parse(categorias) : [];
+                let foto_path = req.file ? req.file.filename : null;
 
-                // Manejar imagen
-                let foto_path = null;
-                if (req.file) {
-                    foto_path = req.file.filename; // Nombre del archivo guardado
-                }
-
-                // Insertar en variedades si no existe
+                // Lógica de IDs para variedad
                 let variedad_id = null;
-                const variedadesResult = await db.ejecutarConsulta('SELECT id FROM variedades WHERE nombre = ?', [variedad]);
-                if (variedadesResult.length > 0) {
-                    variedad_id = variedadesResult[0].id;
-                } else {
-                    const insertVar = await db.ejecutarConsulta('INSERT INTO variedades (nombre) VALUES (?)', [variedad]);
-                    variedad_id = insertVar.insertId;
-                }
+                const varRes = await db.ejecutarConsulta('SELECT id FROM variedades WHERE nombre = ?', [variedad]);
+                variedad_id = varRes.length > 0 ? varRes[0].id : (await db.ejecutarConsulta('INSERT INTO variedades (nombre) VALUES (?)', [variedad])).insertId;
 
-                // Insertar en subtipos si no existe
+                // Lógica de IDs para subtipo
                 let subtipo_id = null;
-                const subtiposResult = await db.ejecutarConsulta('SELECT id FROM subtipos WHERE nombre = ? AND variedad_id = ?', [subtipo, variedad_id]);
-                if (subtiposResult.length > 0) {
-                    subtipo_id = subtiposResult[0].id;
-                } else {
-                    const insertSub = await db.ejecutarConsulta('INSERT INTO subtipos (variedad_id, nombre) VALUES (?, ?)', [variedad_id, subtipo]);
-                    subtipo_id = insertSub.insertId;
-                }
+                const subRes = await db.ejecutarConsulta('SELECT id FROM subtipos WHERE nombre = ? AND variedad_id = ?', [subtipo, variedad_id]);
+                subtipo_id = subRes.length > 0 ? subRes[0].id : (await db.ejecutarConsulta('INSERT INTO subtipos (variedad_id, nombre) VALUES (?, ?)', [variedad_id, subtipo])).insertId;
 
-                // Insertar en manos_review
+                // 2. INSERTAR INCLUYENDO LOS NUEVOS CAMPOS
                 const insertMano = await db.ejecutarConsulta(
-                    'INSERT INTO manos_review (modalidad, variedad_id, subtipo_id, nivel_stake, tipo_rival, notas, ruta_imagen) VALUES (?, ?, ?, ?, ?, ?, ?)',
-                    [modalidad, variedad_id, subtipo_id, nivel, rival, notas, foto_path]
+                    'INSERT INTO manos_review (modalidad, variedad_id, subtipo_id, nivel_stake, tipo_rival, notas, duda, posicion, ruta_imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                    [modalidad, variedad_id, subtipo_id, nivel, rival, notas, duda, posicion, foto_path]
                 );
+                
                 const mano_id = insertMano.insertId;
 
                 // Insertar categorías
@@ -303,136 +151,35 @@ const server = http.createServer(async (req, res) => {
                 }
 
                 await db.cerrarConexion();
-
-                res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+                res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ status: 'success', message: 'Mano guardada con éxito' }));
             } catch (error) {
-                console.error('Error al guardar la mano:', error);
-                res.writeHead(500, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+                console.error('Error:', error);
+                res.writeHead(500, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ status: 'error', message: error.message }));
             }
         });
         return;
     }
 
-    if (pathname === '/api/usuarios') {
-        try {
-            await db.inicializar();
-            const usuarios = await db.consultarUsuarios();
-            await db.cerrarConexion();
-            
-            res.writeHead(200, { 
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            });
-            res.end(JSON.stringify(usuarios), 'utf-8');
-        } catch (error) {
-            res.writeHead(500, { 
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            });
-            res.end(JSON.stringify({ error: error.message }), 'utf-8');
-        }
-        return;
-    }
-
-    if (pathname === '/api/usuario' && query.id) {
-        try {
-            await db.inicializar();
-            const usuario = await db.obtenerUsuarioPorId(query.id);
-            await db.cerrarConexion();
-            
-            res.writeHead(200, { 
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            });
-            res.end(JSON.stringify(usuario), 'utf-8');
-        } catch (error) {
-            res.writeHead(500, { 
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            });
-            res.end(JSON.stringify({ error: error.message }), 'utf-8');
-        }
-        return;
-    }
-
-    if (pathname === '/api/cartera' && query.usuarioId) {
-        try {
-            await db.inicializar();
-            const cartera = await db.obtenerCarteraUsuario(query.usuarioId);
-            await db.cerrarConexion();
-            
-            res.writeHead(200, { 
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            });
-            res.end(JSON.stringify(cartera), 'utf-8');
-        } catch (error) {
-            res.writeHead(500, { 
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            });
-            res.end(JSON.stringify({ error: error.message }), 'utf-8');
-        }
-        return;
-    }
-
-    // Servir archivos de uploads
-    if (pathname.startsWith('/uploads/')) {
-        const filePath = path.join(__dirname, pathname);
-        const ext = path.extname(filePath).toLowerCase();
-        const mimeType = mimeTypes[ext] || 'application/octet-stream';
-
-        fs.readFile(filePath, (err, content) => {
-            if (err) {
-                res.writeHead(404, { 'Content-Type': 'text/html' });
-                res.end('<h1>404 - Archivo no encontrado</h1>', 'utf-8');
-            } else {
-                res.writeHead(200, { 'Content-Type': mimeType });
-                res.end(content, 'utf-8');
-            }
-        });
-        return;
-    }
-
-    // ARCHIVOS ESTÁTICOS
+    // --- SERVIR ARCHIVOS ESTÁTICOS Y UPLOADS ---
     let filePath = path.join(__dirname, pathname);
-    
-    // Si es una ruta raíz, servir index.html
-    if (pathname === '/' || pathname === '') {
-        filePath = path.join(__dirname, 'index.html');
-    }
+    if (pathname === '/' || pathname === '') filePath = path.join(__dirname, 'index.html');
 
-    // Obtener extensión del archivo
     const ext = path.extname(filePath).toLowerCase();
     const mimeType = mimeTypes[ext] || 'application/octet-stream';
 
-    // Leer y servir el archivo
     fs.readFile(filePath, (err, content) => {
         if (err) {
-            if (err.code === 'ENOENT') {
-                // Archivo no encontrado
-                res.writeHead(404, { 'Content-Type': 'text/html' });
-                res.end('<h1>404 - Archivo no encontrado</h1>', 'utf-8');
-            } else {
-                // Error del servidor
-                res.writeHead(500, { 'Content-Type': 'text/html' });
-                res.end('<h1>500 - Error del servidor</h1>', 'utf-8');
-                console.error('Error al leer archivo:', err);
-            }
+            res.writeHead(404, { 'Content-Type': 'text/html' });
+            res.end('<h1>404 - Not Found</h1>');
         } else {
-            // Archivo encontrado, servir con tipo MIME correcto
             res.writeHead(200, { 'Content-Type': mimeType });
-            res.end(content, 'utf-8');
+            res.end(content);
         }
     });
 });
 
-// Iniciar servidor
 server.listen(PORT, () => {
-    console.log(`✓ Servidor Node.js iniciado en http://localhost:${PORT}`);
-    console.log(`✓ Puerto: ${PORT}`);
-    console.log(`✓ Abre tu navegador y ve a: http://localhost:${PORT}`);
-    console.log(`✓ API disponible en: http://localhost:${PORT}/api/usuarios`);
+    console.log(`✓ Servidor corriendo en http://localhost:${PORT}`);
 });
