@@ -73,7 +73,7 @@
 </head>
 <body>
 
-    <header class="header-filters">
+   <header class="header-filters">
         <div class="container-fluid">
             <h5 class="mb-3">Filtros de Búsqueda</h5>
             <form id="filterForm" class="row g-3">
@@ -81,45 +81,34 @@
                     <label class="compact-label">Modalidad</label>
                     <select class="form-select form-select-sm" id="f_modalidad">
                         <option value="">Todas</option>
-                        <option value="Cash">No Limit holdemn</option>
-                        <option value="MTT">Pot Limit Omaha</option>
+                        <option value="NoLimitHoldem">No Limit Holdem</option>
+                        <option value="PotLimitOmaha">Pot Limit Omaha</option>
                     </select>
                 </div>
 
                 <div class="col-md-2">
                     <label class="compact-label">Variedad</label>
-                    <select class="form-select form-select-sm" id="f_modalidad">
-                        <option value="">MTT</option>
-                        <option value="Cash">CASH</option>
-                        <option value="MTT">SPIN AND GO</option>
+                    <select class="form-select form-select-sm" id="f_variedad">
+                        <option value="">Selecciona modalidad primero</option>
                     </select>
                 </div>
 
-                <!-- El subtipo se refiere a cosas como Zoom, Rush, Hyper, PKO, ESTO RENDERIZA SEGÚN LA VARIEDAD ELEGIDA-->
                 <div class="col-md-2">
                     <label class="compact-label">Subtipo</label>
-                    <select class="form-select form-select-sm" id="f_modalidad">
-                        <option value="">1</option>
-                        <option value="Cash">2</option>
-                        <option value="MTT">3</option>
+                    <select class="form-select form-select-sm" id="f_subtipo">
+                        <option value="">Selecciona variedad primero</option>
                     </select>
                 </div>
 
                 <div class="col-md-2">
-                    <label class="compact-label">Verificador (Coach)</label>
-                    <select class="form-select form-select-sm" id="f_coach">
-                        <option value="">Cualquiera</option>
-                        </select>
-                </div>
-
-                <!--renderiza segun la variedad elegida, igual que hace el form del drag_and_drop-->
-                <div class="col-md-2">
                     <label class="compact-label">Nivel / Stake</label>
-                    <input type="text" class="form-control form-control-sm" id="f_stake" placeholder="Ej: NL500">
+                    <select class="form-select form-select-sm" id="f_stake">
+                        <option value="">Nivel...</option>
+                    </select>
                 </div>
 
                 <div class="col-md-2">
-                    <label class="compact-label">Estado de Revisión</label>
+                    <label class="compact-label">Estado</label>
                     <select class="form-select form-select-sm" id="f_estado">
                         <option value="">Todos</option>
                         <option value="revisada">✓ Revisadas</option>
@@ -127,48 +116,12 @@
                     </select>
                 </div>
 
-                <fieldset class="border-0 p-0 text-center" style="max-width: 100%; overflow: hidden;">
-                    <legend class="text-white-50 fw-normal mb-1" style="font-size: 0.6rem; letter-spacing: 1px; float: none; text-transform: uppercase;">
-                        HERO POSITION
-                    </legend>
-                    
-                    <select id="positionFilter" 
-                            class="form-select form-select-sm text-center mx-auto" 
-                            style="max-width: 90%; 
-                                font-size: 0.75rem; 
-                                padding-top: 2px; 
-                                padding-bottom: 2px; 
-                                height: auto; 
-                                background-position: right 0.5rem center;">
-                        
-                        <option value="all" selected>ALL POSITIONS</option> 
-                        
-                        <optgroup label="Relativas" style="font-size: 0.7rem;">
-                            <option value="IP">In Position (IP)</option>
-                            <option value="OOP">Out of Position (OOP)</option>
-                        </optgroup>
-                        
-                        <optgroup label="Específicas (9-Max)" style="font-size: 0.7rem;">
-                            <option value="SB">SB</option>
-                            <option value="BB">BB</option>
-                            <option value="UTG">UTG</option>
-                            <option value="UTG1">EP</option>
-                            <option value="MP">MP</option>
-                            <option value="MP1">LJ</option>
-                            <option value="HJ">HJ</option>
-                            <option value="CO">CO</option>
-                            <option value="BTN">BU</option>
-                        </optgroup>
-                    </select>
-                </fieldset>
-
-                <div class="col-md-1 d-flex align-items-end">
-                    <button type="button" class="btn btn-outline-secondary btn-sm w-100">Limpiar</button>
+                <div class="col-md-2 d-flex align-items-end">
+                    <button type="button" id="btnBuscadorSend" class="btn btn-primary btn-sm w-100">Cargar Manos</button>
                 </div>
-
             </form>
         </div>
-    </header>
+    </header> 
 
     <main class="app-layout">
         
@@ -243,6 +196,116 @@
         </section>
 
     </main>
+
+
+    <script>
+        const POKER_CONFIG = {
+            modalidades: {
+                'NoLimitHoldem': {
+                    'MTT': ['vanilla (sin bounty)', 'PKO', 'MisteryBounty', 'Hyper_PKO', 'Hyper_vanilla'],
+                    'CASH_GAME': ['6Max - SIN ANTE', '6Max - CON ANTE', '9max - SIN ANTE', '9max - CON ANTE', '9max - 200bb', 'ZOOM'],
+                    'SPIN_AND_GO': ['velocidad normal', 'NITRO']
+                },
+                'PotLimitOmaha': {
+                    'CASH_GAME': ['PLO 6Max', 'PLO 9Max', 'PLO ZOOM'],
+                    'MTT': ['PLO vanilla', 'PLO PKO'],
+                    'SPIN_AND_GO': ['PLO Spin']
+                }
+            },
+            nivelesConfig: {
+                'CASH_GAME': ["NL2", "NL5", "NL10", "NL25", "NL50", "NL100", "NL200", "NL400", "NL600", "NL1000"],
+                'MTT': [2, 5, 10, 25, 50, 100, 200, 400, 600, 1000],
+                'SPIN_AND_GO': ["0.25", "0.50", "1", "2", "3", "5", "10", "20", "50", "100"]
+            }
+        };
+
+        // Referencias
+        const modSelect   = document.getElementById('f_modalidad');
+        const varSelect   = document.getElementById('f_variedad');
+        const subSelect   = document.getElementById('f_subtipo');
+        const nivelSelect = document.getElementById('f_stake');
+
+        // Evento 1: Cambia Modalidad -> Llena Variedad
+        modSelect.addEventListener('change', function() {
+            const modValue = this.value;
+            
+            varSelect.innerHTML = '<option value="">Selecciona Variedad...</option>';
+            subSelect.innerHTML = '<option value="">-</option>';
+            nivelSelect.innerHTML = '<option value="">-</option>';
+
+            if (modValue && POKER_CONFIG.modalidades[modValue]) {
+                Object.keys(POKER_CONFIG.modalidades[modValue]).forEach(v => {
+                    const opt = document.createElement('option');
+                    opt.value = v;
+                    opt.textContent = v.replace(/_/g, ' ');
+                    varSelect.appendChild(opt);
+                });
+            }
+        });
+
+        // Evento 2: Cambia Variedad -> Llena Subtipo y Niveles
+        varSelect.addEventListener('change', function() {
+            const modActual = modSelect.value;
+            const varActual = this.value;
+
+            subSelect.innerHTML = '<option value="">Selecciona Subtipo...</option>';
+            nivelSelect.innerHTML = '<option value="">Nivel...</option>';
+
+            if (modActual && varActual) {
+                // Llenar Subtipos
+                const subtipos = POKER_CONFIG.modalidades[modActual][varActual];
+                if (subtipos) {
+                    subtipos.forEach(s => {
+                        const opt = document.createElement('option');
+                        opt.value = s; opt.textContent = s;
+                        subSelect.appendChild(opt);
+                    });
+                }
+
+                // Llenar Niveles
+                const niveles = POKER_CONFIG.nivelesConfig[varActual];
+                if (niveles) {
+                    niveles.forEach(n => {
+                        const opt = document.createElement('option');
+                        opt.value = n;
+                        opt.textContent = (varActual === 'CASH_GAME') ? n : `$${n}`;
+                        nivelSelect.appendChild(opt);
+                    });
+                }
+            }
+        });
+
+        // Evento 3: Botón Enviar (FETCH)
+        document.getElementById('btnBuscadorSend').addEventListener('click', () => {
+            // Recoger valores para filtrar
+            const filtros = {
+                modalidad: modSelect.value,
+                variedad: varSelect.value,
+                subtipo: subSelect.value,
+                nivel: nivelSelect.value,
+                estado: document.getElementById('f_estado').value
+            };
+
+            console.log("Enviando filtros:", filtros);
+
+            // Convertir objeto a Query Params para el GET
+            const params = new URLSearchParams(filtros).toString();
+
+            fetch(`http://localhost:3000/api/filter/hands?${params}`)
+            .then(response => response.json())
+            .then(result => {
+                if (result.html) {
+                    document.getElementById('data_table_container').innerHTML = result.html;
+                    document.getElementById('placeholder-text').style.display = 'none';
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Error al conectar con el servidor.");
+            });
+        });
+    </script>
+    <!-- Scripts FUNCIONA
     <script>
         document.getElementById('btnBuscadorSend').addEventListener('click', () => {
 
@@ -262,6 +325,8 @@
             });
 
         });
-    </script>
+    </script> 
+    -->
+    
 </body>
 </html>
