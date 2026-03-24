@@ -147,7 +147,6 @@
                         </div>
                     </fieldset>
                 </div>
-                <button class="btn-send" id="btnBuscadorSend">Cargar Manos</button>
             </div>
         </aside>
 
@@ -277,33 +276,53 @@
 
         // Evento 3: Botón Enviar (FETCH)
         document.getElementById('btnBuscadorSend').addEventListener('click', () => {
-            // Recoger valores para filtrar
-            const filtros = {
-                modalidad: modSelect.value,
-                variedad: varSelect.value,
-                subtipo: subSelect.value,
-                nivel: nivelSelect.value,
-                estado: document.getElementById('f_estado').value
-            };
+    // 1. Recogemos los elementos
+    const filtros = {
+        modalidad: document.getElementById('f_modalidad').value,
+        variedad: document.getElementById('f_variedad').value,
+        subtipo: document.getElementById('f_subtipo').value,
+        nivel: document.getElementById('f_stake').value,
+        estado: document.getElementById('f_estado').value,
+        posicion: document.getElementById('positionFilter').value,
+        fechaInicio: document.getElementById('fechaInicio').value,
+        fechaFin: document.getElementById('fechaFin').value
+    };
 
-            console.log("Enviando filtros:", filtros);
+    // 2. LIMPIEZA: Eliminamos los campos vacíos o "all" para no enviarlos al servidor
+    // Esto permite que si solo eliges "NoLimitHoldem", la consulta sea limpia.
+    Object.keys(filtros).forEach(key => {
+        if (filtros[key] === "" || filtros[key] === "all") {
+            delete filtros[key];
+        }
+    });
 
-            // Convertir objeto a Query Params para el GET
-            const params = new URLSearchParams(filtros).toString();
+    // 3. Convertimos el objeto en parámetros de URL (Ej: ?modalidad=MTT&variedad=PKO)
+    const queryString = new URLSearchParams(filtros).toString();
+    console.log("Enviando consulta con:", queryString);
 
-            fetch(`http://localhost:3000/api/filter/hands?${params}`)
-            .then(response => response.json())
-            .then(result => {
-                if (result.html) {
-                    document.getElementById('data_table_container').innerHTML = result.html;
-                    document.getElementById('placeholder-text').style.display = 'none';
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("Error al conectar con el servidor.");
-            });
+    // 4. Petición al servidor
+    fetch(`http://localhost:3000/api/filter/hands?${queryString}`)
+        .then(response => {
+            if (!response.ok) throw new Error("Error en la respuesta del servidor");
+            return response.json();
+        })
+        .then(result => {
+            const container = document.getElementById('data_table_container');
+            const placeholder = document.getElementById('placeholder-text');
+
+            if (result.html && result.count > 0) {
+                container.innerHTML = result.html;
+                placeholder.style.display = 'none'; // Escondemos el icono de imagen
+            } else {
+                container.innerHTML = '<div class="alert alert-warning">No se encontraron manos con esos filtros.</div>';
+                placeholder.style.display = 'block';
+            }
+        })
+        .catch(error => {
+            console.error("Error en el envío:", error);
+            alert("No se pudo conectar con el servidor.");
         });
+});
     </script>
     <!-- Scripts FUNCIONA
     <script>
