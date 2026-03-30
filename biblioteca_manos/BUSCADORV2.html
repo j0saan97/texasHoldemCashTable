@@ -8,14 +8,15 @@
     <style>
         :root {
             --sidebar-width: 400px;
-            --filter-height: 180px;
+            --filter-height: 180px; /* Si ves que los nuevos filtros no caben, puedes subirlo a 220px */
         }
 
         body, html { height: 100%; overflow: hidden; background-color: #f4f7f6; }
 
         /* Contenedor de Filtros */
         .header-filters {
-            height: var(--filter-height);
+            height: auto; /* Cambiado a auto para que se adapte si hay muchas filas de filtros */
+            min-height: var(--filter-height);
             background: #ffffff;
             border-bottom: 2px solid #dee2e6;
             padding: 20px;
@@ -25,10 +26,9 @@
         /* Layout Principal */
         .app-layout {
             display: flex;
-            height: calc(100vh - var(--filter-height));
+            height: calc(100vh - 180px); /* Ajustar según altura final del header */
         }
 
-        /* Columna de la lista (Donde irán los ManoComponent) */
         .sidebar-list {
             width: var(--sidebar-width);
             background: #fff;
@@ -37,7 +37,6 @@
             padding: 10px;
         }
 
-        /* Visor de Imagen */
         .image-viewer {
             flex-grow: 1;
             background: #2d2d2d;
@@ -53,7 +52,7 @@
             max-height: 100%;
             box-shadow: 0 0 30px rgba(0,0,0,0.5);
             border-radius: 4px;
-            display: none; /* Se activará con JS/React */
+            display: none;
         }
 
         .no-image-placeholder {
@@ -73,7 +72,7 @@
 </head>
 <body>
 
-   <header class="header-filters">
+    <header class="header-filters">
         <div class="container-fluid">
             <h5 class="mb-3">Filtros de Búsqueda</h5>
             <form id="filterForm" class="row g-3">
@@ -108,11 +107,43 @@
                 </div>
 
                 <div class="col-md-2">
+                    <label class="compact-label">Tipo de Rival</label>
+                    <select class="form-select form-select-sm" id="f_rival">
+                        <option value="">Cualquiera</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <label class="compact-label">Clasificación</label>
+                    <select class="form-select form-select-sm" id="f_clasificacion">
+                        <option value="">Todas</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
                     <label class="compact-label">Estado</label>
                     <select class="form-select form-select-sm" id="f_estado">
                         <option value="">Todos</option>
                         <option value="revisada">✓ Revisadas</option>
                         <option value="pendiente">⚠ Pendientes</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <label class="compact-label">Hero Position</label>
+                    <select id="positionFilter" class="form-select form-select-sm">
+                        <option value="all" selected>ALL POSITIONS</option> 
+                        <optgroup label="Relativas">
+                            <option value="IP">In Position (IP)</option>
+                            <option value="OOP">Out of Position (OOP)</option>
+                        </optgroup>
+                        <optgroup label="Específicas">
+                            <option value="SB">SB</option>
+                            <option value="BB">BB</option>
+                            <option value="BTN">BU</option>
+                            <option value="CO">CO</option>
+                            <option value="HJ">HJ</option>
+                        </optgroup>
                     </select>
                 </div>
 
@@ -124,62 +155,41 @@
     </header> 
 
     <main class="app-layout">
-        
         <aside class="sidebar-list" id="react-hand-list-container">
-            <div class="text-center py-5 text-muted">
-                <div style="margin-top:10px">
-                    <fieldset class="mb-4 border-0 p-0 text-center">
-                        <legend class="text-white-50 fw-normal mb-2" style="font-size: 0.7rem; letter-spacing: 1px; float: none; text-transform: uppercase;">
-                            Filtro por Fecha
-                        </legend>
-                        <select id="dateRangeType" class="form-select custom-poker-input text-center mx-auto" style="max-width: 90%;">
-                            <option value="all" selected>All Dates</option>
-                            <option value="today">Today</option>
-                            <option value="yesterday">Yesterday</option>
-                            <option value="this_month">This Month</option>
-                            <option value="this_year">This Year</option> 
-                            <option value="since">Since Date...</option>
-                            <option value="between">Between Dates...</option>
-                        </select>
-                        <div style="display:flex;flex-direction:column;align-items:center;margin-top:10px;">
-                            <input type="date" id="fechaInicio"  style="max-width: 44%;">
-                            <input type="date" id="fechaFin"style="max-width: 44%;">
-                        </div>
-                    </fieldset>
-                </div>
+            <div class="text-center py-4 text-muted">
+                <fieldset class="mb-4 border-0 p-0 text-center">
+                    <legend class="compact-label">Filtro por Fecha</legend>
+                    <select id="dateRangeType" class="form-select form-select-sm mb-2 mx-auto" style="max-width: 90%;">
+                        <option value="all" selected>All Dates</option>
+                        <option value="today">Today</option>
+                        <option value="this_month">This Month</option>
+                        <option value="between">Between Dates...</option>
+                    </select>
+                    <div class="d-flex justify-content-center gap-1">
+                        <input type="date" id="fechaInicio" class="form-control form-control-sm" style="width: 45%;">
+                        <input type="date" id="fechaFin" class="form-control form-control-sm" style="width: 45%;">
+                    </div>
+                </fieldset>
             </div>
         </aside>
 
         <section class="image-viewer" id="hand-image-viewer" style="display:flex;flex-direction:column">
-            <div id="data_table_container">
-                <table class="table">
-                    <thead>
-                        <th>ID</th>
-                        <th>Modalidad</th>
-                        <th>Variedad</th>
-                        <th>Subtipo</th>
-                        <th>Nivel</th>
-                        <th>Tipo Rivel</th>
-                        <th>Nota</th>
-                        <th>Ruta</th>
-                        <th>Fecha</th>
+            <div id="data_table_container" style="width: 100%; overflow-x: auto; background: white;">
+                <table class="table table-hover table-sm">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Modalidad</th>
+                            <th>Variedad</th>
+                            <th>Subtipo</th>
+                            <th>Nivel</th>
+                            <th>Rival</th>
+                            <th>Clasificación</th>
+                            <th>Fecha</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <!-- Aquí se llenarán las filas de las manos desde el backend -->
-                         <!--
-                            <tr>
-                                <td>1</td>
-                                <td>Cash</td>
-                                <td>Hold'em</td>
-                                <td>Zoom</td>
-                                <td>NL100</td>
-                                <td>Regular</td>
-                                <td>Mano complicada, revisar...</td>
-                                <td>/path/to/hand1.png</td>
-                                <td>2024-06-01</td>
-                            </tr>
-                         -->
-                    </tbody>
+                        </tbody>
                 </table>
             </div>
             <div class="no-image-placeholder" id="placeholder-text">
@@ -187,15 +197,11 @@
                     <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
                     <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
                 </svg>
-                <h4>Selecciona una mano de la lista</h4>
-                <p>Haz clic en una mano para visualizar la captura y los detalles completos.</p>
+                <h4>Selecciona una mano</h4>
             </div>
-
-            <img src="" id="display-hand-image" alt="Captura de la mano">
+            <img src="" id="display-hand-image" alt="Captura">
         </section>
-
     </main>
-
 
     <script>
         const POKER_CONFIG = {
@@ -215,19 +221,47 @@
                 'CASH_GAME': ["NL2", "NL5", "NL10", "NL25", "NL50", "NL100", "NL200", "NL400", "NL600", "NL1000"],
                 'MTT': [2, 5, 10, 25, 50, 100, 200, 400, 600, 1000],
                 'SPIN_AND_GO': ["0.25", "0.50", "1", "2", "3", "5", "10", "20", "50", "100"]
-            }
+            },
+            // NUEVAS CATEGORÍAS
+            tiposDeRival: ['Desconocido (Default)', 'Fish', 'Reg Agresivo', 'Nit', 'Whale / Ballena', 'Loco-Maniatico', 'Pagón'],
+            clasificaciones: [
+                { id: 1, name: 'ERRORES GRAVES' },
+                { id: 2, name: 'MANOS TOP VALUE' },
+                { id: 3, name: 'Pozos Grandes' },
+                { id: 4, name: 'ERRORES PREFLOP' },
+                { id: 5, name: 'Pozos 3beteados' },
+                { id: 6, name: 'vs LOCO' },
+                { id: 7, name: 'CALL-FOLD vs agresion' },
+                { id: 8, name: 'DudaSize' },
+                { id: 9, name: 'Inducimos' }
+            ]
         };
 
-        // Referencias
+        // Llenar selectores al cargar
+        function initSelectores() {
+            const rivalSelect = document.getElementById('f_rival');
+            POKER_CONFIG.tiposDeRival.forEach(r => {
+                const opt = document.createElement('option');
+                opt.value = r; opt.textContent = r;
+                rivalSelect.appendChild(opt);
+            });
+
+            const clasSelect = document.getElementById('f_clasificacion');
+            POKER_CONFIG.clasificaciones.forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c.id; opt.textContent = c.name;
+                clasSelect.appendChild(opt);
+            });
+        }
+        initSelectores();
+
         const modSelect   = document.getElementById('f_modalidad');
         const varSelect   = document.getElementById('f_variedad');
         const subSelect   = document.getElementById('f_subtipo');
         const nivelSelect = document.getElementById('f_stake');
 
-        // Evento 1: Cambia Modalidad -> Llena Variedad
         modSelect.addEventListener('change', function() {
             const modValue = this.value;
-            
             varSelect.innerHTML = '<option value="">Selecciona Variedad...</option>';
             subSelect.innerHTML = '<option value="">-</option>';
             nivelSelect.innerHTML = '<option value="">-</option>';
@@ -242,16 +276,13 @@
             }
         });
 
-        // Evento 2: Cambia Variedad -> Llena Subtipo y Niveles
         varSelect.addEventListener('change', function() {
             const modActual = modSelect.value;
             const varActual = this.value;
-
             subSelect.innerHTML = '<option value="">Selecciona Subtipo...</option>';
             nivelSelect.innerHTML = '<option value="">Nivel...</option>';
 
             if (modActual && varActual) {
-                // Llenar Subtipos
                 const subtipos = POKER_CONFIG.modalidades[modActual][varActual];
                 if (subtipos) {
                     subtipos.forEach(s => {
@@ -260,8 +291,6 @@
                         subSelect.appendChild(opt);
                     });
                 }
-
-                // Llenar Niveles
                 const niveles = POKER_CONFIG.nivelesConfig[varActual];
                 if (niveles) {
                     niveles.forEach(n => {
@@ -274,78 +303,45 @@
             }
         });
 
-        // Evento 3: Botón Enviar (FETCH)
         document.getElementById('btnBuscadorSend').addEventListener('click', () => {
-    // 1. Recogemos los elementos
-    const filtros = {
-        modalidad: document.getElementById('f_modalidad').value,
-        variedad: document.getElementById('f_variedad').value,
-        subtipo: document.getElementById('f_subtipo').value,
-        nivel: document.getElementById('f_stake').value,
-        estado: document.getElementById('f_estado').value,
-        posicion: document.getElementById('positionFilter').value,
-        fechaInicio: document.getElementById('fechaInicio').value,
-        fechaFin: document.getElementById('fechaFin').value
-    };
+            const filtros = {
+                modalidad: document.getElementById('f_modalidad').value,
+                variedad: document.getElementById('f_variedad').value,
+                subtipo: document.getElementById('f_subtipo').value,
+                nivel: document.getElementById('f_stake').value,
+                estado: document.getElementById('f_estado').value,
+                posicion: document.getElementById('positionFilter').value,
+                rival: document.getElementById('f_rival').value,
+                clasificacion: document.getElementById('f_clasificacion').value,
+                fechaInicio: document.getElementById('fechaInicio').value,
+                fechaFin: document.getElementById('fechaFin').value
+            };
 
-    // 2. LIMPIEZA: Eliminamos los campos vacíos o "all" para no enviarlos al servidor
-    // Esto permite que si solo eliges "NoLimitHoldem", la consulta sea limpia.
-    Object.keys(filtros).forEach(key => {
-        if (filtros[key] === "" || filtros[key] === "all") {
-            delete filtros[key];
-        }
-    });
-
-    // 3. Convertimos el objeto en parámetros de URL (Ej: ?modalidad=MTT&variedad=PKO)
-    const queryString = new URLSearchParams(filtros).toString();
-    console.log("Enviando consulta con:", queryString);
-
-    // 4. Petición al servidor
-    fetch(`http://localhost:3000/api/filter/hands?${queryString}`)
-        .then(response => {
-            if (!response.ok) throw new Error("Error en la respuesta del servidor");
-            return response.json();
-        })
-        .then(result => {
-            const container = document.getElementById('data_table_container');
-            const placeholder = document.getElementById('placeholder-text');
-
-            if (result.html && result.count > 0) {
-                container.innerHTML = result.html;
-                placeholder.style.display = 'none'; // Escondemos el icono de imagen
-            } else {
-                container.innerHTML = '<div class="alert alert-warning">No se encontraron manos con esos filtros.</div>';
-                placeholder.style.display = 'block';
-            }
-        })
-        .catch(error => {
-            console.error("Error en el envío:", error);
-            alert("No se pudo conectar con el servidor.");
-        });
-});
-    </script>
-    <!-- Scripts FUNCIONA
-    <script>
-        document.getElementById('btnBuscadorSend').addEventListener('click', () => {
-
-            fetch('http://localhost:3000/api/filter/hands', {
-                method: 'GET'
-            })
-            .then(response => response.json())
-            .then(result => {
-                console.log("Respuesta del servidor:", result);
-
-                // Inyectar el HTML generado
-                document.getElementById('data_table_container').innerHTML = result.html;
-            })
-            .catch(error => {
-                console.error("Error en el envío:", error);
-                alert("No se pudo conectar con el servidor: " + error.message);
+            Object.keys(filtros).forEach(key => {
+                if (filtros[key] === "" || filtros[key] === "all") {
+                    delete filtros[key];
+                }
             });
 
+            const queryString = new URLSearchParams(filtros).toString();
+            
+            fetch(`http://localhost:3000/api/filter/hands?${queryString}`)
+                .then(response => response.json())
+                .then(result => {
+                    const container = document.getElementById('data_table_container');
+                    const placeholder = document.getElementById('placeholder-text');
+
+                    if (result.html && result.count > 0) {
+                        // Inyectamos el tbody o la tabla completa según envíe el backend
+                        container.querySelector('tbody').innerHTML = result.html;
+                        placeholder.style.display = 'none';
+                    } else {
+                        container.querySelector('tbody').innerHTML = '<tr><td colspan="8" class="text-center">No hay resultados</td></tr>';
+                        placeholder.style.display = 'block';
+                    }
+                })
+                .catch(error => alert("Error de conexión"));
         });
-    </script> 
-    -->
-    
+    </script>
 </body>
 </html>
