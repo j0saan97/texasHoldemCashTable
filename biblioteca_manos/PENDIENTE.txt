@@ -4,9 +4,8 @@ PENDIENTE:
 
 2.- BOTÓN CARGAR MANOS --> CREAR FUNCION QUE CARGA LAS MANOS DESDE EL SERVIDOR --> PREPARAR CONSULTA CON DATOS SELECCIONADOS
 
- 
-3.- meter filtros spot
+3.- hacerlo responsive el buscador o DIMENSION MINIMA 838X 848
 
+4.- OBJETO POKER_CONFIG hacerlo en un JS unico e importarlo en los 2 htmls
 
-4.- hacerlo responsive el buscador o DIMENSION MINIMA 838X 848
-
+5.- ordenar estilos y JS en archivs separados, limpiar codigo repetido

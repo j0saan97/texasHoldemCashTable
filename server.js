@@ -162,6 +162,72 @@ const server = http.createServer(async (req, res) => {
         return;
     }
 
+    // -- API : FILTRO DE MANOS
+    if (pathname === '/api/filter/hands' && req.method === 'GET') {
+        try {
+            await db.inicializar();
+            /* query['modalidad'] */
+            
+            console.log(query['rangoDeFechas']);
+            if (query['rangoDeFechas'] === undefined) {
+                /* Todas las fechas ... falta a;adir consulta de campo posicion */
+                let querySql = `
+                    SELECT 
+                        m.id, m.modalidad,
+                        v.nombre as variedad,
+                        s.nombre as subtipo,
+                        m.nivel_stake,
+                        m.tipo_rival,
+                        m.fecha_registro
+                        GROUP_CONCAT(c.nombre) AS categorias
+                    FROM manos_review m
+                    LEFT JOIN variedades v ON m.variedad_id = v.id
+                    LEFT JOIN subtipos s ON m.subtipo_id = s.id
+                    LEFT JOIN categorias c ON mc.categoria_id = c.id
+                    WHERE m.nivel_stake = ? AND m.modalidad = ? AND m.tipo_rival = ?
+                `;
+                const params = [query['nivel'], query['modalidad'], query['tipoRival']];
+                const manos = await db.ejecutarConsulta(querySql, params);
+            } else if (query['rangoDeFechas'] === 'today') {
+                /* Fecha Hoy */
+                let querySql = `
+                    SELECT 
+                        m.id, m.modalidad,
+                        v.nombre as variedad,
+                        s.nombre as subtipo,
+                        m.nivel_stake,
+                        m.tipo_rival,
+                        m.fecha_registro
+                        GROUP_CONCAT(c.nombre) AS categorias
+                    FROM manos_review m
+                    LEFT JOIN variedades v ON m.variedad_id = v.id
+                    LEFT JOIN subtipos s ON m.subtipo_id = s.id
+                    LEFT JOIN categorias c ON mc.categoria_id = c.id
+                    WHERE m.nivel_stake = ? AND m.modalidad = ? AND m.tipo_rival = ? AND DATE(m.fecha_registro) = CURDATE()
+                `;
+                const params = [query['nivel'], query['modalidad'], query['tipoRival']];
+                const manos = await db.ejecutarConsulta(querySql, params);
+            } else if (query['rangoDeFechas'] === 'yesterday') {
+                /* Fecha Ayer */
+            } else if (query['rangoDeFechas'] === 'this_month') {   
+                /* Fecha por Mes */ 
+            } else if (query['rangoDeFechas'] === 'between') {
+                /* Rango de Fechas */
+            } else {
+                /* Sin filtro de fecha */
+            }
+            
+            await db.cerrarConexion();
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error:'N/A', message:'Correcto', manos: manos }));
+        } catch (error) {
+            console.error('Error:', error);
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: error.message, message: 'Error interno del servidor', manos: [] }));
+        }
+        return;
+    }
+
     // --- SERVIR ARCHIVOS ESTÁTICOS Y UPLOADS ---
     let filePath = path.join(__dirname, pathname);
     if (pathname === '/' || pathname === '') filePath = path.join(__dirname, 'index.html');

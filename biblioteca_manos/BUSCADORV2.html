@@ -304,6 +304,7 @@
         });
 
         document.getElementById('btnBuscadorSend').addEventListener('click', () => {
+            /* Campos posibles para procesos de filtrado en base de datos*/
             const filtros = {
                 modalidad: document.getElementById('f_modalidad').value,
                 variedad: document.getElementById('f_variedad').value,
@@ -313,6 +314,7 @@
                 posicion: document.getElementById('positionFilter').value,
                 rival: document.getElementById('f_rival').value,
                 clasificacion: document.getElementById('f_clasificacion').value,
+                rangoDeFechas: document.getElementById('dateRangeType').value,
                 fechaInicio: document.getElementById('fechaInicio').value,
                 fechaFin: document.getElementById('fechaFin').value
             };
@@ -324,7 +326,7 @@
             });
 
             const queryString = new URLSearchParams(filtros).toString();
-            
+
             fetch(`http://localhost:3000/api/filter/hands?${queryString}`)
                 .then(response => response.json())
                 .then(result => {
