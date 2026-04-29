@@ -11,62 +11,210 @@
             --filter-height: 180px; /* Si ves que los nuevos filtros no caben, puedes subirlo a 220px */
         }
 
-        body, html { height: 100%; overflow: hidden; background-color: #f4f7f6; }
+        body, html { height: 100%; overflow: hidden; background-color: #1a1a2e; }
 
-        /* Contenedor de Filtros */
+        /* ── HEADER ─────────────────────────────────────── */
         .header-filters {
-            height: auto; /* Cambiado a auto para que se adapte si hay muchas filas de filtros */
+            height: auto;
             min-height: var(--filter-height);
-            background: #ffffff;
-            border-bottom: 2px solid #dee2e6;
-            padding: 20px;
+            background: #16213e;
+            border-bottom: 2px solid #0f3460;
+            padding: 16px 20px;
             z-index: 100;
         }
+        .header-filters h5 { color: #e0e0e0; }
 
-        /* Layout Principal */
+        /* ── LAYOUT ──────────────────────────────────────── */
         .app-layout {
             display: flex;
-            height: calc(100vh - 180px); /* Ajustar según altura final del header */
+            height: calc(100vh - var(--filter-height));
+            overflow: hidden;
         }
 
+        /* ── SIDEBAR ─────────────────────────────────────── */
         .sidebar-list {
             width: var(--sidebar-width);
-            background: #fff;
-            border-right: 1px solid #dee2e6;
+            background: #16213e;
+            border-right: 1px solid #0f3460;
             overflow-y: auto;
-            padding: 10px;
+            padding: 16px;
+            flex-shrink: 0;
         }
 
-        .image-viewer {
+        /* ── GRID SECTION ────────────────────────────────── */
+        #hand-grid-section {
             flex-grow: 1;
-            background: #2d2d2d;
+            overflow-y: auto;
+            padding: 20px;
+            background: #1a1a2e;
+        }
+
+        /* Placeholder inicial */
+        .grid-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #555;
+            text-align: center;
+        }
+        .grid-placeholder p { font-size: 0.95rem; }
+
+        /* Grid de tarjetas */
+        .hands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        /* ── TARJETA ─────────────────────────────────────── */
+        .hand-card {
+            background: #16213e;
+            border: 1px solid #0f3460;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+            display: flex;
+            flex-direction: column;
+        }
+        .hand-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            border-color: #e94560;
+        }
+
+        /* Zona de imagen de la tarjeta */
+        .hand-card__thumb {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #0f3460;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            position: relative;
+        }
+        .hand-card__thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hand-card__thumb .no-img-icon {
+            color: #334;
+            font-size: 2rem;
         }
 
-        .image-viewer img {
-            max-width: 100%;
-            max-height: 100%;
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
-            border-radius: 4px;
-            display: none;
+        /* Info de la tarjeta */
+        .hand-card__body {
+            padding: 10px 12px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
         }
-
-        .no-image-placeholder {
+        .hand-card__modalidad {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #e94560;
+        }
+        .hand-card__stake {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #f0f0f0;
+        }
+        .hand-card__fecha {
+            font-size: 0.72rem;
             color: #888;
-            text-align: center;
+            margin-top: auto;
         }
+        .hand-card__badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+        .badge-pendiente { background: #ff9800; color: #000; }
+        .badge-revisada  { background: #2ecc71; color: #000; }
+
+        /* ── MODAL ───────────────────────────────────────── */
+        .img-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+        .img-modal.open { display: flex; }
+
+        .modal-content-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        .modal-content-wrap img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.8);
+        }
+        .modal-info {
+            margin-top: 12px;
+            color: #ccc;
+            font-size: 0.85rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .modal-close {
+            position: fixed;
+            top: 16px; right: 20px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            line-height: 1;
+            z-index: 10000;
+            opacity: 0.7;
+            transition: opacity 0.15s;
+        }
+        .modal-close:hover { opacity: 1; }
+
+        .modal-nav {
+            position: fixed;
+            top: 50%; transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #fff;
+            font-size: 2.5rem;
+            width: 48px; height: 80px;
+            border-radius: 6px;
+            cursor: pointer;
+            z-index: 10000;
+            transition: background 0.15s;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .modal-nav:hover { background: rgba(255,255,255,0.25); }
+        .modal-nav--prev { left: 12px; }
+        .modal-nav--next { right: 12px; }
 
         .compact-label {
             font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
-            color: #555;
+            color: #aaa;
             margin-bottom: 4px;
             display: block;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -155,53 +303,54 @@
     </header> 
 
     <main class="app-layout">
+
+        <!-- SIDEBAR: Filtro de fechas + contador -->
         <aside class="sidebar-list" id="react-hand-list-container">
-            <div class="text-center py-4 text-muted">
-                <fieldset class="mb-4 border-0 p-0 text-center">
-                    <legend class="compact-label">Filtro por Fecha</legend>
-                    <select id="dateRangeType" class="form-select form-select-sm mb-2 mx-auto" style="max-width: 90%;">
-                        <option value="all" selected>All Dates</option>
-                        <option value="today">Today</option>
-                        <option value="this_month">This Month</option>
-                        <option value="between">Between Dates...</option>
-                    </select>
-                    <div class="d-flex justify-content-center gap-1">
-                        <input type="date" id="fechaInicio" class="form-control form-control-sm" style="width: 45%;">
-                        <input type="date" id="fechaFin" class="form-control form-control-sm" style="width: 45%;">
-                    </div>
-                </fieldset>
-            </div>
+            <fieldset class="mb-3 border-0 p-0">
+                <legend class="compact-label">Filtro por Fecha</legend>
+                <select id="dateRangeType" class="form-select form-select-sm mb-2">
+                    <option value="all" selected>All Dates</option>
+                    <option value="today">Today</option>
+                    <option value="this_month">This Month</option>
+                    <option value="between">Between Dates...</option>
+                </select>
+                <div class="d-flex gap-1">
+                    <input type="date" id="fechaInicio" class="form-control form-control-sm" style="width:50%">
+                    <input type="date" id="fechaFin"    class="form-control form-control-sm" style="width:50%">
+                </div>
+            </fieldset>
+
+            <div id="results-count" class="compact-label text-muted mb-2" style="display:none"></div>
         </aside>
 
-        <section class="image-viewer" id="hand-image-viewer" style="display:flex;flex-direction:column">
-            <div id="data_table_container" style="width: 100%; overflow-x: auto; background: white;">
-                <table class="table table-hover table-sm">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>ID</th>
-                            <th>Modalidad</th>
-                            <th>Variedad</th>
-                            <th>Subtipo</th>
-                            <th>Nivel</th>
-                            <th>Rival</th>
-                            <th>Clasificación</th>
-                            <th>Fecha</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        </tbody>
-                </table>
-            </div>
-            <div class="no-image-placeholder" id="placeholder-text">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-image mb-3" viewBox="0 0 16 16">
+        <!-- ZONA PRINCIPAL: grid de tarjetas -->
+        <section id="hand-grid-section">
+
+            <!-- Estado inicial / sin resultados -->
+            <div id="grid-placeholder" class="grid-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" viewBox="0 0 16 16" class="mb-3 opacity-50">
                     <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
                     <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
                 </svg>
-                <h4>Selecciona una mano</h4>
+                <p>Aplica los filtros y pulsa <strong>Cargar Manos</strong></p>
             </div>
-            <img src="" id="display-hand-image" alt="Captura">
+
+            <!-- Grid donde se renderizan las tarjetas -->
+            <div id="hands-grid" class="hands-grid"></div>
+
         </section>
     </main>
+
+    <!-- MODAL: imagen a pantalla completa -->
+    <div id="img-modal" class="img-modal" role="dialog" aria-modal="true">
+        <button id="modal-close" class="modal-close" aria-label="Cerrar">&times;</button>
+        <button id="modal-prev"  class="modal-nav modal-nav--prev" aria-label="Anterior">&#8249;</button>
+        <button id="modal-next"  class="modal-nav modal-nav--next" aria-label="Siguiente">&#8250;</button>
+        <div class="modal-content-wrap">
+            <img id="modal-img" src="" alt="Mano">
+            <div id="modal-info" class="modal-info"></div>
+        </div>
+    </div>
 
     <script>
         const POKER_CONFIG = {
@@ -303,46 +452,151 @@
             }
         });
 
-        document.getElementById('btnBuscadorSend').addEventListener('click', () => {
-            /* Campos posibles para procesos de filtrado en base de datos*/
+        document.getElementById('btnBuscadorSend').addEventListener('click', cargarManos);
+
+        // ── Datos en memoria para navegación en modal ──
+        let manosActuales = [];
+        let indexActual   = 0;
+
+        function cargarManos() {
             const filtros = {
-                modalidad: document.getElementById('f_modalidad').value,
-                variedad: document.getElementById('f_variedad').value,
-                subtipo: document.getElementById('f_subtipo').value,
-                nivel: document.getElementById('f_stake').value,
-                estado: document.getElementById('f_estado').value,
-                posicion: document.getElementById('positionFilter').value,
-                rival: document.getElementById('f_rival').value,
+                modalidad:     document.getElementById('f_modalidad').value,
+                variedad:      document.getElementById('f_variedad').value,
+                subtipo:       document.getElementById('f_subtipo').value,
+                nivel:         document.getElementById('f_stake').value,
+                estado:        document.getElementById('f_estado').value,
+                posicion:      document.getElementById('positionFilter').value,
+                rival:         document.getElementById('f_rival').value,
                 clasificacion: document.getElementById('f_clasificacion').value,
                 rangoDeFechas: document.getElementById('dateRangeType').value,
-                fechaInicio: document.getElementById('fechaInicio').value,
-                fechaFin: document.getElementById('fechaFin').value
+                fechaInicio:   document.getElementById('fechaInicio').value,
+                fechaFin:      document.getElementById('fechaFin').value
             };
 
+            // Eliminar vacíos y "all"
             Object.keys(filtros).forEach(key => {
-                if (filtros[key] === "" || filtros[key] === "all") {
-                    delete filtros[key];
-                }
+                if (!filtros[key] || filtros[key] === 'all') delete filtros[key];
             });
 
             const queryString = new URLSearchParams(filtros).toString();
 
             fetch(`http://localhost:3000/api/filter/hands?${queryString}`)
-                .then(response => response.json())
+                .then(r => r.json())
                 .then(result => {
-                    const container = document.getElementById('data_table_container');
-                    const placeholder = document.getElementById('placeholder-text');
+                    manosActuales = result.manos || [];
+                    renderGrid(manosActuales);
 
-                    if (result.html && result.count > 0) {
-                        // Inyectamos el tbody o la tabla completa según envíe el backend
-                        container.querySelector('tbody').innerHTML = result.html;
-                        placeholder.style.display = 'none';
+                    const contador = document.getElementById('results-count');
+                    if (manosActuales.length > 0) {
+                        contador.textContent = `${manosActuales.length} mano${manosActuales.length > 1 ? 's' : ''} encontrada${manosActuales.length > 1 ? 's' : ''}`;
+                        contador.style.display = 'block';
                     } else {
-                        container.querySelector('tbody').innerHTML = '<tr><td colspan="8" class="text-center">No hay resultados</td></tr>';
-                        placeholder.style.display = 'block';
+                        contador.style.display = 'none';
                     }
                 })
-                .catch(error => alert("Error de conexión"));
+                .catch(err => alert('Error de conexión: ' + err.message));
+        }
+
+        // ── Renderiza el grid de tarjetas ──
+        function renderGrid(manos) {
+            const grid        = document.getElementById('hands-grid');
+            const placeholder = document.getElementById('grid-placeholder');
+
+            if (!manos.length) {
+                grid.innerHTML   = '';
+                placeholder.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" viewBox="0 0 16 16" class="mb-3 opacity-50">
+                        <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                        <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
+                    </svg>
+                    <p>No se encontraron manos con esos filtros</p>`;
+                placeholder.style.display = 'flex';
+                return;
+            }
+
+            placeholder.style.display = 'none';
+            grid.innerHTML = manos.map((m, i) => {
+                const fecha    = new Date(m.fecha_registro).toLocaleDateString('es-ES');
+                const modalAb  = m.modalidad === 'NoLimitHoldem' ? 'NLH' : 'PLO';
+                const badge    = m.duda
+                    ? '<span class="hand-card__badge badge-pendiente">⚠ Pendiente</span>'
+                    : '<span class="hand-card__badge badge-revisada">✓ Revisada</span>';
+                const thumb    = m.ruta_imagen
+                    ? `<img src="http://localhost:3000/uploads/${m.ruta_imagen}" alt="mano" loading="lazy">`
+                    : `<span class="no-img-icon">🃏</span>`;
+
+                return `
+                    <div class="hand-card" data-index="${i}">
+                        <div class="hand-card__thumb">${thumb}</div>
+                        <div class="hand-card__body">
+                            <span class="hand-card__modalidad">${modalAb} · ${m.variedad || ''}</span>
+                            <span class="hand-card__stake">${m.nivel_stake || '—'}</span>
+                            ${badge}
+                            <span class="hand-card__fecha">${fecha}</span>
+                        </div>
+                    </div>`;
+            }).join('');
+
+            // Click en tarjeta → abrir modal
+            grid.querySelectorAll('.hand-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    indexActual = parseInt(card.dataset.index);
+                    abrirModal(indexActual);
+                });
+            });
+        }
+
+        // ── Modal ──
+        function abrirModal(index) {
+            const m      = manosActuales[index];
+            const modal  = document.getElementById('img-modal');
+            const img    = document.getElementById('modal-img');
+            const info   = document.getElementById('modal-info');
+
+            img.src = m.ruta_imagen
+                ? `http://localhost:3000/uploads/${m.ruta_imagen}`
+                : '';
+
+            const fecha = new Date(m.fecha_registro).toLocaleDateString('es-ES');
+            info.innerHTML = `
+                <strong style="color:#e94560">${m.modalidad}</strong> ·
+                ${m.variedad || ''} · ${m.subtipo || ''} &nbsp;|&nbsp;
+                Stake: <strong>${m.nivel_stake || '—'}</strong> &nbsp;|&nbsp;
+                Rival: ${m.tipo_rival || '—'} &nbsp;|&nbsp;
+                Pos: ${m.posicion || '—'} &nbsp;|&nbsp;
+                ${fecha}
+                ${m.notas ? `<br><em style="color:#aaa">${m.notas}</em>` : ''}
+            `;
+
+            modal.classList.add('open');
+
+            // Mostrar/ocultar nav según posición
+            document.getElementById('modal-prev').style.display = index > 0 ? 'flex' : 'none';
+            document.getElementById('modal-next').style.display = index < manosActuales.length - 1 ? 'flex' : 'none';
+        }
+
+        document.getElementById('modal-close').addEventListener('click', () => {
+            document.getElementById('img-modal').classList.remove('open');
+        });
+
+        document.getElementById('modal-prev').addEventListener('click', () => {
+            if (indexActual > 0) abrirModal(--indexActual);
+        });
+
+        document.getElementById('modal-next').addEventListener('click', () => {
+            if (indexActual < manosActuales.length - 1) abrirModal(++indexActual);
+        });
+
+        // Cerrar modal con ESC o click fuera
+        document.getElementById('img-modal').addEventListener('click', e => {
+            if (e.target === e.currentTarget) e.currentTarget.classList.remove('open');
+        });
+        document.addEventListener('keydown', e => {
+            const modal = document.getElementById('img-modal');
+            if (!modal.classList.contains('open')) return;
+            if (e.key === 'Escape')      modal.classList.remove('open');
+            if (e.key === 'ArrowLeft'  && indexActual > 0)                          abrirModal(--indexActual);
+            if (e.key === 'ArrowRight' && indexActual < manosActuales.length - 1)   abrirModal(++indexActual);
         });
     </script>
 </body>

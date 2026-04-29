@@ -166,64 +166,97 @@ const server = http.createServer(async (req, res) => {
     if (pathname === '/api/filter/hands' && req.method === 'GET') {
         try {
             await db.inicializar();
-            /* query['modalidad'] */
-            
-            console.log(query['rangoDeFechas']);
-            if (query['rangoDeFechas'] === undefined) {
-                /* Todas las fechas ... falta a;adir consulta de campo posicion */
-                let querySql = `
-                    SELECT 
-                        m.id, m.modalidad,
-                        v.nombre as variedad,
-                        s.nombre as subtipo,
-                        m.nivel_stake,
-                        m.tipo_rival,
-                        m.fecha_registro
-                        GROUP_CONCAT(c.nombre) AS categorias
-                    FROM manos_review m
-                    LEFT JOIN variedades v ON m.variedad_id = v.id
-                    LEFT JOIN subtipos s ON m.subtipo_id = s.id
-                    LEFT JOIN categorias c ON mc.categoria_id = c.id
-                    WHERE m.nivel_stake = ? AND m.modalidad = ? AND m.tipo_rival = ?
-                `;
-                const params = [query['nivel'], query['modalidad'], query['tipoRival']];
-                const manos = await db.ejecutarConsulta(querySql, params);
-            } else if (query['rangoDeFechas'] === 'today') {
-                /* Fecha Hoy */
-                let querySql = `
-                    SELECT 
-                        m.id, m.modalidad,
-                        v.nombre as variedad,
-                        s.nombre as subtipo,
-                        m.nivel_stake,
-                        m.tipo_rival,
-                        m.fecha_registro
-                        GROUP_CONCAT(c.nombre) AS categorias
-                    FROM manos_review m
-                    LEFT JOIN variedades v ON m.variedad_id = v.id
-                    LEFT JOIN subtipos s ON m.subtipo_id = s.id
-                    LEFT JOIN categorias c ON mc.categoria_id = c.id
-                    WHERE m.nivel_stake = ? AND m.modalidad = ? AND m.tipo_rival = ? AND DATE(m.fecha_registro) = CURDATE()
-                `;
-                const params = [query['nivel'], query['modalidad'], query['tipoRival']];
-                const manos = await db.ejecutarConsulta(querySql, params);
-            } else if (query['rangoDeFechas'] === 'yesterday') {
-                /* Fecha Ayer */
-            } else if (query['rangoDeFechas'] === 'this_month') {   
-                /* Fecha por Mes */ 
-            } else if (query['rangoDeFechas'] === 'between') {
-                /* Rango de Fechas */
-            } else {
-                /* Sin filtro de fecha */
+
+            // --- CONSTRUCCIÓN DINÁMICA DE FILTROS ---
+            // Solo se añade cada condición si el parámetro viene informado
+            const conditions = [];
+            const params = [];
+
+            if (query['modalidad']) {
+                conditions.push('m.modalidad = ?');
+                params.push(query['modalidad']);
             }
-            
+            if (query['variedad']) {
+                conditions.push('v.nombre = ?');
+                params.push(query['variedad']);
+            }
+            if (query['subtipo']) {
+                conditions.push('s.nombre = ?');
+                params.push(query['subtipo']);
+            }
+            if (query['nivel']) {
+                conditions.push('m.nivel_stake = ?');
+                params.push(query['nivel']);
+            }
+            if (query['rival']) {
+                conditions.push('m.tipo_rival = ?');
+                params.push(query['rival']);
+            }
+            if (query['posicion'] && query['posicion'] !== 'all') {
+                conditions.push('m.posicion = ?');
+                params.push(query['posicion']);
+            }
+            if (query['clasificacion']) {
+                conditions.push('mc.categoria_id = ?');
+                params.push(query['clasificacion']);
+            }
+            if (query['estado']) {
+                conditions.push('m.duda = ?');
+                params.push(query['estado'] === 'pendiente' ? 1 : 0);
+            }
+
+            // --- FILTRO DE FECHAS ---
+            const rango = query['rangoDeFechas'];
+            if (rango === 'today') {
+                conditions.push('DATE(m.fecha_registro) = CURDATE()');
+            } else if (rango === 'yesterday') {
+                conditions.push('DATE(m.fecha_registro) = DATE_SUB(CURDATE(), INTERVAL 1 DAY)');
+            } else if (rango === 'this_month') {
+                conditions.push('YEAR(m.fecha_registro) = YEAR(CURDATE()) AND MONTH(m.fecha_registro) = MONTH(CURDATE())');
+            } else if (rango === 'between' && query['fechaInicio'] && query['fechaFin']) {
+                conditions.push('DATE(m.fecha_registro) BETWEEN ? AND ?');
+                params.push(query['fechaInicio'], query['fechaFin']);
+            }
+
+            const whereClause = conditions.length > 0 ? 'WHERE ' + conditions.join(' AND ') : '';
+
+            // --- QUERY PRINCIPAL CON TODOS LOS JOINs CORRECTOS ---
+            const querySql = `
+                SELECT
+                    m.id,
+                    m.modalidad,
+                    v.nombre        AS variedad,
+                    s.nombre        AS subtipo,
+                    m.nivel_stake,
+                    m.tipo_rival,
+                    m.posicion,
+                    m.duda,
+                    m.notas,
+                    m.ruta_imagen,
+                    m.fecha_registro,
+                    GROUP_CONCAT(c.nombre ORDER BY c.nombre SEPARATOR ', ') AS categorias
+                FROM manos_review m
+                LEFT JOIN variedades     v  ON m.variedad_id   = v.id
+                LEFT JOIN subtipos       s  ON m.subtipo_id    = s.id
+                LEFT JOIN mano_categorias mc ON m.id           = mc.mano_id
+                LEFT JOIN categorias     c  ON mc.categoria_id = c.id
+                ${whereClause}
+                GROUP BY
+                    m.id, m.modalidad, v.nombre, s.nombre,
+                    m.nivel_stake, m.tipo_rival, m.posicion,
+                    m.duda, m.notas, m.ruta_imagen, m.fecha_registro
+                ORDER BY m.fecha_registro DESC
+            `;
+
+            const manos = await db.ejecutarConsulta(querySql, params);
             await db.cerrarConexion();
+
             res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error:'N/A', message:'Correcto', manos: manos }));
+            res.end(JSON.stringify({ error: 'N/A', message: 'Correcto', manos: manos, count: manos.length }));
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error en /api/filter/hands:', error);
             res.writeHead(500, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: error.message, message: 'Error interno del servidor', manos: [] }));
+            res.end(JSON.stringify({ error: error.message, message: 'Error interno del servidor', manos: [], count: 0 }));
         }
         return;
     }

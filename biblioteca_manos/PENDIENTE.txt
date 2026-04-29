@@ -9,3 +9,35 @@ PENDIENTE:
 4.- OBJETO POKER_CONFIG hacerlo en un JS unico e importarlo en los 2 htmls
 
 5.- ordenar estilos y JS en archivs separados, limpiar codigo repetido
+
+29-04-26 --> CLAUDE lee mi repo :
+
+
+Estructura del proyecto — Biblioteca de Manos
+Los 2 componentes principales de la biblioteca:
+drag-and_dropV4.html — Formulario para subir/guardar manos
+
+Selectores en cascada: Modalidad → Variedad → Subtipo → Nivel → Rival
+Posición del hero, casillas de clasificación, zona drag & drop para imagen, notas, duda
+Envía a POST /api/manos/viewer
+
+BUSCADORV2.html — Buscador/visor de manos guardadas
+
+Filtros: modalidad, variedad, subtipo, nivel, rival, clasificación, estado, posición, fechas
+Llama a GET /api/filter/hands
+Muestra resultados en tabla + visor de imagen
+
+
+Estado del backend (server.js):
+
+✅ POST /api/manos/viewer — funciona, guarda manos correctamente
+⚠️ GET /api/filter/hands — incompleto: la query SQL tiene un error (falta LEFT JOIN mano_categorias mc), y los casos yesterday, this_month, between están vacíos
+❌ El buscador espera result.html y result.count pero el servidor devuelve result.manos (array)
+
+Pendientes identificados en PENDIENTE.txt:
+
+Función para convertir rangos de fecha
+Botón "Cargar Manos" → función completa con filtros
+Responsive mínimo 838×848px
+POKER_CONFIG en un JS único importable
+Separar CSS y JS en archivos propios
