@@ -99,6 +99,16 @@
       </div>
 
       <textarea id="notes" placeholder="Describe la mano..."></textarea>
+      <!-- ASOCIAR MANO A JUGADOR -->
+      <div style="margin-top: 15px; background: #0b3d2e; border-radius: 8px; padding: 12px; border: 1px solid #ffffff22;">
+        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13px; color: #aaa;">
+          <input type="checkbox" id="asociarJugador"> Asociar mano a un jugador
+        </label>
+        <div id="loginMano" style="display:none; margin-top: 10px; display: flex; flex-direction: column; gap: 8px;">
+          <input type="text"     id="nickJugador" placeholder="Tu nick"     style="background:#1a1a1a; color:#fff; border:1px solid #ffffff33; padding:8px; border-radius:6px; font-size:13px;">
+          <input type="password" id="passJugador" placeholder="Tu password" style="background:#1a1a1a; color:#fff; border:1px solid #ffffff33; padding:8px; border-radius:6px; font-size:13px;">
+        </div>
+      </div>
       <button class="btn-send" id="btnSend">ENVIAR A BIBLIOTECA</button>
     </section>
 
@@ -147,6 +157,10 @@
       const textarea = document.getElementById("notes");
       const duda = document.getElementById("duda");
       const posicionHero = document.getElementById("positionFilter");
+
+      document.getElementById('asociarJugador').addEventListener('change', function() {
+          document.getElementById('loginMano').style.display = this.checked ? 'flex' : 'none';
+      });
 
       function init() {
         POKER_CONFIG.tiposDeRival.forEach(r => {
@@ -261,6 +275,11 @@
 
           // 3. Creamos FormData para enviar archivos e datos
           const formData = new FormData();
+          // 2b. Recoger nick/pass si el jugador quiere asociar la mano
+          const asociar  = document.getElementById('asociarJugador').checked;
+          const nick     = asociar ? document.getElementById('nickJugador').value.trim() : '';
+          const password = asociar ? document.getElementById('passJugador').value.trim() : '';
+
           formData.append('modalidad', modSelect.value);
           formData.append('variedad', varSelect.value);
           formData.append('subtipo', subSelect.value);
@@ -270,6 +289,8 @@
           formData.append('categorias', JSON.stringify(selectedTypes));
           formData.append('duda', duda.value);
           formData.append('posicion', posicionHero.value);
+          formData.append('nick',     nick);
+          formData.append('password', password);
 
           // 4. Agregar imagen si existe
           if (selectedFile) {

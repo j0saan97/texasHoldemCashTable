@@ -123,6 +123,15 @@ const server = http.createServer(async (req, res) => {
 
                 // 1. EXTRAER DUDA Y POSICION DEL BODY
                 const { modalidad, variedad, subtipo, nivel, rival, notas, duda, posicion, categorias } = req.body;
+                // Validar jugador si se envió nick
+                let jugador_alias = null;
+                if (req.body.nick && req.body.password) {
+                    const userResult = await db.ejecutarConsulta(
+                        'SELECT nick FROM users_hand_review WHERE nick = ? AND password = ?',
+                        [req.body.nick, req.body.password]
+                    );
+                    jugador_alias = userResult.length > 0 ? userResult[0].nick : null;
+                }
                 
                 let categoriasArray = categorias ? JSON.parse(categorias) : [];
                 let foto_path = req.file ? req.file.filename : null;
@@ -139,8 +148,8 @@ const server = http.createServer(async (req, res) => {
 
                 // 2. INSERTAR INCLUYENDO LOS NUEVOS CAMPOS
                 const insertMano = await db.ejecutarConsulta(
-                    'INSERT INTO manos_review (modalidad, variedad_id, subtipo_id, nivel_stake, tipo_rival, notas, duda, posicion, ruta_imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                    [modalidad, variedad_id, subtipo_id, nivel, rival, notas, duda, posicion, foto_path]
+                    'INSERT INTO manos_review (modalidad, variedad_id, subtipo_id, nivel_stake, tipo_rival, notas, duda, posicion, ruta_imagen, jugador_alias) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                    [modalidad, variedad_id, subtipo_id, nivel, rival, notas, duda, posicion, foto_path, jugador_alias]
                 );
                 
                 const mano_id = insertMano.insertId;

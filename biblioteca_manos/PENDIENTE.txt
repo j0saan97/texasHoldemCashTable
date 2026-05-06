@@ -37,11 +37,12 @@ Estado del backend (server.js):
 Pendientes identificados en PENDIENTE.txt:
 
 URGENTE: 
- 2.- filtros fecha ver que sean iguales a PT4 y que funcionen 
  3.- como crear elementos users_hand_review que tengan un nombre y un pasword para poder subir su mano (la idea es que 
     para que una mano se guarde a nombre de un jugador el jugador tenga que poner su nick y un pasword, solo si coincide 
     la mano se guardará correctamente, solo aplica si selecciona jugador, sino se sube la mano anonimamente)
  4.- comentarios a manos ya guardadas como lo hacemos? 
+
+ 
 SIN PRISA
 Responsive mínimo 838×848px
 Separar CSS y JS en archivos propios
