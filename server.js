@@ -214,6 +214,11 @@ const server = http.createServer(async (req, res) => {
                 params.push(query['estado'] === 'pendiente' ? 1 : 0);
             }
 
+            if (query['jugador_alias']) {
+                conditions.push('m.jugador_alias = ?');
+                params.push(query['jugador_alias']);
+            }
+
             // --- FILTRO DE FECHAS ---
             const rango = query['rangoDeFechas'];
             if (rango === 'today') {
@@ -252,6 +257,7 @@ const server = http.createServer(async (req, res) => {
                     m.duda,
                     m.notas,
                     m.ruta_imagen,
+                    m.jugador_alias,
                     m.fecha_registro,
                     GROUP_CONCAT(c.nombre ORDER BY c.nombre SEPARATOR ', ') AS categorias
                 FROM manos_review m
@@ -263,6 +269,7 @@ const server = http.createServer(async (req, res) => {
                 GROUP BY
                     m.id, m.modalidad, v.nombre, s.nombre,
                     m.nivel_stake, m.tipo_rival, m.posicion,
+                    m.jugador_alias,
                     m.duda, m.notas, m.ruta_imagen, m.fecha_registro
                 ORDER BY m.fecha_registro DESC
             `;

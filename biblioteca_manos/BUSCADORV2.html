@@ -332,6 +332,11 @@
             </div>
         </fieldset>
 
+        <fieldset class="mb-3 border-0 p-0">
+            <legend class="compact-label">Filtro por Jugador</legend>
+            <input type="text" id="f_jugador" class="form-control form-control-sm" placeholder="Nick del jugador...">
+        </fieldset>
+
         <div id="results-count" class="compact-label text-muted mb-2" style="display:none"></div>
     </aside>
 
@@ -499,6 +504,7 @@
                 estado:        document.getElementById('f_estado').value,
                 posicion:      document.getElementById('positionFilter').value,
                 rival:         document.getElementById('f_rival').value,
+                jugador_alias: document.getElementById('f_jugador').value,
                 clasificacion: document.getElementById('f_clasificacion').value,
                 rangoDeFechas: rango,
                 fechaInicio:   rango === 'between' ? document.getElementById('fechaInicio').value : (rango === 'since'  ? fechaSingle : ''),
