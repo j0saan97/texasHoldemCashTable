@@ -305,23 +305,35 @@
     <main class="app-layout">
 
         <!-- SIDEBAR: Filtro de fechas + contador -->
-        <aside class="sidebar-list" id="react-hand-list-container">
-            <fieldset class="mb-3 border-0 p-0">
-                <legend class="compact-label">Filtro por Fecha</legend>
-                <select id="dateRangeType" class="form-select form-select-sm mb-2">
-                    <option value="all" selected>All Dates</option>
-                    <option value="today">Today</option>
-                    <option value="this_month">This Month</option>
-                    <option value="between">Between Dates...</option>
-                </select>
-                <div class="d-flex gap-1">
-                    <input type="date" id="fechaInicio" class="form-control form-control-sm" style="width:50%">
-                    <input type="date" id="fechaFin"    class="form-control form-control-sm" style="width:50%">
-                </div>
-            </fieldset>
+    <aside class="sidebar-list" id="react-hand-list-container">
+        <fieldset class="mb-3 border-0 p-0">
+            <legend class="compact-label">Filtro por Fecha</legend>
+            <select id="dateRangeType" class="form-select form-select-sm mb-2">
+                <option value="all" selected>All Dates</option>
+                <option value="today">Today</option>
+                <option value="yesterday">Yesterday</option>
+                <option value="this_month">This Month</option>
+                <option value="this_year">This Year</option>
+                <option value="since">Since Date</option>
+                <option value="before">Before Date</option>
+                <option value="select_date">Select Date</option>
+                <option value="between">Between Dates...</option>
+            </select>
 
-            <div id="results-count" class="compact-label text-muted mb-2" style="display:none"></div>
-        </aside>
+            <!-- Una sola fecha: Since / Before / Select Date -->
+            <div id="fecha-single" style="display:none" class="mb-1">
+                <input type="date" id="fechaSingle" class="form-control form-control-sm">
+            </div>
+
+            <!-- Rango: Between Dates -->
+            <div id="fecha-range" style="display:none" class="d-flex gap-1">
+                <input type="date" id="fechaInicio" class="form-control form-control-sm" style="width:50%">
+                <input type="date" id="fechaFin"    class="form-control form-control-sm" style="width:50%">
+            </div>
+        </fieldset>
+
+        <div id="results-count" class="compact-label text-muted mb-2" style="display:none"></div>
+    </aside>
 
         <!-- ZONA PRINCIPAL: grid de tarjetas -->
         <section id="hand-grid-section">
@@ -452,6 +464,23 @@
             }
         });
 
+        // ── Mostrar/ocultar inputs de fecha según opción elegida ──
+        document.getElementById('dateRangeType').addEventListener('change', function() {
+            const val    = this.value;
+            const single = document.getElementById('fecha-single');
+            const range  = document.getElementById('fecha-range');
+            single.style.display = ['since', 'before', 'select_date'].includes(val) ? 'block' : 'none';
+            range.style.display  = val === 'between' ? 'flex' : 'none';
+        });
+
+        // ── Mostrar/ocultar inputs de fecha según opción elegida ──
+        document.getElementById('dateRangeType').addEventListener('change', function() {
+            const val    = this.value;
+            const single = document.getElementById('fecha-single');
+            const range  = document.getElementById('fecha-range');
+            single.style.display = ['since', 'before', 'select_date'].includes(val) ? 'block' : 'none';
+            range.style.display  = val === 'between' ? 'flex' : 'none';
+        });
         document.getElementById('btnBuscadorSend').addEventListener('click', cargarManos);
 
         // ── Datos en memoria para navegación en modal ──
@@ -459,6 +488,9 @@
         let indexActual   = 0;
 
         function cargarManos() {
+            const rango       = document.getElementById('dateRangeType').value;
+            const fechaSingle = document.getElementById('fechaSingle').value;
+
             const filtros = {
                 modalidad:     document.getElementById('f_modalidad').value,
                 variedad:      document.getElementById('f_variedad').value,
@@ -468,9 +500,10 @@
                 posicion:      document.getElementById('positionFilter').value,
                 rival:         document.getElementById('f_rival').value,
                 clasificacion: document.getElementById('f_clasificacion').value,
-                rangoDeFechas: document.getElementById('dateRangeType').value,
-                fechaInicio:   document.getElementById('fechaInicio').value,
-                fechaFin:      document.getElementById('fechaFin').value
+                rangoDeFechas: rango,
+                fechaInicio:   rango === 'between' ? document.getElementById('fechaInicio').value : (rango === 'since'  ? fechaSingle : ''),
+                fechaFin:      rango === 'between' ? document.getElementById('fechaFin').value    : (rango === 'before' ? fechaSingle : ''),
+                fechaExacta:   rango === 'select_date' ? fechaSingle : ''
             };
 
             // Eliminar vacíos y "all"

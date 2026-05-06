@@ -213,13 +213,23 @@ const server = http.createServer(async (req, res) => {
                 conditions.push('DATE(m.fecha_registro) = DATE_SUB(CURDATE(), INTERVAL 1 DAY)');
             } else if (rango === 'this_month') {
                 conditions.push('YEAR(m.fecha_registro) = YEAR(CURDATE()) AND MONTH(m.fecha_registro) = MONTH(CURDATE())');
+            } else if (rango === 'this_year') {
+                conditions.push('YEAR(m.fecha_registro) = YEAR(CURDATE())');
+            } else if (rango === 'since' && query['fechaInicio']) {
+                conditions.push('DATE(m.fecha_registro) >= ?');
+                params.push(query['fechaInicio']);
+            } else if (rango === 'before' && query['fechaFin']) {
+                conditions.push('DATE(m.fecha_registro) <= ?');
+                params.push(query['fechaFin']);
+            } else if (rango === 'select_date' && query['fechaExacta']) {
+                conditions.push('DATE(m.fecha_registro) = ?');
+                params.push(query['fechaExacta']);
             } else if (rango === 'between' && query['fechaInicio'] && query['fechaFin']) {
                 conditions.push('DATE(m.fecha_registro) BETWEEN ? AND ?');
                 params.push(query['fechaInicio'], query['fechaFin']);
             }
 
             const whereClause = conditions.length > 0 ? 'WHERE ' + conditions.join(' AND ') : '';
-
             // --- QUERY PRINCIPAL CON TODOS LOS JOINs CORRECTOS ---
             const querySql = `
                 SELECT

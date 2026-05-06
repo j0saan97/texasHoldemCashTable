@@ -36,8 +36,7 @@ Estado del backend (server.js):
 
 Pendientes identificados en PENDIENTE.txt:
 
-URGENTE:
- 1.- borrar todas las manos de la biblioteca (hay ejemplos de prueba y queiro que este limpia para ya subir manos buenas) 
+URGENTE: 
  2.- filtros fecha ver que sean iguales a PT4 y que funcionen 
  3.- como crear elementos users_hand_review que tengan un nombre y un pasword para poder subir su mano (la idea es que 
     para que una mano se guarde a nombre de un jugador el jugador tenga que poner su nick y un pasword, solo si coincide 
