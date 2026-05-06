@@ -27,7 +27,14 @@
 
     <section class="hand-review">
       <h3>Sube tu mano</h3>
-
+      <!-- LOGIN REVISOR -->
+      <div style="background:#0b3d2e; border-radius:8px; padding:12px; border:1px solid #ffffff22; margin-bottom:15px;">
+        <p style="font-size:11px; color:#aaa; font-weight:bold; margin-bottom:8px;">IDENTIFICARSE (OPCIONAL)</p>
+        <input type="text"     id="login_nick" placeholder="Tu nick..."     style="width:100%; background:#1a1a1a; color:#fff; border:1px solid #ffffff33; padding:8px; border-radius:6px; font-size:13px; margin-bottom:6px;">
+        <input type="password" id="login_pass" placeholder="Tu password..." style="width:100%; background:#1a1a1a; color:#fff; border:1px solid #ffffff33; padding:8px; border-radius:6px; font-size:13px; margin-bottom:6px;">
+        <button id="btnLogin" style="width:100%; padding:8px; border-radius:6px; border:1px solid #ffffff44; background:transparent; color:#fff; font-size:13px; cursor:pointer;">Identificarse</button>
+        <div id="login_status" style="display:none; margin-top:6px; font-size:12px;"></div>
+      </div>
       <div class="selectors-container">
         <select id="modalidad">
           <option value="" disabled selected hidden>Selecciona Modalidad...</option>
@@ -99,16 +106,7 @@
       </div>
 
       <textarea id="notes" placeholder="Describe la mano..."></textarea>
-      <!-- ASOCIAR MANO A JUGADOR -->
-      <div style="margin-top: 15px; background: #0b3d2e; border-radius: 8px; padding: 12px; border: 1px solid #ffffff22;">
-        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13px; color: #aaa;">
-          <input type="checkbox" id="asociarJugador"> Asociar mano a un jugador
-        </label>
-        <div id="loginMano" style="display:none; margin-top: 10px; display: flex; flex-direction: column; gap: 8px;">
-          <input type="text"     id="nickJugador" placeholder="Tu nick"     style="background:#1a1a1a; color:#fff; border:1px solid #ffffff33; padding:8px; border-radius:6px; font-size:13px;">
-          <input type="password" id="passJugador" placeholder="Tu password" style="background:#1a1a1a; color:#fff; border:1px solid #ffffff33; padding:8px; border-radius:6px; font-size:13px;">
-        </div>
-      </div>
+      
       <button class="btn-send" id="btnSend">ENVIAR A BIBLIOTECA</button>
     </section>
 
@@ -158,10 +156,36 @@
       const duda = document.getElementById("duda");
       const posicionHero = document.getElementById("positionFilter");
 
-      document.getElementById('asociarJugador').addEventListener('change', function() {
-          document.getElementById('loginMano').style.display = this.checked ? 'flex' : 'none';
+      // ── Login revisor ──
+      let revisorNick = null;
+      let revisorPass = null;
+
+      document.getElementById('btnLogin').addEventListener('click', async () => {
+          const nick = document.getElementById('login_nick').value.trim();
+          const pass = document.getElementById('login_pass').value.trim();
+          if (!nick || !pass) return;
+
+          const res = await fetch('http://localhost:3000/api/auth/revisor', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ nick, password: pass })
+          });
+          const data = await res.json();
+          const status = document.getElementById('login_status');
+          if (data.status === 'ok') {
+              revisorNick = nick;
+              revisorPass = pass;
+              status.textContent = `✓ Logueado como ${nick}`;
+              status.style.color = '#2ecc71';
+              status.style.display = 'block';
+          } else {
+              status.textContent = '✗ Nick o password incorrectos';
+              status.style.color = '#e94560';
+              status.style.display = 'block';
+          }
       });
 
+      
       function init() {
         POKER_CONFIG.tiposDeRival.forEach(r => {
             const opt = document.createElement('option');
@@ -276,9 +300,8 @@
           // 3. Creamos FormData para enviar archivos e datos
           const formData = new FormData();
           // 2b. Recoger nick/pass si el jugador quiere asociar la mano
-          const asociar  = document.getElementById('asociarJugador').checked;
-          const nick     = asociar ? document.getElementById('nickJugador').value.trim() : '';
-          const password = asociar ? document.getElementById('passJugador').value.trim() : '';
+          const nick     = revisorNick || '';
+          const password = revisorPass || '';
 
           formData.append('modalidad', modSelect.value);
           formData.append('variedad', varSelect.value);
