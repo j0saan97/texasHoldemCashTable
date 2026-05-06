@@ -42,7 +42,16 @@ URGENTE:
     la mano se guardará correctamente, solo aplica si selecciona jugador, sino se sube la mano anonimamente)
  4.- comentarios a manos ya guardadas como lo hacemos? 
 
- 
+LINKS SUBIR MANOS Y BUSCADOR
+http://localhost:3000/biblioteca_manos/drag-and_dropV4.html
+http://localhost:3000/biblioteca_manos/BUSCADORV2.html
+
+y0saan  1234 
+mati    2345
+anthony 3456
+franco  4567
+superaccion 5678
+
 SIN PRISA
 Responsive mínimo 838×848px
 Separar CSS y JS en archivos propios

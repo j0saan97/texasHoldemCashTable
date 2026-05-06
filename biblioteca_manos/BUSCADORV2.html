@@ -469,14 +469,6 @@
             }
         });
 
-        // ── Mostrar/ocultar inputs de fecha según opción elegida ──
-        document.getElementById('dateRangeType').addEventListener('change', function() {
-            const val    = this.value;
-            const single = document.getElementById('fecha-single');
-            const range  = document.getElementById('fecha-range');
-            single.style.display = ['since', 'before', 'select_date'].includes(val) ? 'block' : 'none';
-            range.style.display  = val === 'between' ? 'flex' : 'none';
-        });
 
         // ── Mostrar/ocultar inputs de fecha según opción elegida ──
         document.getElementById('dateRangeType').addEventListener('change', function() {
