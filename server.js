@@ -171,6 +171,76 @@ const server = http.createServer(async (req, res) => {
         return;
     }
 
+    // --- API: AUTH REVISOR ---
+    if (pathname === '/api/auth/revisor' && req.method === 'POST') {
+        let body = '';
+        req.on('data', chunk => body += chunk);
+        req.on('end', async () => {
+            try {
+                const { nick, password } = JSON.parse(body);
+                await db.inicializar();
+                const result = await db.ejecutarConsulta(
+                    'SELECT nick FROM users_hand_review WHERE nick = ? AND password = ? AND user_type = ?',
+                    [nick, password, 'top_reg']
+                );
+                await db.cerrarConexion();
+                if (result.length > 0) {
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ status: 'ok' }));
+                } else {
+                    res.writeHead(401, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ status: 'error' }));
+                }
+            } catch (error) {
+                res.writeHead(500, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ status: 'error', message: error.message }));
+            }
+        });
+        return;
+    }
+
+    // --- API: AÑADIR COMENTARIO A MANO (PUT) ---
+    if (pathname.match(/^\/api\/manos\/\d+\/comentario$/) && req.method === 'PUT') {
+        const mano_id = pathname.split('/')[3];
+
+        let body = '';
+        req.on('data', chunk => body += chunk);
+        req.on('end', async () => {
+            try {
+                const { nick, password, comentario } = JSON.parse(body);
+
+                await db.inicializar();
+
+                // Validar que el usuario es top_reg
+                const userResult = await db.ejecutarConsulta(
+                    'SELECT nick FROM users_hand_review WHERE nick = ? AND password = ? AND user_type = ?',
+                    [nick, password, 'top_reg']
+                );
+
+                if (userResult.length === 0) {
+                    res.writeHead(403, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ status: 'error', message: 'No autorizado' }));
+                    await db.cerrarConexion();
+                    return;
+                }
+
+                // Guardar comentario y marcar como revisada
+                await db.ejecutarConsulta(
+                    'UPDATE manos_review SET comentario = ?, estado_revision = ? WHERE id = ?',
+                    [comentario, 'revisada', mano_id]
+                );
+
+                await db.cerrarConexion();
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ status: 'success', message: 'Comentario guardado' }));
+            } catch (error) {
+                res.writeHead(500, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ status: 'error', message: error.message }));
+            }
+        });
+        return;
+    }
+
     // -- API : FILTRO DE MANOS
     if (pathname === '/api/filter/hands' && req.method === 'GET') {
         try {

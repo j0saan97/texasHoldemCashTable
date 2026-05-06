@@ -28,18 +28,10 @@ Llama a GET /api/filter/hands
 Muestra resultados en tabla + visor de imagen
 
 
-Estado del backend (server.js):
-
-✅ POST /api/manos/viewer — funciona, guarda manos correctamente
-⚠️ GET /api/filter/hands — incompleto: la query SQL tiene un error (falta LEFT JOIN mano_categorias mc), y los casos yesterday, this_month, between están vacíos
-❌ El buscador espera result.html y result.count pero el servidor devuelve result.manos (array)
-
 Pendientes identificados en PENDIENTE.txt:
 
 URGENTE: 
- 3.- como crear elementos users_hand_review que tengan un nombre y un pasword para poder subir su mano (la idea es que 
-    para que una mano se guarde a nombre de un jugador el jugador tenga que poner su nick y un pasword, solo si coincide 
-    la mano se guardará correctamente, solo aplica si selecciona jugador, sino se sube la mano anonimamente)
+ )
  4.- comentarios a manos ya guardadas como lo hacemos? 
 
 LINKS SUBIR MANOS Y BUSCADOR
