@@ -31,8 +31,8 @@ Muestra resultados en tabla + visor de imagen
 Pendientes identificados en PENDIENTE.txt:
 
 URGENTE: 
- )
- 4.- comentarios a manos ya guardadas como lo hacemos? 
+
+ 
 
 LINKS SUBIR MANOS Y BUSCADOR
 http://localhost:3000/biblioteca_manos/drag-and_dropV4.html

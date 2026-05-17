@@ -113,6 +113,20 @@
     
    
     <script>
+          // Función para generar un ID único
+      function generateUniqueId() {
+        const timestamp = Date.now();
+        const random = Math.random().toString(36).substring(2, 8);
+        return `hand_${timestamp}_${random}`;
+      }
+
+      // Función para renombrar el archivo conservando la extensión
+      function renameFile(originalFile) {
+        const ext = originalFile.name.split('.').pop().toLowerCase();
+        const uniqueName = `${generateUniqueId()}.${ext}`;
+        return new File([originalFile], uniqueName, { type: originalFile.type });
+      }
+
       const POKER_CONFIG = {
         modalidades: {
             'NoLimitHoldem': {
@@ -258,6 +272,7 @@
         });
       });
 
+
       const dropZone = document.getElementById("dropZone");
       const fileInput = document.getElementById("fileInput");
       let selectedFile = null; // Variable para almacenar el archivo seleccionado
@@ -317,7 +332,8 @@
 
           // 4. Agregar imagen si existe
           if (selectedFile) {
-            formData.append('foto_mano', selectedFile);
+            const renamedFile = renameFile(selectedFile);
+            formData.append('foto_mano', renamedFile);
           }
 
           // 5. Envío al servidor (Node.js API)
