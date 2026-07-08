@@ -514,7 +514,7 @@
             const pass = document.getElementById('login_pass').value.trim();
             if (!nick || !pass) return;
 
-            const res = await fetch(`http://localhost:3000/api/auth/revisor`, {
+            const res = await fetch(`auth.php`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ nick, password: pass })
@@ -561,7 +561,7 @@
 
             const queryString = new URLSearchParams(filtros).toString();
 
-            fetch(`http://localhost:3000/api/filter/hands?${queryString}`)
+            fetch(`get_hands.php?${queryString}`)
                 .then(r => r.json())
                 .then(result => {
                     manosActuales = result.manos || [];
@@ -671,11 +671,12 @@
             document.getElementById('btnGuardarComentario').onclick = async () => {
                 const comentario = txtComentario.value.trim();
                 if (!comentario) return;
-                const r = await fetch(`http://localhost:3000/api/manos/${m.id}/comentario`, {
-                    method: 'PUT',
+                const r = await fetch(`comentario.php`, {
+                    method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ nick: revisorNick, password: revisorPass, comentario })
+                    body: JSON.stringify({ nick: revisorNick, password: revisorPass, comentario, mano_id: m.id })
                 });
+                
                 const data = await r.json();
                 if (data.status === 'success') {
                     manosActuales[index].comentario = comentario;

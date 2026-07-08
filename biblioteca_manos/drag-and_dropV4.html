@@ -179,7 +179,7 @@
           const pass = document.getElementById('login_pass').value.trim();
           if (!nick || !pass) return;
 
-          const res = await fetch('http://localhost:3000/api/auth/revisor', {
+          const res = await fetch('auth.php', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ nick, password: pass })
@@ -337,7 +337,7 @@
           }
 
           // 5. Envío al servidor (Node.js API)
-          fetch('http://localhost:3000/api/manos/viewer', {
+          fetch('upload.php', {
             method: 'POST',
             body: formData  // No necesitamos Content-Type, fetch lo pone automáticamente
           })
