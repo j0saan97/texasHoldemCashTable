@@ -1,38 +1,28 @@
 PENDIENTE:
+yo tengo un servidor local en node, ahora hay que convertir lso endpoints de ese servidor local que corre 
+en mi pc a php para poder subirlo al server de bana hosting y que todo el mundo tenga acceso correcto? 
+si es asi marcame los pasos
 
-1.- CREAR FUNCION QUE RECOJA LOS VALORES DE FECHA TODAY, YESTERDAY, THIS MONTH... Y LOS CONVIERTA A FORMATO FECHA
+ Exacto, lo has entendido perfectamente. Los pasos son:
+1. Crear los archivos PHP (sustituyen al server.js):
 
-2.- BOTÓN CARGAR MANOS --> CREAR FUNCION QUE CARGA LAS MANOS DESDE EL SERVIDOR --> PREPARAR CONSULTA CON DATOS SELECCIONADOS
+upload.php → subir mano + imagen
+get_hands.php → filtrar/buscar manos
+auth.php → login del revisor
+comentario.php → añadir comentario
 
-3.- hacerlo responsive el buscador o DIMENSION MINIMA 838X 848
+2. Adaptar los HTMLs para que apunten a los .php en vez de a /api/...:
 
-4.- OBJETO POKER_CONFIG hacerlo en un JS unico e importarlo en los 2 htmls
+drag-and_dropV4.html → apuntar a upload.php
+BUSCADORV2.html → apuntar a get_hands.php, auth.php, comentario.php
 
-5.- ordenar estilos y JS en archivs separados, limpiar codigo repetido
+3. Subir a BanaHosting por FTP:
 
-29-04-26 --> CLAUDE lee mi repo :
+Los 4 PHPs
+Los 2 HTMLs adaptados
+La carpeta uploads/
 
-
-Estructura del proyecto — Biblioteca de Manos
-Los 2 componentes principales de la biblioteca:
-drag-and_dropV4.html — Formulario para subir/guardar manos
-
-Selectores en cascada: Modalidad → Variedad → Subtipo → Nivel → Rival
-Posición del hero, casillas de clasificación, zona drag & drop para imagen, notas, duda
-Envía a POST /api/manos/viewer
-
-BUSCADORV2.html — Buscador/visor de manos guardadas
-
-Filtros: modalidad, variedad, subtipo, nivel, rival, clasificación, estado, posición, fechas
-Llama a GET /api/filter/hands
-Muestra resultados en tabla + visor de imagen
-
-
-Pendientes identificados en PENDIENTE.txt:
-
-URGENTE: 
-
- 
+4. Probar en BanaHosting con la URL real que te dan ellos.
 
 LINKS SUBIR MANOS Y BUSCADOR
 http://localhost:3000/biblioteca_manos/drag-and_dropV4.html
@@ -44,11 +34,5 @@ anthony 3456
 franco  4567
 superaccion 5678
 
-SIN PRISA
-Responsive mínimo 838×848px
-Separar CSS y JS en archivos propios
-
-trabajo en rama DEV: CUANNDO TOD FUNCIONO --> MERGEO CON MASTER
-RAMA FIX: SOLO PA PEQUEÑOS ARREGLOS PUNTUALES O PARA PROBAR PEQUEÑOS CAMBIOS
 
 
