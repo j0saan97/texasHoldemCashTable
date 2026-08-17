@@ -635,7 +635,7 @@
             const info  = document.getElementById('modal-info');
 
             img.src = m.ruta_imagen
-                ? `http://localhost:3000/uploads/${m.ruta_imagen}`
+                `uploads/${m.ruta_imagen}`
                 : '';
 
             const fecha = new Date(m.fecha_registro).toLocaleDateString('es-ES');
